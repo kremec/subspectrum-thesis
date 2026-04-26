@@ -1429,64 +1429,81 @@ by
     programi raje poslužijo zgoraj omenjenega podprograma iz ROM-a. ~\cite{strojnijezikzaprocesorz80}
 
     \section{Kasete}
-    \subsection*{Uporaba - branje in pisanje, preverjanje, itd}
-    Namesto, da bi morali vsakič ponovno v računalnik vnašati programe, ZX Spectrum
-    omogoča snemanje programov, spremenljivk in drugih oblik podatkov za ponovno
-    uporabo na kasete z običajnim domačim kasetofonom. To ROM omogoča z ukazom SAVE,
-    pravilnost prenešenih spremenljivk in programa na kaseti pa lahko nato
-    preverimo pravilnost napram programu v računalniku z ukazom VERIFY. Kasneje lahko
-    program iz kasete naložimo v pomnilnik z ukazom LOAD, in ga nato poženemo z
-    ukazom RUN. ~\cite{zxspectrumintroduction} ~\cite{zxspectrumbasicprogramming}
 
-    V vsakemu od teh ukazov lahko bodisi sledi niz, ki predstavlja ime programa (10
-    znakov, sestavljeno le iz črk in številk), ki ga želimo shraniti, preveriti, naložiti
-    ali pognati. V primeru ukazov LOAD, VERIFY in RUN lahko niz pustimo tudi prazen,
-    kar privzeto pomeni obdelavo prvega najdenega programa. ~\cite{zxspectrumintroduction}
+    ZX Spectrum za trajno hrambo programov uporablja navadne avdio kasete. Program,
+    spremenljivke ali drug del pomnilnika lahko shranimo z ukazom SAVE, kasneje pa
+    ga naložimo z ukazom LOAD. Ukaz VERIFY ne nalaga podatkov, temveč preveri,
+    ali se podatki na kaseti ujemajo s podatki v pomnilniku. Ukaz RUN deluje podobno
+    kot LOAD, le da program po nalaganju tudi zažene. ~\cite{zxspectrumintroduction}
     ~\cite{zxspectrumbasicprogramming}
+
+    Pri teh ukazih lahko navedemo ime programa, dolgo največ 10 znakov. Če pri
+    ukazih LOAD, VERIFY ali RUN ime pustimo prazno, Spectrum uporabi prvi
+    ustrezen program, ki ga najde na kaseti. ~\cite{zxspectrumintroduction} ~\cite{zxspectrumbasicprogramming}
 
     \subsection*{Formati}
 
-    Ob nalaganju vidimo vzorce barvnih vodoravnih črt, ponavadi v podobnem
-    vzorcu:
-    \begin{itemize}
-        \item 5 sekund rdečih in svetlo modrih črt, širokih približno 1 cm, ki se
-            počasi premikajo navzgor
+    Kasetne formate je treba ločiti od posnetkov stanja, kot sta formata datotek SNA
+    in Z80. Posnetek stanja hrani le stanje pomnilnika, registrov in drugih indikatorjev
+    stanja sistema, kasetni format pa le hrani podatke kasete v obliki, v kakršni
+    bi jih računalnik prebral iz kasete. S tem se ohrani ne le vrstni red
+    nalaganja blokov, temveč tudi morebitne posebne nalagalnike. ~\cite{worldofspectrumformats}
 
-        \item zelo kratek izbruh modrih in rumenih črt
+    Posnetki kaset v formatih, primernih za uporabo v takšni emulaciji, so
+    razdeljeni na bloke. Pri običajnem nalaganju se najprej prebere glava zapisa z
+    osnovnimi podatki o programu, nato pa še podatkovni bloki z dejansko vsebino.
+    Vsak blok vsebuje zastavični zlog, podatke in kontrolno vsoto. ~\cite{worldofspectrumformats}
 
-        \item 1 sekunda, ko je vse normalno
+    Format TAP je neposreden zapis takih blokov. Datoteka \texttt{.tap} je sestavljena
+    iz zaporedja enako sestavljenih blokov, pri čemer ima vsak blok najprej dva
+    zloga dolžine, nato pa sledijo zastavični zlog, zlog s kontrolno vsoto, in dejanski
+    podatki. Format je zato preprost in primeren za programe, shranjene s standardnimi
+    podprogrami ROMa, ne ohrani pa natančnih časov impulzov, pavz ali delovanja posebnih
+    nalagalnikov. ~\cite{worldofspectrumformats}
 
-        \item 2 sekundi rdečega in svetlo modrega vzorca
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=0.7\textwidth]{howtapeloadingword_pic1}
+        \end{center}
+        \caption{Pri nalaganju kaset s standardnim podprogramom iz ROMa se
+        branje uvodnega dela bloka na zaslonu kaže kot rdeče in svetlo modre
+        črte, branje dejanskih podatkov pa kot modre in rumene črte. ~\cite{zxspectrumintroduction}
+        ~\cite{zxspectrumbasicprogramming} ~\cite{howtapeloadingworks}}
+        \label{howtapeloadingword_pic1}
+    \end{figure}
 
-        \item 1 sekunda modrega in rumenega vzorca
-    \end{itemize}
-    ~\cite{zxspectrumintroduction}
+    Format TZX je namenjen čim natančnejšemu hranjenju kaset za ZX Spectrum,
+    predvsem za uporabo v emulatorjih. Datoteka \texttt{.tzx} se začne z glavo
+    \texttt{ZXTape!} in številko različice, za tem pa sledi en ali več različnih
+    tipov blokov. Če je bil program shranjen z navadnimi ROM-ovimi rutinami,
+    datoteka v formatu TZX načeloma vsebuje enake standardne podatkovne bloke
+    kot TAP. Njegova prednost je, da lahko poleg osnovnih tipov blokov hrani
+    tudi tudi pavze, časovne podatke o impulzih in druge posebne bloke, ki jih
+    uporabljajo posebni nalagalniki ali zaščite. Zato je TZX primernejši takrat,
+    ko želimo v emulatorju čim bolj natančno ponoviti potek izvirnega nalaganja
+    s kasete. ~\cite{tzxformat} ~\cite{worldofspectrumformats}
 
-    Informacije so shranjene v dveh blokih, oba bloka imata uvod, ki ustreza rdečemu
-    in svetlo modremu vzorcu, dejanski program in podatki pa ustrezajo modremu
-    in rumenemu vzorcu. Prvi blok je predhodni in vsebuje ime ter različne druge informacije
-    o programu, drugi blok pa je sam program skupaj z vsemi prisotnimi
-    spremenljivkami. Bel del med njima je le vrzel. ~\cite{zxspectrumintroduction}
+    \subsection*{Implementacija v emulatorju}
 
     \section{Zvok}
     \subsection*{Delovanje in toni}
-    ZX Spectrum lahko proizvaja neskončno raznolike zvoke, pri čemer lahko določimo
-    tako frekvenco kot trajanje tona z ukazom BEEP. ~\cite{zxspectrumintroduction}
+    ZX Spectrum lahko proizvaja neskončno raznolike zvoke, pri čemer lahko
+    določimo tako frekvenco kot trajanje tona z ukazom BEEP. ~\cite{zxspectrumintroduction}
 
-    Ukazu podamo dolžino izvajanja tona v sekundah in višino tona v poltonih nad
-    srednjim C. Osrednja frekvenca za ukaz BEEP je srednji C, lahko pa pridobimo
-    katerikoli polton nad ali pod to osrednjo frekvenco. ~\cite{zxspectrumintroduction}
+    Ukazu podamo dolžino izvajanja tona v sekundah in višino tona v poltonih nad srednjim
+    C. Osrednja frekvenca za ukaz BEEP je srednji C, lahko pa pridobimo katerikoli
+    polton nad ali pod to osrednjo frekvenco. ~\cite{zxspectrumintroduction}
 
     *Str. 101 - prikaz tonov na klavirski tipkovnici* ~\cite{zxspectrumbasicprogramming}
 
-    Ker je v računalniku samo en zvočnik, lahko igrate samo en ton naenkrat.
-    Proizveden zvočni signal ne pride le do zvočnika, temveč istočasno tudi do MIC
-    in EAR **sockets**. ~\cite{zxspectrumbasicprogramming}
+    Ker je v računalniku samo en zvočnik, lahko igrate samo en ton naenkrat. Proizveden
+    zvočni signal ne pride le do zvočnika, temveč istočasno tudi do MIC in EAR **sockets**.
+    ~\cite{zxspectrumbasicprogramming}
 
-    Na zvočnik lahko poleg z ukazom BEEP preko ROMa vplivamo tudi z ukazi OUT
-    skozi V/I vrata 0xFE. Bita 4 v zlogu na vratih določa stanje zvočnika (0
-    pomeni izključen, 1 pomeni vključen) - frekvenco pa določamo s hitrostjo
-    menjav med stanjema. ~\cite{strojnijezikzaprocesorz80}
+    Na zvočnik lahko poleg z ukazom BEEP preko ROMa vplivamo tudi z ukazi OUT skozi
+    V/I vrata 0xFE. Bita 4 v zlogu na vratih določa stanje zvočnika (0 pomeni izključen,
+    1 pomeni vključen) - frekvenco pa določamo s hitrostjo menjav med stanjema.
+    ~\cite{strojnijezikzaprocesorz80}
 
     \section{Implementacija v emulatorju}
 
@@ -1501,11 +1518,11 @@ by
     \subsection*{Evalvacija uspešnosti diplomskega dela (na podlagi ciljev iz uvoda)}
 
     \subsection*{Možne izboljšave}
-    Boljša emulacija časovnih ciklov s strani pomnilnika, procesorja in ULA za boljšo
-    sinhronizacijo in emulacijo strojnih napak dejanskega Spectruma: - 1. Memory
+    Boljša emulacija časovnih ciklov s strani pomnilnika, procesorja in ULA za
+    boljšo sinhronizacijo in emulacijo strojnih napak dejanskega Spectruma: - 1. Memory
     contention - fetching instructions and other general memory reads/writes - I/O
-    contention - Port 0xFE (ULA port) contention based on address bus high byte
-    - Snow effect
+    contention - Port 0xFE (ULA port) contention based on address bus high byte -
+    Snow effect
 
     %\cleardoublepage
     %\addcontentsline{toc}{chapter}{Literatura}
