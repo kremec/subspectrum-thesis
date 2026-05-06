@@ -315,20 +315,21 @@ by
         {\bf CRC}     & cyclic redundancy check                            & ciklično preverjanje redundance                            \\
         {\bf EAR}     & earphone                                           & vhod za signal iz kasetofona                               \\
         {\bf IFF}     & interrupt flip-flop                                & prekinitveni preklopnik                                    \\
-        {\bf INT}     & interrupt                                          & maskirna prekinitev                                        \\
+        {\bf INT}     & interrupt                                          & maskabilna prekinitev                                      \\
         {\bf JVM}     & Java Virtual Machine                               & javanski navidezni stroj                                   \\
         {\bf KMP}     & Kotlin Multiplatform                               & večplatformska tehnologija Kotlin Multiplatform            \\
         {\bf LIFO}    & last in, first out                                 & oblika delovanja sklada po principu zadnji noter, prvi ven \\
         {\bf MIC}     & microphone                                         & izhod za signal proti kasetofonu                           \\
-        {\bf NMI}     & non-maskable interrupt                             & nemaskirna prekinitev                                      \\
+        {\bf NMI}     & non-maskable interrupt                             & nemaskabilna prekinitev                                    \\
         {\bf PC}      & program counter                                    & programski števec                                          \\
         {\bf PDF/A}   & Portable Document Format/Archive                   & arhivska različica zapisa PDF                              \\
+        {\bf PSP}     & interrupt handler                                  & prekinitveno-servisni program                              \\
         {\bf RAM}     & random access memory                               & bralno-pisalni pomnilnik                                   \\
         {\bf ROM}     & read-only memory                                   & bralni pomnilnik                                           \\
         {\bf SNA}     & snapshot                                           & posnetek stanja emulatorja                                 \\
         {\bf SP}      & stack pointer                                      & kazalec sklada                                             \\
         {\bf TAP}     & tape                                               & zapis standardnih kasetnih blokov                          \\
-        {\bf TZX}     & ZX tape                                            & zapis kasete s časovnimi podatki                           \\
+        {\bf TZX}     & ZX tape                                            & datotečni format zapisa kasete za ZX Spectrum              \\
         {\bf ULA}     & uncommitted logic array                            & logično vezje ULA                                          \\
         {\bf V/I}     & input/output                                       & vhod/izhod                                                 \\
     \end{tabular}
@@ -412,17 +413,17 @@ by
     \end{figure}
 
     Namen diplomskega dela je razviti delujoč emulator in razhroščevalnik
-    sistema ZX Spectrum 48K. Emulator mora podpirati poganjanje programov napisanih
-    za Spectrum in razhroščevanje z vpogledom v notranje stanje sistema. Zaradi
-    poudarka na razhroščevanje mora pri tem omogočati pregled in spreminjanje
-    vrednosti registrov ter pomnilnika, pregled in razlago pomena naloženih ukazov
-    in delov pomnilnika. Tak vpogled ni pomemben le za boljše razumevanje
-    sistema, temveč tudi ohranjanje znanja o njegovem delovanju. Delovanje
-    emulatorja se ovrednoti z zagonom nekaj izbranih programov in iger, s čimer potrdimo
+    sistema ZX Spectrum 48K. Emulator mora podpirati poganjanje programov,
+    napisanih za Spectrum in razhroščevanje z vpogledom v notranje stanje
+    sistema. Zaradi poudarka na razhroščevanju mora pri tem omogočati pregled in spreminjanje
+    vrednosti registrov ter pomnilnika, pregled in razlago pomena naloženih
+    ukazov in delov pomnilnika. Tak vpogled ni pomemben le za boljše razumevanje sistema,
+    temveč tudi za ohranjanje znanja o njegovem delovanju. Delovanje emulatorja se
+    ovrednoti z zagonom nekaj izbranih programov in iger, s čimer potrdimo
     pravilno delovanje emulacije.
 
-    V nadaljnjih poglavjih je najprej predstavljen računalnik ZX Spectrum,
-    njegov vpliv na slovensko in svetovno okolje, in pomen ohranjanja takega znanja.
+    V nadaljnjih poglavjih je najprej predstavljen računalnik ZX Spectrum, njegov
+    vpliv na slovensko in svetovno okolje ter pomen ohranjanja takega znanja.
     Sledi opis splošne zgradbe emulatorja, zatem pa poglavja o zasnovi in implementaciji
     posameznih delov sistema, to so pomnilnik, procesor Z80 in ULA, ki obravnava
     časovnik, zaslon, tipkovnico, kasete in zvok.
@@ -434,7 +435,7 @@ by
 
     Sinclair Research je pred ZX Spectrumom že uveljavil nizkocenovne domače
     računalnike, kot sta ZX80 in ZX81, ki sta poleg računalnika ZX Spectruma
-    prikazana na sliki \ref{i4cysinclairomputers_pic1}. Bila sta bila namenjena predvsem
+    videna na sliki \ref{i4cysinclairomputers_pic1}. Bila sta bila namenjena predvsem
     učenju programiranja in prvi uporabi računalnika doma. ZX Spectrum je bil
     predstavljen aprila 1982 kot zmogljivejši naslednik ZX81, napram kateremu je na
     trg prinesel barvno grafiko, višjo ločljivost zaslonske slike, zvok in bolj razvito
@@ -449,7 +450,7 @@ by
     \end{figure}
 
     Prvotni Spectrum je bil na voljo v različicah s 16 KB in 48 KB RAMa, obe pa
-    sta uporabljali procesor Zilog Z80 in 16 KB ROMa. Računalnik se je priključil
+    sta uporabljali procesor Zilog Z80 in 16 KB ROMa. Računalnik se je dalo priključiti
     na navaden televizor, programe pa je praviloma nalagal s kasete, kar je pomembno
     vplivalo na način uporabe in razširjanja programske opreme. Zaradi nizke
     cene in velike programske knjižnice je Spectrum postal eden
@@ -478,7 +479,7 @@ by
     razvite programske opreme, ki je iz Spectruma, takrat večinoma uporabljanega
     za igranje iger, naredila delovno orodje. INES je bil januarja 1985
     objavljen kot kasetni program, ki je omogočal obdelavo besedil spremeljive dolžine
-    (primer delovanja prikazan na sliki \ref{subspectrum_ines}), slik ter
+    (primer delovanja je viden na sliki \ref{subspectrum_ines}), slik ter
     manjših podatkovnih zbirk. Podpora šumnikom in jugoslovanskim črkam je bila posebej
     pomembna za domačo rabo ~\cite{mojmikroines1984} ~\cite{mojmikroines1985saje}
     ~\cite{mojmikroines1985jakopin}.
@@ -528,7 +529,7 @@ by
     ali zvočnik na kasetofonu, 3,5 milimeterska vtičnica MIC, ki se poveže z vhodno
     vtičnico za mikrofon na kasetofonu, vtičnico za televizijo in robni
     priključek za povezavo z dodatno opremo. Povezave med osnovnimi deli sistema so
-    prikazane na sliki \ref{zxspectrumintroduction_pic1} ~\cite{zxspectrumintroduction}.
+    videne na sliki \ref{zxspectrumintroduction_pic1} ~\cite{zxspectrumintroduction}.
 
     Ko računalnik ugasnemo, se vse v njem shranjene informacije izgubijo, če jih
     pred tem ne prenesemo na zunanji medij, kot je na primer kaseta. Če se
@@ -544,7 +545,7 @@ by
         \label{zxspectrumintroduction_pic1}
     \end{figure}
 
-    Razporeditev glavnih notranjih komponent računalnika je prikazana na sliki
+    Razporeditev glavnih notranjih komponent računalnika je videna na sliki
     \ref{zxspectrumintroduction_pic2}.
 
     CPE Z80 predstavlja možgane računalnika, ki nadzira vse operacije, izvaja
@@ -631,12 +632,12 @@ by
     \section{Programiranje emulatorja in razhroščevalnika}
 
     Emulator je razvit kot aplikacija, ki poleg samega izvajanja programov
-    prikazuje tudi notranje stanje emuliranega računalnika. Zato posamezni deli sistema
-    niso skriti za emulacijsko zanko, ampak so implementirani kot ločeni modeli
-    komponent delujočega sistema: registri, pomnilnik, V/I vrata, časovnik ter
-    ostale naprave in funkcionalnosti računalnika. Procesor vrednosti stanja teh modelov
-    spreminja med izvajanjem ukazov, uporabniški vmesnik pa jih opazuje in
-    prikaže v razhroščevalniku.
+    omogoča vpogled in posege tudi v notranje stanje emuliranega računalnika. Zato
+    posamezni deli sistema niso skriti za emulacijsko zanko, ampak so
+    implementirani kot ločeni modeli komponent delujočega sistema: registri,
+    pomnilnik, V/I vrata, časovnik ter ostale naprave in funkcionalnosti
+    računalnika. Procesor vrednosti stanja teh modelov spreminja med izvajanjem ukazov,
+    uporabniški vmesnik pa jih opazuje in prikaže v razhroščevalniku.
 
     \subsection{Uporabljene tehnologije}
 
@@ -656,7 +657,7 @@ by
     \subsection{Kratek pregled delovanja emulacije in vpogleda v sistem}
 
     Na sliki \ref{subspectrum_interface} vidimo primer vmesnika emulatorja.
-    Podokno za registre prikazuje vrednosti splošnin in posebnih registrov ter
+    Podokno za registre prikazuje vrednosti splošnih in posebnih registrov ter
     zastavic, podokno za pomnilnik prikazuje vrednosti pomnilniških lokacij po naslovih,
     podokno z razstavljenimi ukazi pa prikazuje ukaze, dekodirane iz trenutne vsebine
     pomnilnika. Grafični izhod emuliranega računalnika je prikazan v ločenem
@@ -666,7 +667,7 @@ by
     Iz orodne vrstice lahko uporabnik ponovno naloži ROM ali kasetni program,
     ponastavi stanje sistema, izvede posamezen procesorski korak, ki izvede
     trenutni ukaz, zažene in ustavi tek procesorja, v katerem se ti koraki
-    ponavljajo zaustavitve ali prekinitvene točke, preklopi hitrost izvajanja emulacije,
+    ponavljajo do zaustavitve ali prekinitvene točke, preklopi hitrost izvajanja emulacije,
     odpre okno zaslona ter nastavi način tipkovnice in omogoči zvok.
 
     \begin{figure}[htb]
@@ -783,8 +784,8 @@ by
             barv papirja in papirja, ter drugih atributov stalnega prikaza
             znakov,
 
-        \item CHARS na naslovu \texttt{0x5C36}, ki vsebuje naslov na začetek nabora
-            znakov.
+        \item CHARS na naslovu \texttt{0x5C36}, ki vsebuje naslov začetka definicije
+            nabora znakov.
     \end{itemize}
 
     \section{Implementacija v emulatorju}
@@ -844,7 +845,7 @@ by
     spremembi vsebine poljubne pomnilniške celice.
 
     Poleg običajnega heksadecimalnega prikaza razhroščevalnik podpira še
-    anotiran pogled. Stalna območja RAMa, kot so ROM, zaslonska datoteka,
+    anotiran pogled. Stalna območja pomnilnika, kot so ROM, zaslonska datoteka,
     atributi, medpomnilnik tiskalnika in sistemske spremenljivke, so zapisana v
     registru območij, meje dinamičnih območij pa se izračunajo iz vrednosti določenih
     sistemskih spremeljivk ter skladovnega kazalca \texttt{SP}. Zato lahko vmesnik
@@ -865,7 +866,8 @@ by
     \label{cpe}
 
     Procesor Z80 najdemo v mnogih računalnikih - Spectrum, ZX 81, Galaksija, Dialog
-    20 Gorenje, Amstrad CPC 454 in celo večji računalniki, kot je Iskrin Partner ~\cite{strojnijezikzaprocesorz80}.
+    20 Gorenje, Amstrad CPC 454 in celo večjih računalnikih, kot je Iskrin Partner
+    ~\cite{strojnijezikzaprocesorz80}.
 
     Družina komponent procesorjev Z80 podjetja Zilog je četrta generacija
     mikroprocesorjev, ki dosega hitrosti od 6 do 20 MHz. Čeprav ima mnogo 8-bitnih
@@ -882,7 +884,7 @@ by
         \label{z80cpuusermanual_pic1}
     \end{figure}
 
-    Glavni notranji elementi procesorja so prikazani na sliki
+    Glavni notranji elementi procesorja so videni na sliki
     \ref{z80cpuusermanual_pic1}. Vsak sistem s procesorjem Z80 mora vsebovati določene
     zunanje strojne elemente, kot so vir napajanja +5V, oscilator, pomnilniške naprave
     (RAM, ROM ali PROM) in vhodno-izhodna vezja, katerih signali so časovno usklajeni
@@ -896,7 +898,7 @@ by
     in \texttt{0xFF}, kar lahko predstavlja bodisi nepredznačen obseg vrednosti
     od 0 do 255, bodisi predznačen obseg vrednosti od -128 do 127 ~\cite{strojnijezikzaprocesorz80}.
 
-    Nekatere operacije pa so 16-bitne, torej CPE dela z vrednosti med \texttt{0x0000}
+    Nekatere operacije pa so 16-bitne, torej CPE dela z vrednostmi med \texttt{0x0000}
     in \texttt{0xFFFF}, kar lahko predstavlja bodisi nepredznačen obseg vrednosti
     od 0 do 65535, bodisi predznačen obseg vrednosti od -32768 do 32767. 16-bitna
     števila največkrat potrebujemo za naslavljanje pomnilniških celic ~\cite{strojnijezikzaprocesorz80}.
@@ -905,33 +907,34 @@ by
     (prvi zlog vsebuje $128+n$, ostali 4 zlogi vsebujejo mantiso z vrednostjo $[\frac{1
     }{2}, 1)$). Ker 5-zložnih vrednosti ne moremo shraniti v posamezen register ali
     registrski par, za njihovo shranjevanje uporabljamo bodisi celoten
-    registrski petorček AFBCDE, bodisi računski sklad v pomnilniku. Vender pa
-    tak tip podatka ni specifičen za procesor Z80, temveč za podprograme ROMa računalnika
-    ZX Spectrum ~\cite{strojnijezikzaprocesorz80}.
+    registrski petorček AFBCDE bodisi računski sklad v pomnilniku. Vendar pa tak tip
+    podatka ni specifičen za procesor Z80, temveč za podprograme ROMa
+    računalnika ZX Spectrum ~\cite{strojnijezikzaprocesorz80}.
 
-    Procesor Z80 vsebuje 208 bitov bralno-pisalnega pomnilnika, implementiranega kot
-    statični RAM, ki predstavlja 18 8-bitnih registrov in 4 16-bitne registre ~\cite{z80cpuusermanual}.
+    Procesor Z80 vsebuje 208 bitov bralno-pisalnega pomnilnika, implementiranega
+    kot statični RAM, ki predstavlja 18 8-bitnih registrov in 4 16-bitne registre
+    ~\cite{z80cpuusermanual}.
 
-    Ti notranji registri se delijo na dva registrska nabora, od katerih vsak
-    vsebuje 6 splošnonamenskih registrov (registri B, C, D, H in L), akumulator
-    (register A) in register zastavic (register F), ter 6 posebnonamenskih registrov,
-    ki so 16-bitni programski števec (register PC), 16-bitni kazalec sklada (register
-    SP), 16-bitna indeksna registra IX in IY, osvežitveni register R in register naslova
-    strani prekinitev I. Razporeditev notranjih registrov je prikazana na sliki
+    Ti notranji registri se delijo na dva registrska nabora, od katerih vsak vsebuje
+    6 splošnonamenskih registrov (registri B, C, D, H in L), akumulator (register
+    A) in register zastavic (register F), ter 6 posebnonamenskih registrov, ki so
+    16-bitni programski števec (register PC), 16-bitni kazalec sklada (register SP),
+    16-bitna indeksna registra IX in IY, osvežitveni register R in register
+    naslova strani prekinitev I. Razporeditev notranjih registrov je videna na sliki
     \ref{z80cpuusermanual_pic2} ~\cite{strojnijezikzaprocesorz80} ~\cite{z80cpuusermanual}.
 
-    Pri tem lahko splošnonamenske 8-bitne registre uporabljamo posamično, ali pa pare
-    8-bitnih registrov združimo v 16-bitne registrske pare BC, DE in HL ~\cite{strojnijezikzaprocesorz80}
+    Pri tem lahko splošnonamenske 8-bitne registre uporabljamo posamično, ali pa
+    pare 8-bitnih registrov združimo v 16-bitne registrske pare BC, DE in HL ~\cite{strojnijezikzaprocesorz80}
     ~\cite{z80cpuusermanual}.
 
-    Med osnovnim in zamenljivim registrskim naborom (keterega imena registrov označujemo
-    z apostrofom ob imenih) se lahko menjava. Ta značilnost procesorja Z80 je posebej
-    potrebna v sistemih, ki zahtevajo hiter odziv na prekinitve. Ob pričetku obdelave
-    prekinitev ali izvajanja podprograma je potrebno star izvajalni kontekst (vrednosti
-    registrov) shraniti do obnovitve pred vrnitvijo iz podprograma. Zamenljiva
-    registrska nabora tako omogočata mnogo hitrejšo menjavo konteksta napram
-    hrambi in obnavaljanju vrednosti vseh registrov v pomnilniku ~\cite{strojnijezikzaprocesorz80}
-    ~\cite{z80cpuusermanual}.
+    Med uporabo osnovnega in zamenljivega registrskega nabora (katerega imena
+    registrov označujemo z apostrofom ob imenih) se lahko preklaplja. Ta
+    značilnost procesorja Z80 je posebej potrebna v sistemih, ki zahtevajo hiter odziv
+    na prekinitve. Ob pričetku obdelave prekinitev ali izvajanja podprograma je
+    potrebno star izvajalni kontekst (vrednosti registrov) shraniti do obnovitve
+    pred vrnitvijo iz podprograma. Zamenljiva registrska nabora tako omogočata mnogo
+    hitrejšo menjavo konteksta napram hrambi in obnavljanju vrednosti vseh registrov
+    v pomnilniku ~\cite{strojnijezikzaprocesorz80} ~\cite{z80cpuusermanual}.
 
     \begin{figure}[htb]
         \begin{center}
@@ -942,50 +945,51 @@ by
         \label{z80cpuusermanual_pic2}
     \end{figure}
 
-    Akumulator oz. register A velja za edini register, kjer procesor lahko opravlja
-    8-bitne aritmetično-logične operacije. Pri njihovem izvajanju register
-    zastavic F v splošnem hrani posebne pogoje izvedenih operacij ali
-    značilnosti dobljenega rezultata ~\cite{strojnijezikzaprocesorz80} ~\cite{z80cpuusermanual}.
+    Akumulator oz. register A velja za edini register, kjer procesor lahko
+    opravlja 8-bitne aritmetično-logične operacije. Pri njihovem izvajanju register
+    zastavic F v splošnem hrani posebne pogoje izvedenih operacij ali značilnosti
+    dobljenega rezultata ~\cite{strojnijezikzaprocesorz80} ~\cite{z80cpuusermanual}.
 
     Register naslova strani prekinitev (I) hrani višji zlog naslova prekinitveno-servisnega
-    programa, ki se dopolnejo z nižjim zlogom naslova, ki jih zagotovi zunanja
-    naprava, ki je sprožila prekinitev. ko naprava, ki povzroči prekinitev.
-    Procesor Z80 namreč deluje v načinu, v katerem je mogoče v odziv na prekinitev
-    izvesti posredni klic na PSP na poljubnem mestu v pomnilniku ~\cite{z80cpuusermanual}.
+    programa, ki se dopolnejo z nižjim zlogom naslova, ki jih zagotovi zunanja naprava,
+    ki je sprožila prekinitev. Procesor Z80 namreč deluje v načinu, v katerem je
+    mogoče v odziv na prekinitev izvesti posredni klic na PSP na poljubnem mestu
+    v pomnilniku ~\cite{z80cpuusermanual}.
 
-    Register osveževanja pomnilnika (R) hrani 7-bitni števec osveževanja
-    pomnilnika, ki se samodejno poveča po vsakem pridobljenem ukazu, osmi bit se
-    uporablja le pri ukazu \texttt{LD R, A}. To omogoča enostavno uporabo
-    dinamičnih in statičnih pomnilnikov brez upočasnjevanja delovanja CPE (osveževanje
-    se dogaja med dekodiranjem prej pridobljenega ukaza) ~\cite{z80cpuusermanual}.
+    Register osveževanja pomnilnika (R) hrani 7-bitni števec osveževanja pomnilnika,
+    ki se samodejno poveča po vsakem pridobljenem ukazu, osmi bit se uporablja le
+    pri ukazu \texttt{LD R, A}. To omogoča enostavno uporabo dinamičnih in statičnih
+    pomnilnikov brez upočasnjevanja delovanja CPE (osveževanje se dogaja med
+    dekodiranjem prej pridobljenega ukaza) ~\cite{z80cpuusermanual}.
 
-    Za 16-bitne registre in registrske pare velja, da je višji zlog shranjen v
-    registru/registrskem paru prvi, nižji pa drugi. Pri tem je potrebno
-    opozoriti, da je tak vrstni red ravno obraten kot pri hranjenju 16-bitne vrednosti
-    v pomnilniku, kjer prva pomnilniška celica vsebuje nižji del vrednosti, druga
-    pa višjega ~\cite{strojnijezikzaprocesorz80} ~\cite{z80cpuusermanual}.
+    Za 16-bitne registre in registrske pare velja, da je višji zlog shranjen v registru/registrskem
+    paru prvi, nižji pa drugi. Pri tem je potrebno opozoriti, da je tak vrstni
+    red ravno obraten kot pri hranjenju 16-bitne vrednosti v pomnilniku, kjer prva
+    pomnilniška celica vsebuje nižji del vrednosti, druga pa višjega ~\cite{strojnijezikzaprocesorz80}
+    ~\cite{z80cpuusermanual}.
 
-    Indeksna registra IX in IY hranita 16-bitni naslov, ki se uporablja v
-    indeksnem načinu naslavljanja kot bazni kazalec, iz katerega po prištetju odmika
-    (dodaten zlog, predstavljen kot število v dvojiškem komplementu), dobimo končni
+    Indeksna registra IX in IY hranita 16-bitni naslov, ki se uporablja v indeksnem
+    načinu naslavljanja kot bazni kazalec, iz katerega po prištetju odmika (dodaten
+    zlog, predstavljen kot število v dvojiškem komplementu), dobimo končni
     pomnilniški naslov operanda ~\cite{z80cpuusermanual}.
 
-    Programski števec PC hrani naslov trenutnega ukaza, ki se pridobiva iz pomnilnika,
-    in se samodejno poveča, ko se njegova vsebina prenese na naslovno vodilo. PC
-    se uporablja tudi za klice in vračanje iz podprogramov, pri čemer se povratni
-    naslov hrani na skladu v pomnilniku ~\cite{strojnijezikzaprocesorz80} ~\cite{z80cpuusermanual}.
+    Programski števec PC hrani naslov trenutnega ukaza, ki se pridobiva iz
+    pomnilnika, in se samodejno poveča, ko se njegova vsebina prenese na
+    naslovno vodilo. PC se uporablja tudi za klice in vračanje iz podprogramov,
+    pri čemer se povratni naslov hrani na skladu v pomnilniku ~\cite{strojnijezikzaprocesorz80}
+    ~\cite{z80cpuusermanual}.
 
-    Kazalec sklada SP hrani naslov vrhnje vrednosti na skladu. Sklad, organiziran
-    v obliki LIFO, omogoča preprosto izvajanje večstopenjskih prekinitev, teoretično
-    neomejeno gnezdenje podprogramov in poenostavitev mnogih vrst manipulacije podatkov
-    ~\cite{strojnijezikzaprocesorz80} ~\cite{z80cpuusermanual}.
+    Kazalec sklada SP hrani naslov vrhnje vrednosti na skladu. Sklad,
+    organiziran v obliki LIFO, omogoča preprosto izvajanje večstopenjskih prekinitev,
+    teoretično neomejeno gnezdenje podprogramov in poenostavitev mnogih vrst
+    manipulacije podatkov ~\cite{strojnijezikzaprocesorz80} ~\cite{z80cpuusermanual}.
 
     \subsection{Zastavice}
 
-    Zastavice, hranjene v registrih F in F', predstavljajo informacijo o stanju bodisi
-    vsebine registra A, ali o ravnokar opravljeni računski operaciji. Kljub temu,
-    da ima register F možnost shranjevanja 8 bitov, za dokumentirane zastavice uporablja
-    le 6 bitov (bita 3 in 5 se ne uporabljata) ~\cite{strojnijezikzaprocesorz80}
+    Zastavice, hranjene v registrih F in F', predstavljajo informacijo o stanju
+    bodisi vsebine registra A, ali o ravnokar opravljeni računski operaciji.
+    Kljub temu, da ima register F možnost shranjevanja 8 bitov, za dokumentirane
+    zastavice uporablja le 6 bitov (bita 3 in 5 se ne uporabljata) ~\cite{strojnijezikzaprocesorz80}
     ~\cite{z80cpuusermanual}:
 
     \begin{itemize}
@@ -1000,7 +1004,8 @@ by
 
         \item zastavica parnosti/prepolnjenja P/V (angl. Parity/oVerflow flag)
             na bitu 2 je dvignjena, ko je v rezultatu operacije parno število bitov
-            ali ko se je spremenil 8. bit registra (kar pomeni možnost preliva),
+            ali ko se je spremenil najvišji bit registra (kar pomeni možnost
+            preliva),
 
         \item zastavica odštevanja N (angl. subtract flag) na bitu 1 je
             dvignjena, ko je zadnja operacija bila odštevanje,
@@ -1031,69 +1036,68 @@ by
 
     \subsection{Nedokumentirane zastavice}
 
-    Uradna dokumentacija procesorja Z80 bita 5 in 3 registrov zastavic F in F', ki
-    ju bomo označevali kot YF in XF, pogosto obravnava kot neuporabljena, vendar ju
-    dejanski procesor vseeno nastavlja in uporablja. Ti zastavici nista pogojni
-    zastavici v enakem smislu kot ničelna zastavica Z ali zastavica prenosa C, saj
-    Z80 nima pogojnih skokov, klicev ali vrnitev, ki bi neposredno preverjali YF ali
-    XF. Zaradi tega se zdita bita za običajno programiranje nepomembna, pri emulaciji
-    pa sta pomembna za programe, ki uporabljajo stranske učinke ukazov. Zato ju emulator,
-    ki želi natančno posnemati procesor, kljub pomanjkljivi uradni dokumentaciji ne
-    sme obravnavati kot neuporabljena ~\cite{theundocumentedz80documented}.
+    Uradna dokumentacija procesorja Z80 bita 5 in 3 registrov zastavic F in F',
+    ki ju bomo označevali kot YF in XF, pogosto obravnava kot neuporabljena,
+    vendar ju dejanski procesor vseeno nastavlja in uporablja. Ti zastavici nista
+    pogojni zastavici v enakem smislu kot ničelna zastavica Z ali zastavica prenosa
+    C, saj Z80 nima pogojnih skokov, klicev ali vrnitev, ki bi neposredno
+    preverjali YF ali XF. Zaradi tega se zdita bita za običajno programiranje nepomembna,
+    pri emulaciji pa sta pomembna za programe, ki uporabljajo stranske učinke ukazov.
+    Zato ju emulator, ki želi natančno posnemati procesor, kljub pomanjkljivi
+    uradni dokumentaciji ne sme obravnavati kot neuporabljena ~\cite{theundocumentedz80documented}.
 
-    Pri običajnih aritmetično-logičnih ukazih z 8-bitnim rezultatom se YF in XF
-    praviloma nastavita iz bitov 5 in 3 tega rezultata. Pri ukazih primerjave se rezultat
-    ne shrani v akumulator, zato se YF in XF nastavita iz bitov 5 in 3
-    primerjanega operanda. Pri 16-bitni aritmetiki se YF in XF nastavita tako,
-    kot da bi ju določila operacija nad višjima zlogoma operandov. Pri ukazih preverjanja
-    stanja posameznega bita se YF nastavi, kadar ukaz preverja bit 5 in je ta
-    bit postavljen, XF pa kadar preverja bit 3 in je ta bit postavljen. A to ne
-    velja pri indeksnem naslavljanju, kjer se YF in XF nastavita iz bitov 5 in 3 višjega
-    zloga efektivnega naslova indeksiranega naslavljanja, ter pri ukazu \texttt{BIT
-    n,(HL)}, kjer se YF in XF nastavita iz vrednosti nedokumentiranega
-    notranjega registra, povezanega z nekaterimi predhodnimi 16-bitnimi aritmetičnimi
-    ukazi ter uporabljenimi efektivnimi naslovi. Pri bločnih ukazih prenosov in
-    primerjav se YF in XF nastavita iz vmesnih vrednosti prenosov ali izračunov
-    primerjav. Pri bločnih vhodno-izhodnih ukazih se po prenosu zloga najprej zmanjša
-    register B, nato pa se YF nastavi iz bita 5 nove vrednosti registra B, XF pa iz
-    njenega bita 3 ~\cite{theundocumentedz80documented}.
+    Pri običajnih aritmetično-logičnih ukazih z 8-bitnim rezultatom se YF in XF praviloma
+    nastavita iz bitov 5 in 3 tega rezultata. Pri ukazih primerjave se rezultat
+    ne shrani v akumulator, zato se YF in XF nastavita iz bitov 5 in 3 primerjanega
+    operanda. Pri 16-bitni aritmetiki se YF in XF nastavita tako, kot da bi ju določila
+    operacija nad višjima zlogoma operandov. Pri ukazih preverjanja stanja
+    posameznega bita se YF nastavi, kadar ukaz preverja bit 5 in je ta bit postavljen,
+    XF pa kadar preverja bit 3 in je ta bit postavljen. A to ne velja pri indeksnem
+    naslavljanju, kjer se YF in XF nastavita iz bitov 5 in 3 višjega zloga
+    efektivnega naslova indeksiranega naslavljanja, ter pri ukazu \texttt{BIT n,(HL)},
+    kjer se YF in XF nastavita iz vrednosti nedokumentiranega notranjega registra,
+    povezanega z nekaterimi predhodnimi 16-bitnimi aritmetičnimi ukazi ter
+    uporabljenimi efektivnimi naslovi. Pri bločnih ukazih prenosov in primerjav se
+    YF in XF nastavita iz vmesnih vrednosti prenosov ali izračunov primerjav.
+    Pri bločnih vhodno-izhodnih ukazih se po prenosu zloga najprej zmanjša
+    register B, nato pa se YF nastavi iz bita 5 nove vrednosti registra B, XF pa
+    iz njenega bita 3 ~\cite{theundocumentedz80documented}.
 
     \section{Ukazi}
-    ZX Spectrum omogoča uporabo visokonivojskega jezika BASIC. Jezik je bil leta 1964
-    razvit na Dartmouth College v New Hampshiru, in je bil v svojem času zelo
-    razširjen na osebnih računalnikih. Ima več različic, med katerimi obstajajo
-    manjše razlike, kot na primer zahteva po zapisu ukazne besede LET pri dodeljevanju
-    vrednosti spremenljivkam, kar v mnogih drugih različicah jezika BASIC lahko
-    opustimo. A različica BASICa za ZX Spectrum vseeno ni daleč od (neobstoječega
-    standarda) jezika BASIC, zato ne bi smeli imeti preveč težav pri
-    prilagajanju katerega koli BASIC programa za delovanje na ZX Spectrum ~\cite{zxspectrumintroduction}.
+    ZX Spectrum omogoča uporabo visokonivojskega jezika BASIC. Jezik je bil leta
+    1964 razvit na Dartmouth College v New Hampshiru, in je bil v svojem času zelo
+    razširjen na osebnih računalnikih. Ima več različic, med katerimi obstajajo manjše
+    razlike, kot na primer zahteva po zapisu ukazne besede LET pri dodeljevanju
+    vrednosti spremenljivkam, kar v mnogih drugih različicah jezika BASIC lahko opustimo.
+    A različica BASICa za ZX Spectrum vseeno ni daleč od (neobstoječega standarda)
+    jezika BASIC, zato ne bi smeli imeti preveč težav pri prilagajanju katerega koli
+    BASIC programa za delovanje na ZX Spectrum ~\cite{zxspectrumintroduction}.
 
-    Za programiranje na Spectrumu lahko uporabljamo tudi strojni jezik, ki v
-    večini primerov omogoča hitrejše izvajanje, učinkovitejšo izrabo pomnilnika,
-    krajše programe (za hrambo v pomnilniku omejene velikosti) ter neodvisnost
-    od nadzornega programa, ki je potreben za izvajanje programov v BASICu. A
-    prinaša tudi nekatere slabosti, kot so slabša berljivost programov,
-    omejenost na izvajanje programa v sistemih z istim procesorjem, ter nasploh daljši
-    programi (za hrambo v pomnilniku) ~\cite{strojnijezikzaprocesorz80}.
+    Za programiranje na Spectrumu lahko uporabljamo tudi strojni jezik, ki v večini
+    primerov omogoča hitrejše izvajanje, učinkovitejšo izrabo pomnilnika, krajše programe
+    (za hrambo v pomnilniku omejene velikosti) ter neodvisnost od nadzornega programa,
+    ki je potreben za izvajanje programov v BASICu. A prinaša tudi nekatere slabosti,
+    kot so slabša berljivost programov, omejenost na izvajanje programa v sistemih
+    z istim procesorjem, ter nasploh daljši programi (za hrambo v pomnilniku) ~\cite{strojnijezikzaprocesorz80}.
 
-    Berljivost strojnega programa lahko izboljšamo s pisanjem v zbirnem jeziku, ki
-    predstavlja preslikavo strojnega jezika v ljudem razumljivejšo obliko, v
-    kateri vsak zbirni ukaz ustreza enemu strojnemu ukazu (in obratno). Zbirni jezik
-    je tako razumljivejši ljudem, a ga moramo pred izvajanjem prevesti v
-    zaporedje zlogov strojnega koda, bodisi ročno, bodisi z uporabo zbirnika. Najbolj
-    razširjen zbirnik za uporabo v Spectrumu je bil program GENS ~\cite{zxspectrumbasicprogramming}
+    Berljivost strojnega programa lahko izboljšamo s pisanjem v zbirnem jeziku,
+    ki predstavlja preslikavo strojnega jezika v ljudem razumljivejšo obliko, v kateri
+    vsak zbirni ukaz ustreza enemu strojnemu ukazu (in obratno). Zbirni jezik je
+    tako razumljivejši ljudem, a ga moramo pred izvajanjem prevesti v zaporedje zlogov
+    strojnega koda, bodisi ročno, bodisi z uporabo zbirnika. Najbolj razširjen
+    zbirnik za uporabo v Spectrumu je bil program GENS ~\cite{zxspectrumbasicprogramming}
     ~\cite{strojnijezikzaprocesorz80}.
 
     \subsection{Število ukazov in sklopi, njihove dolžine}
 
-    Procesor Z80 lahko izvaja 158 različnih (dokumentiranih) ukazov, vključno z vsemi
-    78 ukazi procesorja 8080A ~\cite{z80cpuusermanual}.
+    Procesor Z80 lahko izvaja 158 različnih (dokumentiranih) ukazov, vključno z
+    vsemi 78 ukazi procesorja 8080A ~\cite{z80cpuusermanual}.
 
-    Vsak ukaz je sestavljen iz zaporedja osnovnih strojnih M-stanj, ta pa so sinhrona
-    s časovnimi T-stanji (angl. Transition state), ki predstavljajo čas ene urine
-    periode kremenčevega kristala v CPE. Pri frekvenci 3,5 MHz procesorja Z80
-    eno stanje T traja približno 0,2857 mikrosekunde in predstavlja osnovno
-    merilo hitrosti operacij ~\cite{strojnijezikzaprocesorz80}.
+    Vsak ukaz je sestavljen iz zaporedja osnovnih strojnih M-stanj, ta pa so
+    sinhrona s časovnimi T-stanji (angl. Transition state), ki predstavljajo čas
+    ene urine periode kremenčevega kristala v CPE. Pri frekvenci 3,5 MHz procesorja
+    Z80 eno stanje T traja približno 0,2857 mikrosekunde in predstavlja osnovno merilo
+    hitrosti operacij ~\cite{strojnijezikzaprocesorz80}.
 
     Ukaze delimo na več skupin ~\cite{z80cpuusermanual}:
     \begin{itemize}
@@ -1125,8 +1129,7 @@ by
             konca definiranega bloka ali najdenega znaka se ukaz samodejno prekine,
             prav tako se lahko izvajanje takega ukaza kadarkoli prekine in
             kasneje nadaljuje, kar omogoča vmesno uporabo procesorja za druge operacije.
-            Ukazi te skupine pridejo posebaj prav pri pri obdelavi velikih nizov
-            podatkov,
+            Ukazi te skupine pridejo prav pri obdelavi velikih nizov podatkov,
 
         \item ukaze vhoda in izhoda, ki omogočajo prenose podatkov (posameznih ali
             blokov) med pomnilniškimi lokacijami ali splošnimi registri
@@ -1137,8 +1140,8 @@ by
             prekinitev, nastavljanje načina odziva na prekinitve, itd.
     \end{itemize}
 
-    Podskupina ukazov ponovnih zagonov RST (angl. ReSTart) opravlja isto nalogo kot
-    brezpogojni klici, le da lahko z njimi kličemo le 8 naslovov v začetku ROMa
+    Podskupina ukazov ponovnih zagonov RST (angl. ReSTart) opravlja isto nalogo
+    kot brezpogojni klici, le da lahko z njimi kličemo le 8 naslovov v začetku ROMa
     ~\cite{strojnijezikzaprocesorz80}:
     \begin{itemize}
         \item RST \texttt{0x00} učinkuje kot izklop in ponovnen vklop
@@ -1173,124 +1176,125 @@ by
 
     \subsection{Tipi naslavljanj}
 
-    Naslavljanje se nanaša na način definicije naslova podatkov v registrih,
-    pomnilniku ali V/I vratih, ki se bodo uporabili pri izvedbi določenega ukaza ~\cite{z80cpuusermanual}.
+    Naslavljanje se nanaša na način definicije naslova podatkov v registrih, pomnilniku
+    ali V/I vratih, ki se bodo uporabili pri izvedbi določenega ukaza ~\cite{z80cpuusermanual}.
 
-    Registrsko naslavljanje (oblike \texttt{LD r, r}) določi enega ali več registrov,
-    ki se uporabijo za dano operacijo ~\cite{strojnijezikzaprocesorz80} ~\cite{z80cpuusermanual}.
-
-    Sprotno ali takojšnje naslavljanje (oblike \texttt{LD r, n}) v zlogu, ki
-    sledi št. strojnega ukaza, vsebuje 8-bitno vrednost operanda ~\cite{strojnijezikzaprocesorz80}
+    Registrsko naslavljanje (oblike \texttt{LD r, r}) določi enega ali več
+    registrov, ki se uporabijo za dano operacijo ~\cite{strojnijezikzaprocesorz80}
     ~\cite{z80cpuusermanual}.
 
-    Razširjeno takojšnje naslavljanje (oblike \texttt{LD rr, nn}) v zlogih, ki
-    sledita št. strojnega ukaza, vsebuje 16-bitno vrednost operanda ~\cite{z80cpuusermanual}.
+    Sprotno ali takojšnje naslavljanje (oblike \texttt{LD r, n}) v zlogu, ki sledi
+    št. strojnega ukaza, vsebuje 8-bitno vrednost operanda ~\cite{strojnijezikzaprocesorz80}
+    ~\cite{z80cpuusermanual}.
+
+    Razširjeno takojšnje naslavljanje (oblike \texttt{LD rr, nn}) v zlogih, ki sledita
+    št. strojnega ukaza, vsebuje 16-bitno vrednost operanda ~\cite{z80cpuusermanual}.
 
     Zunanje ali razširjeno naslavljanje (oblik \texttt{LD A, (nn)} in \texttt{LD
-    (nn), A)}) v zlogih, ki sledita št. strojnega ukaza, vsebuje pomnilniški
-    naslov operanda ali skočne lokacije, kar omogoča prenašanje vrednosti iz registra
-    v pomnilniško celico in obratno ter skok ali prenos podatkov med poljubnima pomnilniškima
+    (nn), A)}) v zlogih, ki sledita št. strojnega ukaza, vsebuje pomnilniški naslov
+    operanda, kar omogoča prenašanje vrednosti iz registra v pomnilniško celico
+    in obratno ter skok ali prenos podatkov med poljubnima pomnilniškima
     lokacijama ~\cite{strojnijezikzaprocesorz80} ~\cite{z80cpuusermanual}.
 
     Registrsko posredno naslavljanje (oblik \texttt{LD r, (rr)} in \texttt{LD (rr),
-    r}) določi registrski par, katerega vrednost predstavlja pomnilniški naslov
-    operanda ~\cite{strojnijezikzaprocesorz80} ~\cite{z80cpuusermanual}.
+    r}) določi registrski par, katerega vrednost predstavlja pomnilniški naslov operanda
+    ~\cite{strojnijezikzaprocesorz80} ~\cite{z80cpuusermanual}.
 
-    Relativno naslavljanje v zlogu, ki sledi št. strojnega ukaza, vsebuje odmik v
-    obliki dvojiškega komplementa, ki se prišteje vrednosti registra PC za
-    določitev pomnilniške lokacije operanda. To poleg prenosljivosti programa omogoča
-    tudi skoke na bližje pomnilniške lokacije z le dvozložnim ukazom ~\cite{z80cpuusermanual}.
+    Relativno naslavljanje v zlogu, ki sledi št. strojnega ukaza, vsebuje odmik
+    v obliki dvojiškega komplementa, ki se prišteje vrednosti registra PC za določitev
+    pomnilniške lokacije operanda. To poleg prenosljivosti programa omogoča tudi
+    skoke na bližnje pomnilniške lokacije z le dvozložnim ukazom ~\cite{z80cpuusermanual}.
 
     Indeksno naslavljanje (oblik \texttt{LD r, (IX+dis)} in \texttt{LD (IX+dis), r})
-    je le oblika registskega posrednega naslavljanja z dodanim odmikom. V zlogu,
-    ki sledi št. strojnega ukaza, vsebuje odmik v predstavitvi dvojiškega
-    komplementa, ki se prišteje vrednosti izbranega indeksnega registra za določitev
-    pomnilniške lokacije operanda. To poleg prenosljivosti programa omogoča tudi
-    poenostavitev dela s tabelami podatkov ~\cite{strojnijezikzaprocesorz80} ~\cite{z80cpuusermanual}.
+    je le oblika registerskega posrednega naslavljanja z dodanim odmikom. V
+    zlogu, ki sledi št. strojnega ukaza, vsebuje odmik v predstavitvi dvojiškega komplementa,
+    ki se prišteje vrednosti izbranega indeksnega registra za določitev
+    pomnilniške lokacije operanda. To poleg prenosljivosti programa omogoča tudi poenostavitev
+    dela s tabelami podatkov ~\cite{strojnijezikzaprocesorz80} ~\cite{z80cpuusermanual}.
 
-    Bitno naslavljanje s pomočjo registrskega, registskega posrednega ali indeksnega
-    naslavljanja lahko določi poljubni bit poljubne pomnilniška lokacije ali registra
-    za izvedbo bitne operacije ~\cite{z80cpuusermanual}.
+    Bitno naslavljanje s pomočjo registrskega, registerskega posrednega ali
+    indeksnega naslavljanja lahko določi poljubni bit poljubne pomnilniška
+    lokacije ali registra za izvedbo bitne operacije ~\cite{z80cpuusermanual}.
 
-    Spremenjeno naslavljanje ničelne strani se nanaša na posebne enozložne ukaze
-    RST za skok na poljubno od 8 lokacij v strani 0 pomnilnika, kjer se nahajajo pogosto
-    uporabljeni podprogrami ROMa ~\cite{z80cpuusermanual}.
+    Spremenjeno naslavljanje ničelne strani se nanaša na posebne enozložne ukaze RST
+    za skok na poljubno od 8 lokacij v strani 0 pomnilnika, kjer se nahajajo
+    pogosto uporabljeni podprogrami ROMa ~\cite{z80cpuusermanual}.
 
-    Implicitno naslavljanje se uporablja pri mnogih ukazih, ki implicitno določijo
-    registre z operandi, potrebnimi za dano operacijo (npr. rezultat
-    aritmetičnih operacij se implicitno shrani v akumulator) ~\cite{z80cpuusermanual}.
+    Implicitno naslavljanje se uporablja pri mnogih ukazih, ki implicitno
+    določijo registre z operandi, potrebnimi za dano operacijo (npr. rezultat aritmetičnih
+    operacij se implicitno shrani v akumulator) ~\cite{z80cpuusermanual}.
 
-    Ker mnoge operacije zahtevajo več kot en operand, se lahko hkrati uporabi tudi
-    več tipov naslavljanj ~\cite{z80cpuusermanual}.
+    Ker mnoge operacije zahtevajo več kot en operand, se lahko hkrati uporabi
+    tudi več tipov naslavljanj ~\cite{z80cpuusermanual}.
 
     \subsection{Nedokumentirani ukazi}
 
-    Poleg uradno navedenega nabora ukazov ima Z80 tudi množico operacijskih kod,
-    ki so v uradni dokumentaciji izpuščene ali označene kot neuporabljene. Na pravem
-    procesorju te operacijske kode kljub temu lahko izvedejo nove ali podvojene že
-    dokumentirane ukaze. To se zgodi zato, ker procesor tudi pri nedokumentiranih
-    kombinacijah bitov uporabi isto dekodirno logiko kot pri uradnem naboru ukazov.
-    Predpona določi skupino ukazov, naslednji zlogi pa določijo operacijo,
-    register ali način naslavljanja ~\cite{theundocumentedz80documented}.
+    Poleg uradno navedenega nabora ukazov ima Z80 tudi množico operacijskih kod, ki
+    so v uradni dokumentaciji izpuščene ali označene kot neuporabljene. Na
+    pravem procesorju te operacijske kode kljub temu lahko izvedejo nove ali
+    podvojene že dokumentirane ukaze. To se zgodi zato, ker procesor tudi pri
+    nedokumentiranih kombinacijah bitov uporabi isto dekodirno logiko kot pri
+    uradnem naboru ukazov. Predpona določi skupino ukazov, naslednji zlogi pa
+    določijo operacijo, register ali način naslavljanja ~\cite{theundocumentedz80documented}.
 
-    Pri predponi \texttt{0xCB} nedokumentirane kode od \texttt{0xCB30} do \texttt{0xCB37}
-    med drugim definirajo ukaze logičnih pomikov v levo \texttt{SLL}. Pri
-    predponi \texttt{0xDD} se uporabe registra HL v ukazih praviloma nadomestijo z
-    IX, pri predponi \texttt{0xFD} pa z IY, vključno z dostopi do posameznih
-    polovic oziroma zlogov indeksnih registrov. Pri predponi \texttt{0xED}
-    nekatere kode predstavljajo dvojnike uradnih ukazov, preostale neuporabljene kode
-    pa se obnašajo kot zaporedja brez učinka. Posebnost sta ukazni kodi \texttt{0xED70}
-    in \texttt{0xED71}, od katerih prva prebere vrednost iz V/I vrat in z njo nastavi
-    samo zastavice, druga pa na V/I vrata zapiše vrednost nič. Pri štirizložnih skupinah
-    s predponama \texttt{0xDD 0xCB} in \texttt{0xFD 0xCB} se bitne operacije izvedejo
-    nad indeksirano pomnilniško lokacijo, pri delu ukazov pa zadnji zlog določi
-    še dodatni ciljni register ~\cite{theundocumentedz80documented}.
+    Pri predponi \texttt{0xCB} nedokumentirane kode od \texttt{0xCB30} do
+    \texttt{0xCB37} med drugim definirajo ukaze logičnih pomikov v levo \texttt{SLL}.
+    Pri predponi \texttt{0xDD} se uporabe registra HL v ukazih praviloma
+    nadomestijo z IX, pri predponi \texttt{0xFD} pa z IY, vključno z dostopi do posameznih
+    polovic oziroma zlogov indeksnih registrov. Pri predponi \texttt{0xED} nekatere
+    kode predstavljajo dvojnike uradnih ukazov, preostale neuporabljene kode pa
+    se obnašajo kot zaporedja brez učinka. Posebnost sta ukazni kodi \texttt{0xED70}
+    in \texttt{0xED71}, od katerih prva prebere vrednost iz V/I vrat in z njo
+    nastavi samo zastavice, druga pa na V/I vrata zapiše vrednost nič. Pri
+    štirizložnih skupinah s predponama \texttt{0xDD 0xCB} in \texttt{0xFD 0xCB}
+    se bitne operacije izvedejo nad indeksirano pomnilniško lokacijo, pri delu ukazov
+    pa zadnji zlog določi še dodatni ciljni register ~\cite{theundocumentedz80documented}.
 
     \section{Prekinitve}
 
-    Prekinitve omogočajo prekinitev operacij CPE, izvajanja PSP in vrnitev v prvotno
-    stanje izvajanje programa. Prekinitev lahko sproži zunanja naprava ali
-    nadzorni program računalnika. Na primer, CPE vsako 1/50 sekunde pogleda
-    stanje posebne notranje zastavice IFF1. Če je njena vrednost 1, sproži
-    prekinitev in izvrši ukaz RST 38H, s katerim pridobi stanje tipkovnice ~\cite{strojnijezikzaprocesorz80}
+    Prekinitve omogočajo prekinitev operacij CPE, izvajanja PSP in vrnitev v
+    prvotno stanje izvajanje programa. Prekinitev lahko sproži zunanja naprava ali
+    nadzorni program računalnika. Na primer, CPE vsako 1/50 sekunde pogleda stanje
+    posebne notranje zastavice IFF1. Če je njena vrednost 1, sproži prekinitev in
+    izvrši ukaz RST 38H, s katerim pridobi stanje tipkovnice ~\cite{strojnijezikzaprocesorz80}
     ~\cite{z80cpuusermanual}.
 
-    Ker se zaradi tega delovna hitrost procesorja nekoliko zmanjša, lahko
-    program z ukazom DI prekinitve onemogoči in kasneje z ukazom EI nazaj
-    omogoči. Program lahko prav tako ukazom HALT prekine izvajanje strojnega programa
-    do naslednje prekinitve. Med tem CPE izvaja operacije NOP za namen delovanja
-    osveževanja pomnilnika ~\cite{strojnijezikzaprocesorz80} ~\cite{z80cpuusermanual}.
+    Ker se zaradi tega delovna hitrost procesorja nekoliko zmanjša, lahko program
+    z ukazom DI prekinitve onemogoči in kasneje z ukazom EI nazaj omogoči.
+    Program lahko prav tako ukazom HALT prekine izvajanje strojnega programa do
+    naslednje prekinitve. Med tem CPE izvaja operacije NOP za namen delovanja osveževanja
+    pomnilnika ~\cite{strojnijezikzaprocesorz80} ~\cite{z80cpuusermanual}.
 
     \subsection{Načini prekinitev in njihovo delovanje}
 
     Z80 CPE podpira 2 vrsti prekinitev:
 
-    Maksabilne prekinitve INT, ki jih je mogoče programsko onemogočiti, z nastavljanjem
-    vrednosti IFF1 prek ukazov EI in DI, saj se uporablja kot zahteva za
-    prekinitev s strani zunanjih naprav. CPE ima poleg notranje zastavice IFF1,
-    ki se dejansko uporablja pri izvajanju, še IFF2 kot začasno shrambo vrednosti
-    IFF1. Glavna stanja obeh notranjih zastavic in spremembe ob pomembnih ukazih
-    so prikazane v tabeli \ref{z80cpuusermanual_tab2} ~\cite{z80cpuusermanual}.
+    Maksabilne prekinitve INT, ki jih je mogoče programsko onemogočiti, z
+    nastavljanjem vrednosti IFF1 prek ukazov EI in DI, saj se uporablja kot zahteva
+    za prekinitev s strani zunanjih naprav. CPE ima poleg notranje zastavice
+    IFF1, ki se dejansko uporablja pri izvajanju, še IFF2 kot začasno shrambo
+    vrednosti IFF1. Glavna stanja obeh notranjih zastavic in spremembe ob pomembnih
+    ukazih so videne v tabeli \ref{z80cpuusermanual_tab2} ~\cite{z80cpuusermanual}.
 
     \begin{table}[htb]
         \begin{center}
             \begin{tabular}{|p{0.28\textwidth}|c|c|p{0.42\textwidth}|}
                 \hline
-                \textbf{Dejanje}              & \textbf{IFF1} & \textbf{IFF2} & \textbf{Opombe}                                                       \\
+                \textbf{Dejanje}              & \textbf{IFF1} & \textbf{IFF2} & \textbf{Opombe}                                                          \\
                 \hline
-                Ponastavitev CPE              & 0             & 0             & Prekinitve so onemogočene.                                            \\
+                Ponastavitev CPE              & 0             & 0             & Prekinitve so onemogočene.                                               \\
                 \hline
-                Izvedba ukaza \texttt{DI}     & 0             & 0             & Prekinitve so onemogočene.                                            \\
+                Izvedba ukaza \texttt{DI}     & 0             & 0             & Prekinitve so onemogočene.                                               \\
                 \hline
-                Izvedba ukaza \texttt{EI}     & 1             & 1             & Prekinitve so omogočene.                                              \\
+                Izvedba ukaza \texttt{EI}     & 1             & 1             & Prekinitve so omogočene.                                                 \\
                 \hline
-                Izvedba ukaza \texttt{LD A,I} & *             & *             & Vrednost IFF2 se shrani v zastavico paritete.                         \\
+                Izvedba ukaza \texttt{LD A,I} & *             & *             & Vrednost IFF2 se shrani v zastavico paritete.                            \\
                 \hline
-                Izvedba ukaza \texttt{LD A,R} & *             & *             & Vrednost IFF2 se shrani v zastavico paritete.                         \\
+                Izvedba ukaza \texttt{LD A,R} & *             & *             & Vrednost IFF2 se shrani v zastavico paritete.                            \\
                 \hline
-                Sprejem NMI                   & 0             & *             & Prekinitve so onemogočene.                                            \\
+                Sprejem NMI                   & 0             & *             & Prekinitve so onemogočene.                                               \\
                 \hline
-                Izvedba ukaza \texttt{RETN}   & IFF2          & *             & Dvignjena IFF2 označi konec rutine za obdelavo nemaskirne prekinitve. \\
+                Izvedba ukaza \texttt{RETN}   & IFF2          & *             & Dvignjena IFF2 označi konec rutine za obdelavo nemaskabilnih prekinitve. \\
                 \hline
             \end{tabular}
         \end{center}
@@ -1298,49 +1302,48 @@ by
         \label{z80cpuusermanual_tab2}
     \end{table}
 
-    CPE je lahko nastavljen v enega izmed 3 možnih načinov obravnavanja
-    maskabilnih prekinitev ~\cite{z80cpuusermanual}.
+    CPE je lahko nastavljen v enega izmed 3 možnih načinov obravnavanja maskabilnih
+    prekinitev ~\cite{z80cpuusermanual}.
 
-    V načinu 0 lahko prekinitvena naprava na podatkovno vodilo postavi poljuben ukaz,
-    ki ga CPE izvede. Ker mora izbran ukaz imeti le 1 zlog, je to pogosto ukaz
-    klica PSP. CPE pri izvedbi tega ukaza samodejno doda 2 čakalni periodi, da
-    bi zagotovil dovolj časa za izvedbo zunanje verižne povezave za nadzor
-    prioritet ~\cite{z80cpuusermanual}.
+    V načinu 0 lahko prekinitvena naprava na podatkovno vodilo postavi poljuben
+    ukaz, ki ga CPE izvede. Ker mora izbran ukaz imeti le 1 zlog, je to pogosto ukaz
+    klica PSP. CPE pri izvedbi tega ukaza samodejno doda 2 čakalni periodi, da bi
+    zagotovil dovolj časa za izvedbo zunanje verižne povezave za nadzor prioritet
+    ~\cite{z80cpuusermanual}.
 
-    V načinu 1 CPE začne izvajati ukaz na pomnilniškem naslovu \texttt{0x0038}. Posledično
-    je odziv razen lokacije klica identičen odzivu na nemaskabilne prekinitve,
-    ki kliče podprogram na pomnilniškem naslovu \texttt{0x0066}. CPE tudi v tem
-    primeru doda 2 čakalni periodi ~\cite{z80cpuusermanual}.
+    V načinu 1 CPE začne izvajati ukaz na pomnilniškem naslovu \texttt{0x0038}.
+    Posledično je odziv razen lokacije klica identičen odzivu na nemaskabilne
+    prekinitve, ki kliče podprogram na pomnilniškem naslovu \texttt{0x0066}. CPE tudi
+    v tem primeru doda 2 čakalni periodi ~\cite{z80cpuusermanual}.
 
-    Način 2 omogoča klic podprograma v uporabniško vzdrževani tabeli 16-bitnih začetnih
-    naslovov PSP na poljubnem mestu v pomnilniku. Naslovi PSP v tabeli se morajo
-    nahajati na sodih naslovih, ker vsak zavzema 2 zloga. Zgornji zlog 16-bitnega
-    naslova PSP določa vrednost registra I, spodnji zlog pa sama prekinitvena naprava.
-    Ko prekinitvena naprava zagotovi spodnji del kazalca, CPE samodejno potisne PC
-    na sklad, pridobi naslov PSP iz tabele in izvede skok nanj. Ta način odziva zahteva
-    19 čakalnih period ~\cite{z80cpuusermanual}.
+    Način 2 omogoča klic podprograma v uporabniško vzdrževani tabeli 16-bitnih
+    začetnih naslovov PSP na poljubnem mestu v pomnilniku. Naslovi PSP v tabeli se
+    morajo nahajati na sodih naslovih, ker vsak zavzema 2 zloga. Zgornji zlog 16-bitnega
+    naslova PSP določa vrednost registra I, spodnji zlog pa sama prekinitvena
+    naprava. Ko prekinitvena naprava zagotovi spodnji del kazalca, CPE samodejno
+    potisne PC na sklad, pridobi naslov PSP iz tabele in izvede skok nanj. Ta
+    način odziva zahteva 19 čakalnih period ~\cite{z80cpuusermanual}.
 
-    Prekinitve NMI imajo višjo prioriteto kot INT in jih ni mogoče programsko
-    onemogočiti, saj se uporablja za predvsem za takojšnje odzive na najpomembnejše
-    signale, ki se morajo obravnavati s čim manj zakasnitve. CPE ga zato obravnava
-    že po koncu izvajanja trenutnega ukaza. Pri tem se najprej IFF1 onemogoči (in
-    njegova prejšnja vrednost shrani v IFF2), kar za čas izvajanja PSP prepreči navadne
-    prekinitve, nato se vrednost registra PC shrani na sklad, izvajanje pa preusmeri
-    na pomnilniški naslov \texttt{0x0066} ~\cite{z80cpuusermanual}.
+    Prekinitve NMI imajo višjo prioriteto kot INT in jih ni mogoče programsko onemogočiti,
+    saj se uporablja za predvsem za takojšnje odzive na najpomembnejše signale, ki
+    se morajo obravnavati s čim manj zakasnitve. CPE ga zato obravnava že po
+    koncu izvajanja trenutnega ukaza. Pri tem se najprej IFF1 onemogoči (in
+    njegova prejšnja vrednost shrani v IFF2), kar za čas izvajanja PSP prepreči
+    navadne prekinitve, nato se vrednost registra PC shrani na sklad, izvajanje
+    pa preusmeri na pomnilniški naslov \texttt{0x0066} ~\cite{z80cpuusermanual}.
 
     \section{Implementacija v emulatorju}
 
-    Procesor je v emulatorju predstavljen z objektom \texttt{Processor}. Ta ne
-    hrani vseh podatkov procesorja neposredno v sebi, ampak povezuje ločene modele
-    registrov, pomnilnika, V/I vrat in časovnika. Časovni model je implementiran
-    v objektu \texttt{ULATiming}, ki hrani skupno število izvedenih T-stanj, trenutno
-    pozicijo znotraj slikovnega okvira in števec prikazanih okvirjev. Emulator
+    Procesor je v emulatorju predstavljen z objektom \texttt{Processor}. Ta ne hrani
+    vseh podatkov procesorja neposredno v sebi, ampak povezuje ločene modele
+    registrov, pomnilnika, V/I vrat in časovnika. Časovni model je implementiran v
+    objektu \texttt{ULATiming}, ki hrani skupno število izvedenih T-stanj,
+    trenutno pozicijo znotraj slikovnega okvira in števec prikazanih okvirjev. Emulator
     privzeto uporablja frekvenco procesorja 3,5 MHz in dolžino okvirja 69888 T-stanj,
-    kar ustreza modelu računalnika 48K z evropskim video standardom. V objektu
-    \texttt{Processor} so shranjena predvsem stanja, ki vodijo izvajanje, kot so omogočenost
-    maskirnih prekinitev \texttt{IFF1} in \texttt{IFF2}, trenutni prekinitveni
-    način, stanje \texttt{HALT}, ter funkcionalnosti razhroščevalnika zastavica teka,
-    prekinitvene točke in števec izvedenih ukazov.
+    kar ustreza modelu računalnika 48K z evropskim video standardom. V objektu \texttt{Processor}
+    so shranjena predvsem stanja, ki vodijo izvajanje, kot so omogočenost
+    maskabilnih prekinitev \texttt{IFF1} in \texttt{IFF2}, trenutni prekinitveni način,
+    stanje \texttt{HALT}, prekinitvene točke in števec izvedenih ukazov.
 
     Registri so zbrani v objektu \texttt{Registers}. Ta vsebuje glavni in
     zamenljiv registrski nabor ter posebne registre \texttt{I}, \texttt{R},
@@ -1374,7 +1377,7 @@ by
 
     Izvajanje enega koraka (naslednjega ukaza) se začne z branjem trenutnega programskega
     števca \texttt{PC}. Če je na tem naslovu nastavljena prekinitvena točka, se
-    neprekinjen tek ustavi. Nato ima prednost morebitna nemaskirna prekinitev.
+    neprekinjen tek ustavi. Nato ima prednost morebitna nemaskabilna prekinitev.
     Če je ni, se preverijo še pogoji za hitro nalaganje kasetnih podatkov. Šele
     nato se ukaz dekodira iz pomnilnika, števec osveževanja \texttt{R} se poveča
     za število dejansko prebranih ukaznih zlogov, programski števec pa se pomakne
@@ -1385,15 +1388,15 @@ by
     izvedenih ukazov za namene razhroščevalnika, časovniku ULA pa se prišteje število
     T-stanj ukaza. Ko število T-stanj preseže dolžino okvirja, časovnik poveča števec
     okvirjev, označi čakajočo prekinitev in o tem obvesti dele uporabniškega
-    vmesnika, ki so vezani na osveževanje slike. Pogoji za izvedbo maskirne
+    vmesnika, ki so vezani na osveževanje slike. Pogoji za izvedbo maskabilne
     prekinitve se preverjajo ob koncu izvajanja trenutnega ukaza, zato časovnik povezuje
     hitrost izvajanja, periodične prekinitve in osveževanje zaslonskega prikaza.
 
-    Pri vseh maskirnih prekinitvah se trenutna vrednost registra \texttt{PC} najprej
-    zapiše na sklad, nato se onemogočita \texttt{IFF1} in \texttt{IFF2}. Nemaskirna
+    Pri vseh maskabilnih prekinitvah se trenutna vrednost registra \texttt{PC} najprej
+    zapiše na sklad, nato se onemogočita \texttt{IFF1} in \texttt{IFF2}. Maskabilna
     prekinitev ponastavi vrednost le \texttt{IFF1}, na sklad shrani vrednost registra
     \texttt{PC} in nadaljuje izvajanje na naslovu \texttt{0x0066}. Ukaza \texttt{EI}
-    in \texttt{DI} nastavita še notranjo zastavico, zaradi katere se maskirna prekinitev
+    in \texttt{DI} nastavita še notranjo zastavico, zaradi katere se maskabilna prekinitev
     ne obdela takoj za njima.
 
     Ukaz \texttt{HALT} je izveden tako, da programski števec vrne na naslov ukaza
@@ -1404,10 +1407,11 @@ by
 
     Poleg izvajanja ukazov po korakih emulator podpira tudi neprekinjen tek. V tem
     načinu delovanja procesor ponavlja izvajanje ukazov, dokler uporabnik
-    emulatorja ne zaustavi. Pri navadni hitrosti primerja število izvedenih T-stanj
-    z realnim časom izvajanja in po potrebi počaka z izvajanjem nadaljnjega ukaza,
-    da se izvajanje približa frekvenci 3,5 MHz. V hitrem načinu tega čakanja ni,
-    zato emulator izvaja ukaze tako hitro, kot dopušča gostiteljski sistem.
+    emulatorja ne zaustavi. V načinu delovanja emulatorja ob standardni hitrosti primerja
+    število izvedenih T-stanj z realnim časom izvajanja in po potrebi počaka z izvajanjem
+    nadaljnjega ukaza, da se izvajanje približa frekvenci 3,5 MHz. V načinu delovanja
+    emulatorja ob najvišji možni hitrosti tega čakanja ni, zato emulator izvaja
+    ukaze tako hitro, kot dopušča gostiteljski sistem.
 
     Pravilnost implementacije ukazov je bila preverjana tudi s programoma \texttt{zexdoc}
     in \texttt{zexall}, različicama preizkuševalnika ukazov Z80, prilagojenima za
@@ -1584,8 +1588,8 @@ by
 
     Tipkovnica Spectruma je na prvi pogled po položaju tipk črk in številk
     podobna tipkovnici navadnega pisalnega stroja, vendar pa ima vsaka tipka Spectruma
-    več funkcij. Razporeditev tipk je prikazana na sliki
-    \ref{softspectrum48_pic1} ~\cite{zxspectrumintroduction}.
+    več funkcij. Razporeditev tipk je videna na sliki \ref{softspectrum48_pic1}
+    ~\cite{zxspectrumintroduction}.
 
     \begin{figure}[htb]
         \begin{center}
@@ -1599,7 +1603,7 @@ by
     znakov in ukazov, imajo nekatere tipke več različnih pomenov, do katerih
     pridemo z uporabo modifikacijskih tipk CAPS SHIFT ali SYMBOL SHIFT ter
     menjavanjem načina delovanja tipkovnice. Povezava med simboli na tipkah in načini
-    vnosa je prikazana na sliki \ref{zxspectrumbasicprogramming_pic2} ~\cite{zxspectrumbasicprogramming}.
+    vnosa je videna na sliki \ref{zxspectrumbasicprogramming_pic2} ~\cite{zxspectrumbasicprogramming}.
 
     \begin{figure}[htb]
         \begin{center}
@@ -1798,7 +1802,7 @@ by
     podprogrami ROMa, ne ohrani pa natančnih časov impulzov, pavz ali delovanja posebnih
     nalagalnikov. ~\cite{worldofspectrumformats}
 
-    Vidni potek standardnega nalaganja s kasete je prikazan na sliki
+    Vidni potek standardnega nalaganja s kasete je viden na sliki
     \ref{howtapeloadingword_pic1}.
 
     \begin{figure}[htb]
@@ -1865,7 +1869,7 @@ by
     srednjim C. Osrednja frekvenca za ukaz BEEP je srednji C, lahko pa pridobimo
     katerikoli polton nad ali pod to osrednjo frekvenco. ~\cite{zxspectrumintroduction}
 
-    Kode tonov za ukaz \texttt{BEEP} so prikazane na sliki
+    Kode tonov za ukaz \texttt{BEEP} so videne na sliki
     \ref{zxspectrumbasicprogramming_pic3}.
 
     \begin{figure}[htb]
