@@ -316,7 +316,6 @@ by
         {\bf EAR}     & earphone                                           & vhod za signal iz kasetofona                               \\
         {\bf IFF}     & interrupt flip-flop                                & prekinitveni preklopnik                                    \\
         {\bf INT}     & interrupt                                          & maskabilna prekinitev                                      \\
-        {\bf JVM}     & Java Virtual Machine                               & javanski navidezni stroj                                   \\
         {\bf KMP}     & Kotlin Multiplatform                               & večplatformska tehnologija Kotlin Multiplatform            \\
         {\bf LIFO}    & last in, first out                                 & oblika delovanja sklada po principu zadnji noter, prvi ven \\
         {\bf MIC}     & microphone                                         & izhod za signal proti kasetofonu                           \\
@@ -1770,107 +1769,99 @@ by
 
     \section{Kasete}
 
-    ZX Spectrum za trajno hrambo programov uporablja navadne avdio kasete.
-    Program, spremenljivke ali drug del pomnilnika lahko shranimo z ukazom SAVE,
-    kasneje pa ga naložimo z ukazom LOAD. Ukaz VERIFY ne nalaga podatkov, temveč
-    preveri, ali se podatki na kaseti ujemajo s podatki v pomnilniku. Ukaz RUN
-    deluje podobno kot LOAD, le da program po nalaganju tudi zažene. ~\cite{zxspectrumintroduction}
-    ~\cite{zxspectrumbasicprogramming}
+    ZX Spectrum za trajno hrambo uporabniškega programa uporablja navadne zvočne kasete.
+    Programe lahko na kaseto shranimo, preverimo za možne napake pri prenosih,
+    ter jih iz nje kasneje naložimo v pomnilnik in zaženemo ~\cite{zxspectrumintroduction}
+    ~\cite{zxspectrumbasicprogramming}.
 
-    Pri teh ukazih lahko navedemo ime programa, dolgo največ 10 znakov. Če pri ukazih
-    LOAD, VERIFY ali RUN ime pustimo prazno, Spectrum uporabi prvi ustrezen program,
-    ki ga najde na kaseti. ~\cite{zxspectrumintroduction} ~\cite{zxspectrumbasicprogramming}
+    Kasetne posnetke ločimo od posnetkov stanja, kot sta datotečna formata SNA in
+    Z80. Posnetek stanja hrani le stanje pomnilnika, registrov in drugih indikatorjev
+    stanja sistema, kasetni format pa le hrani podatke kasete v obliki, v kakršni
+    bi jih računalnik prebral iz kasete. S tem se ohrani ne le vrstni red
+    nalaganja blokov, temveč tudi morebitne posebne nalagalnike programov ~\cite{worldofspectrumformats}
+    ~\cite{z80format}.
 
-    \subsection{Formati}
-
-    Kasetne formate je treba ločiti od posnetkov stanja, kot sta formata datotek
-    SNA in Z80. Posnetek stanja hrani le stanje pomnilnika, registrov in drugih
-    indikatorjev stanja sistema, kasetni format pa le hrani podatke kasete v obliki,
-    v kakršni bi jih računalnik prebral iz kasete. S tem se ohrani ne le vrstni red
-    nalaganja blokov, temveč tudi morebitne posebne nalagalnike. ~\cite{worldofspectrumformats}
-    ~\cite{z80format}
-
-    Posnetki kaset v formatih, primernih za uporabo v takšni emulaciji, so
-    razdeljeni na bloke. Pri običajnem nalaganju se najprej prebere glava zapisa z
+    Posnetki kaset v formatih, primernih za uporabo v takšni emulaciji, so razdeljeni
+    na bloke. Pri običajnem nalaganju se najprej prebere glava zapisa z
     osnovnimi podatki o programu, nato pa še podatkovni bloki z dejansko vsebino.
     Vsak blok vsebuje zastavični zlog, podatke in kontrolno vsoto. ~\cite{worldofspectrumformats}
 
-    Format TAP je neposreden zapis takih blokov. Datoteka \texttt{.tap} je sestavljena
-    iz zaporedja enako sestavljenih blokov, pri čemer ima vsak blok najprej dva
-    zloga dolžine, nato pa sledijo zastavični zlog, zlog s kontrolno vsoto, in dejanski
-    podatki. Format je zato preprost in primeren za programe, shranjene s standardnimi
-    podprogrami ROMa, ne ohrani pa natančnih časov impulzov, pavz ali delovanja posebnih
-    nalagalnikov. ~\cite{worldofspectrumformats}
+    Format TAP je neposreden zapis takih blokov. Datoteka \texttt{.tap} je
+    sestavljena iz zaporedja enako sestavljenih blokov, pri čemer ima vsak blok najprej
+    dva zloga dolžine, nato pa sledijo zastavični zlog, zlog s kontrolno vsoto in
+    nato dejanski podatki. Format je zato preprost in primeren za programe, shranjene
+    s standardnimi podprogrami ROMa, ne ohrani pa natančnih časov impulzov, pavz ali
+    delovanja posebnih nalagalnikov ~\cite{worldofspectrumformats}.
 
-    Vidni potek standardnega nalaganja s kasete je viden na sliki
-    \ref{howtapeloadingword_pic1}.
+    Pri nalaganju kaset s standardnim podprogramom iz ROMa se branje uvodnega
+    dela bloka na zaslonu prikazujejo kot rdeče in svetlo modre črte, branje dejanskih
+    podatkov pa kot modre in rumene črte v območju obrobe zaslona. Vzorca sta
+    vidna na sliki \ref{howtapeloadingword_pic1} ~\cite{zxspectrumintroduction} ~\cite{zxspectrumbasicprogramming}.
 
     \begin{figure}[htb]
         \begin{center}
             \includegraphics[width=0.7\textwidth]{howtapeloadingword_pic1}
         \end{center}
-        \caption{Pri nalaganju kaset s standardnim podprogramom iz ROMa se
-        branje uvodnega dela bloka na zaslonu kaže kot rdeče in svetlo modre
-        črte, branje dejanskih podatkov pa kot modre in rumene črte. ~\cite{zxspectrumintroduction}
-        ~\cite{zxspectrumbasicprogramming} ~\cite{howtapeloadingworks}}
+        \caption{Vzorci, ki se med nalaganjem programa iz kasete prikazujejo na zaslonu,
+        ko se za nalaganje uporablja standardni podprogram iz ROMa ~\cite{howtapeloadingworks}.}
         \label{howtapeloadingword_pic1}
     \end{figure}
 
     Format TZX je namenjen čim natančnejšemu hranjenju kaset za ZX Spectrum,
-    predvsem za uporabo v emulatorjih. Datoteka \texttt{.tzx} se začne z glavo
-    \texttt{ZXTape!} in številko različice, za tem pa sledi en ali več različnih
-    tipov blokov. Če je bil program shranjen z navadnimi ROMovimi rutinami,
-    datoteka v formatu TZX načeloma vsebuje enake standardne podatkovne bloke
-    kot TAP. Njegova prednost je, da lahko poleg osnovnih tipov blokov hrani
-    tudi tudi pavze, časovne podatke o impulzih in druge posebne bloke, ki jih
-    uporabljajo posebni nalagalniki ali zaščite. Zato je TZX primernejši takrat,
-    ko želimo v emulatorju čim bolj natančno ponoviti potek izvirnega nalaganja
-    s kasete. ~\cite{tzxformat} ~\cite{worldofspectrumformats}
+    predvsem za uporabo v emulatorjih. Vsebina datoteke formata \texttt{.tzx} se
+    začne z glavo \texttt{ZXTape!} in številko različice formata, za tem pa
+    sledi en ali več blokov različnih tipov. Če je bil program shranjen z navadnimi
+    ROMovimi rutinami, datoteka v formatu TZX načeloma vsebuje enake standardne
+    podatkovne bloke kot TAP. Njegova prednost je, da lahko poleg osnovnih tipov
+    blokov hrani tudi tudi pavze, časovne podatke o impulzih in druge posebne bloke,
+    ki jih uporabljajo posebni nalagalniki ali zaščite. Zato je format TZX primernejši
+    takrat, ko želimo v emulatorju čim bolj natančno ponoviti potek izvirnega
+    nalaganja s kasete ~\cite{tzxformat} ~\cite{worldofspectrumformats}.
 
     \subsection{Implementacija v emulatorju}
 
     Nalaganje kaset je v emulatorju razdeljeno na razčlenjevanje datoteke in na izvajanje
     nalaganja med tekom programa. Razčlenjevanje izvaja objekt \texttt{ULATapeParser}.
-    Če se datoteka začne s podpisom \texttt{ZXTape!}, jo obravnava kot TZX, sicer
-    kot TAP. Pri formatu TAP zaporedno bere dolžino bloka in surove podatke
-    bloka. Pri formatu TZX prepozna standardne, turbo in čiste podatkovne bloke, druge
-    podprte bloke pa preskoči, kadar ne vplivajo na podatke, ki jih trenutna implementacija
-    potrebuje za nalaganje.
+    Če se vsebina datoteke začne z značilno glavo \texttt{ZXTape!}, jo obravnava
+    kot datotečni format TZX, sicer pa kot TAP.
 
     Razčlenjen posnetek kasete je predstavljen z razredoma \texttt{SpectrumTapeImage}
     in \texttt{SpectrumTapeDataBlock}. Posamezen blok hrani zastavični zlog, koristne
-    podatke in kontrolno vsoto. Kontrolna vsota se preveri z operacijo XOR čez
-    zastavični zlog in vse podatkovne zloge. Parser pri veljavnih standardnih zapisih
-    označi tudi povezavo med blokom glave in naslednjim podatkovnim blokom, kar
-    kasneje poenostavi izbiro pravega bloka pri zaporednem nalaganju.
+    podatke in kontrolno vsoto. Kontrolna vsota se preveri z operacijo XOR nad
+    zlogom z zastavicami in vsemi podatkovnimi zlogi.
 
-    Objekt \texttt{ULATapeDeck} hrani trenutno vstavljeno kaseto, položaj bralne
-    glave in morebitni podatkovni blok, ki pripada že prebrani glavi. Ko program
-    v emuliranem Spectrumu pokliče ROM rutino \texttt{LD-BYTES}, procesor to
-    zazna na naslovu \texttt{0x0556} in klic preda kasetnemu podsistemu. Ta iz
-    registrov prebere pričakovani tip bloka, dolžino in ciljni naslov. Pri ukazu
-    \texttt{LOAD} se koristni podatki iz izbranega bloka zapišejo v pomnilnik,
-    pri \texttt{VERIFY} pa se enak obseg samo prebere in primerja z vsebino bloka.
-    Po koncu se registri nastavijo tako, kot bi se po vrnitvi iz ROM rutine,
-    nato se izvajanje nadaljuje pri skupnem izhodu iz nalagalne rutine.
+    Objekt \texttt{ULATapeDeck} hrani vsebino trenutno vstavljene kasete,
+    položaj bralne glave in morebitni podatkovni blok, ki pripada že prebrani glavi.
+    Pri formatu TAP zaporedno bere dolžino bloka in surove podatke bloka. Pri formatu
+    TZX prepozna standardne, hitrejše in čiste podatkovne bloke, druge s strani formata
+    podprte bloke pa preskoči, kadar ne vplivajo na potek nalaganja. Razčlenjevalnik
+    pri veljavnih standardnih zapisih označi tudi povezavo med blokom glave in naslednjim
+    podatkovnim blokom, kar kasneje poenostavi izbiro pravega bloka pri
+    nalaganju več zaporednih blokov.
 
-    Tak pristop ne emulira zvočnih impulzov kasete v realnem času, temveč posnema
-    učinek standardnih ROM rutin za nalaganje. Prednost je bistveno hitrejše in
-    zanesljivejše nalaganje programov v razhroščevalniku. Omejitev pa je, da
+    Ko program v emuliranem Spectrumu pokliče ROMov podprogram \texttt{LD-BYTES} na
+    naslovu \texttt{0x0556}, emulator to zazna in obravnavo preda kasetnemu podsistemu
+    emulatorja. Ta iz registrov prebere pričakovani tip bloka, dolžino in ciljni naslov.
+    Pri nalaganju iz kasete se koristni podatki iz izbranega bloka zapišejo v
+    pomnilnik, pri preverjanju pravilnosti vsebine pa se enak obseg samo prebere in
+    primerja z vsebino bloka. Po koncu se registri nastavijo tako, kot bi se po vrnitvi
+    iz podprograma ROMa, nato se izvajanje nadaljuje pri skupnem izhodu iz
+    nalagalnega podprograma.
+
+    Tak pristop "hitrega nalaganja" vsebine kasetne datoteke ne emulira zvočnih
+    impulzov kasete v realnem času, temveč posnema učinek standardnih podprogramov
+    ROMa za nalaganje. Prednost takega pristopa je bistveno hitrejše in
+    zanesljivejše nalaganje programov v emulatorju, predstavlja pa omejitev, da
     posebni nalagalniki, ki so odvisni od natančnega trajanja impulzov ali od neposrednega
     branja signala EAR, niso polno podprti.
 
     \section{Zvok}
-    \subsection{Delovanje in toni}
-    ZX Spectrum lahko proizvaja neskončno raznolike zvoke, pri čemer lahko določimo
-    tako frekvenco kot trajanje tona z ukazom BEEP. ~\cite{zxspectrumintroduction}
-
-    Ukazu podamo dolžino izvajanja tona v sekundah in višino tona v poltonih nad
-    srednjim C. Osrednja frekvenca za ukaz BEEP je srednji C, lahko pa pridobimo
-    katerikoli polton nad ali pod to osrednjo frekvenco. ~\cite{zxspectrumintroduction}
-
-    Kode tonov za ukaz \texttt{BEEP} so videne na sliki
-    \ref{zxspectrumbasicprogramming_pic3}.
+    ZX Spectrum lahko proizvaja neskončno raznolike zvoke, a podpira izvajanje le
+    enega tona naenkrat. Pri tem določimo tako dolžino izvajanja tona v sekundah
+    kot frekvenco oziroma višino tona v poltonih nad srednjim C. Osrednja podprta
+    frekvenca je srednji C s kodom 0, lahko pa pridobimo katerikoli polton nad
+    ali pod to osrednjo frekvenco. Kodi tonov so vidni na sliki \ref{zxspectrumbasicprogramming_pic3}
+    ~\cite{zxspectrumintroduction} ~\cite{zxspectrumbasicprogramming}.
 
     \begin{figure}[htb]
         \begin{center}
@@ -1882,35 +1873,22 @@ by
         \label{zxspectrumbasicprogramming_pic3}
     \end{figure}
 
-    Ker je v računalniku samo en zvočnik, lahko igrate samo en ton naenkrat. Proizveden
-    zvočni signal ne pride le do zvočnika, temveč istočasno tudi do MIC in EAR
-    vtičnic. ~\cite{zxspectrumbasicprogramming}
-
-    Na zvočnik lahko poleg z ukazom BEEP prek ROMa vplivamo tudi z ukazi OUT skozi
-    V/I vrata \texttt{0xFE}. Bita 4 v zlogu na vratih določa stanje zvočnika (0
-    pomeni izključen, 1 pomeni vključen) - frekvenco pa določamo s hitrostjo
-    menjav med stanjema. ~\cite{strojnijezikzaprocesorz80}
+    Na zvočnik lahko poleg ukaza BEEP prek podprogramov ROMa vplivamo tudi z
+    ukazi OUT preko V/I vrat \texttt{0xFE}. Bit 4 v podatkovnem zlogu na vratih
+    določa stanje zvočnika, pri čemer vrednost 0 pomeni tišino, 1 pa izvajanje
+    tona. Ker lahko z enim bitom določamo le stanje proizvajanja zvoka, njegovo
+    frekvenco določamo s hitrostjo preklapljanja stanja bita ~\cite{strojnijezikzaprocesorz80}.
 
     \subsection{Implementacija v emulatorju}
 
-    Zvočni del je vezan na pisanje v V/I vrata z nižjim zlogom \texttt{0xFE}.
-    Vsa pisanja v V/I vrata gredo skozi razred \texttt{IOPortSet}; ta shrani
-    zapisano vrednost in jo posreduje objektu \texttt{ULABeeper}. Zvočnik
-    uporablja bit 4 zapisane vrednosti, zato se frekvenca zvoka v praksi določi s
-    hitrostjo, s katero program menja ta bit.
-
-    \texttt{ULABeeper} je v skupni kodi definiran kot pričakovani objekt \texttt{expect},
-    ker je dejansko predvajanje zvoka odvisno od platforme. Na JVM je
-    implementiran z zvočno linijo \texttt{SourceDataLine}. Ob vsakem zapisu na
-    vrata \texttt{0xFE} primerja trenutno število T-stanj s časom prejšnjega zapisa
-    in iz razlike izračuna, koliko vzorcev mora zapisati v zvočni izhod. Kadar je
-    bit 4 nastavljen, zapisuje vzorce z visoko amplitudo, sicer tišino. S tem se
-    signal zvočnika gradi iz istega časovnega modela, ki ga uporablja procesor.
-
-    V spletnih ciljnih platformah je trenutno implementirano le stanje izklopa zvoka,
-    samo predvajanje pa je prazna operacija. To pomeni, da je zvočna emulacija
-    funkcionalna v namizni različici, v spletni različici pa uporabniški vmesnik ohrani
-    enake kontrole, vendar zvočni izhod še ni izveden.
+    Zvočni del je vezan na pisanje v V/I vrata \texttt{0xFE}. Vsa pisanja na V/I
+    vrata gredo skozi razred \texttt{IOPortSet}, ki zapisano vrednost posreduje
+    objektu \texttt{ULABeeper}. Ob vsakem zapisu na V/I vrata \texttt{0xFE} primerja
+    trenutno število izvajanih T-stanj procesorja s časom prejšnjega zapisa in iz
+    razlike izračuna, koliko vzorcev mora zapisati v zvočni izhod, implementiran z
+    neposredno zvočno linijo \texttt{SourceDataLine}. Kadar je bit 4 nastavljen,
+    zapisuje vzorce z visoko amplitudo, sicer tišino. S tem se signal zvočnika
+    gradi iz istega časovnega modela, ki ga uporablja procesor.
 
     \chapter{Evalvacija emulatorja}
     \label{evalvacija}
@@ -1923,18 +1901,17 @@ by
     \subsection{Evalvacija uspešnosti diplomskega dela (na podlagi ciljev iz uvoda)}
 
     \subsection{Možne izboljšave}
-    Boljša emulacija časovnih ciklov s strani pomnilnika, procesorja in ULA za boljšo
-    sinhronizacijo in emulacijo strojnih napak dejanskega Spectruma: - 1. Memory
+    Boljša emulacija časovnih ciklov s strani pomnilnika, procesorja in ULA za
+    boljšo sinhronizacijo in emulacijo strojnih napak dejanskega Spectruma: - 1. Memory
     contention - fetching instructions and other general memory reads/writes - I/O
-    contention - Port \texttt{0xFE} (ULA port) contention based on address bus high
-    byte - Snow effect
+    contention - Port \texttt{0xFE} (ULA port) contention based on address bus
+    high byte - Snow effect
 
-    Raje bi uporabil kaj drugega kot KMP, ker cross-platform funkcionalnosti po mojem
-    mnenju niso uporabne za razhroščevalnik (kar je glavna komponenta tega
-    projekta), prav tako je KMP za desktop privzeto bolj omejen tako v
-    funkcionalnostih kot preformanceu (moral iti nivo nižje od KMP za kaj takega).
-    Tako bi razmišljal o drugih frameworkih, kot so Electron + TS ali Dioxus/Tauri
-    + Rust.
+    Raje bi uporabil kaj drugega kot KMP, ker cross-platform funkcionalnosti po
+    mojem mnenju niso uporabne za razhroščevalnik (kar je glavna komponenta tega projekta),
+    prav tako je KMP za desktop privzeto bolj omejen tako v funkcionalnostih kot preformanceu
+    (moral iti nivo nižje od KMP za kaj takega). Tako bi razmišljal o drugih
+    frameworkih, kot so Electron + TS ali Dioxus/Tauri + Rust.
 
     %\cleardoublepage
     %\addcontentsline{toc}{chapter}{Literatura}
