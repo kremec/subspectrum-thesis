@@ -1451,16 +1451,6 @@ by
     načinu delovanja emulatorja ob najvišji možni hitrosti tega čakanja ni, zato emulator
     izvaja ukaze tako hitro, kot dopušča gostiteljski sistem.
 
-    Pravilnost implementacije ukazov je bila preverjana tudi s programoma
-    \texttt{zexdoc} in \texttt{zexall}, različicama preizkuševalnika ukazov Z80,
-    prilagojenima za ZX Spectrum. \texttt{zexdoc} preverja dokumentirane
-    zastavice, registre in pomnilnik, \texttt{zexall} pa poleg tega preverja tudi
-    nedokumentirani zastavici XF in YF. Programa izvajata skupine ukazov z
-    različnimi začetnimi stanji, iz končnega stanja izračunata kontrolno vsoto CRC
-    in jo primerjata z referenčno vrednostjo, pridobljeno na pravem procesorju
-    Z80. Preizkus ne pove, katera podrobnost ukaza je napačna, temveč samo, da
-    se rezultat razlikuje od referenčnega izvajanja ~\cite{z80exerciseravery} ~\cite{spectrumz80exerciser}.
-
     \chapter{ULA}
     \label{ula}
 
@@ -2049,25 +2039,166 @@ by
     \chapter{Evalvacija emulatorja}
     \label{evalvacija}
 
-    \subsection{Prikaz delovanja par programov in iger}
-    \subsection{Primerjava z obstoječimi emulatorji - hitrost, natančnost}
+    Za raziskovanje delovanja računalnika ZX Spectrum in programiranje emulatorja
+    je bilo potrebnih približno osem mesecev. Nastali emulator lahko ovrednotimo
+    z vidikov pravilnosti izvajanja programov za ZX Spectrum in uporabnosti
+    razhroščevalnika, ki mora omogočati vpogled v notranje stanje emuliranega sistema.
+    Pri prvem vidiku je pomembno, da se kot na izvornem računalniku programi pravilno
+    naložijo, izvajajo pričakovane ukaze procesorja, izpisujejo pravilno sliko,
+    proizvajajo pravilne zvoke in omogočajo uporabo tipkovnice. Pri drugem vidiku
+    pa je pomembno, da uporabniški vmesnik prikazuje dejansko stanje sistema, ki ga
+    emulator uporablja za izvajanje, in da posegi uporabnika v izvajanje
+    vplivajo na izvajanje programov.
+
+    Vsi trije izbrani programi se naložijo iz datotek posnetkov kaset ter
+    delujejo brez opaznih napak, z delujočo sliko, zvokom in upravljanjem preko
+    tipkovnice. Preizkušeni so bili popularna arkadna platformna igra Manic Miner,
+    urejevalnik besedil INES ter slovenska besedilna pustolovska igra Kontrabant.
+    Zaslonske slike delovanja emulatorja med izvajanjem izbranih programov vidimo
+    na slikah \ref{subspectruminterface_pic8}, \ref{subspectruminterface_pic9}
+    in \ref{subspectruminterface_pic10}.
+
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=0.7\textwidth]{subspectruminterface_pic8}
+        \end{center}
+        \caption{Posnetek zaslona emulatorja med izvajanjem igre Manic Miner.}
+        \label{subspectruminterface_pic8}
+    \end{figure}
+
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=0.7\textwidth]{subspectruminterface_pic9}
+        \end{center}
+        \caption{Posnetek zaslona emulatorja med izvajanjem urejevalnika besedil
+        INES.}
+        \label{subspectruminterface_pic9}
+    \end{figure}
+
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=0.7\textwidth]{subspectruminterface_pic10}
+        \end{center}
+        \caption{Posnetek zaslona emulatorja med izvajanjem igre Kontraband.}
+        \label{subspectruminterface_pic10}
+    \end{figure}
+
+    Pravilnost delovanja procesorja, natančneje implementacije ukazov in
+    njihovih učinkov na registre, je bila preverjana tudi s programoma \texttt{zexdoc}
+    in \texttt{zexall}, različicama preizkuševalnika ukazov Z80, prilagojenima za
+    ZX Spectrum. \texttt{zexdoc} preverja dokumentirane zastavice, registre in
+    pomnilnik, \texttt{zexall} pa poleg tega preverja tudi nedokumentirani
+    zastavici XF in YF. Programa izvajata skupine ukazov z različnimi začetnimi stanji,
+    iz končnega stanja izračunata kontrolno vsoto CRC in jo primerjata z
+    referenčno vrednostjo, pridobljeno na pravem procesorju Z80. Preizkus ne
+    pove, katera podrobnost ukaza je napačna, temveč samo, da se rezultat razlikuje
+    od referenčnega izvajanja. Izvajanje testov programa \texttt{zexall}, ki
+    zaradi obsežnosti kljub nastavitvi emulatorja na najhitrejšo možno hitrost
+    emulacije processorja na računalniku MacBook Pro M4 Pro s 24GB pomnilnika za
+    testiranje le prvih petih od 68 skupin ukazov traja približno 10 minut, je vidno
+    na sliki \ref{subspectruminterface_pic11}. ~\cite{z80exerciseravery} ~\cite{spectrumz80exerciser}.
+
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=0.7\textwidth]{subspectruminterface_pic11}
+        \end{center}
+        \caption{Posnetek zaslona emulatorja med izvajanjem testnega programa
+        \texttt{zexall}.}
+        \label{subspectruminterface_pic11}
+    \end{figure}
+
+    Pomemben del evalvacije je tudi preverjanje vpogleda v stanje sistema, saj
+    je razhroščevalnik eden od glavnih ciljev diplomskega dela. Med izvajanjem programov
+    se vmesnik pravilno posodablja glede na stanje procesorja in pomnilnika.
+    Podokno z registri prikazuje spremembe splošnih registrov, posebnih registrov
+    in zastavic po posameznih ukazih, podokno s pomnilnikom prikazuje spremembe
+    vsebine pomnilniških celic, razstavljeni ukazi pa sledijo vsebini pomnilnika.
+    To omogoča opazovanje izvajanja programa na ravni, ki je pri uporabi pravega računalnika
+    brez dodatne opreme težje dosegljiva.
+
+    Pravilnost razhroščevalnega vpogleda je bila preverjana tudi med ročnim korakanjem
+    skozi ukaze in z uporabo prekinitvenih točk. Pri korakanju skozi ukaze se po
+    vsakem izvedenem ukazu spremenijo registri in morebitne pomnilniške lokacije,
+    ki jih je ukaz dosegel. Uporabnik lahko ob zaustavljenem procesorju
+    spreminja vrednosti registrov, pomnilniških celic in ukaznih zlogov, te
+    spremembe pa se upoštevajo pri nadaljnjem izvajanju. S tem emulator poleg izvajanja
+    programov podpira tudi raziskovanje delovanja posameznih ukazov in celotnih programov
+    ter delovanja osnovnega sistema ROMa.
+
+    Evalvacija pokaže tudi omejitve razvitega emulatorja. Najpomembnejša
+    omejitev je, da emulacija ni popolnoma časovno natančna na ravni vseh dostopov
+    do pomnilnika, V/I vrat in vezja ULA. Za običajne programe in obravnavane preizkuse
+    to zadostuje, pri programih, ki so odvisni od zelo natančnega časovnega usklajevanja
+    z ULA, od učinkov zadrževanja vodil ali od posebnih strojnih pojavov, pa bi lahko
+    prišlo do razlik, čeprav te med testiranjem mnogih programov niso bile
+    opažene. Podobno omejitev predstavlja nalaganje kaset. Nalaganje vsebine
+    kasetnih datotek deluje preko "hitrega nalaganja", ki posnema učinek standardnega
+    ROMovega podprograma za nalaganje, ne emulira pa celotnega zvočnega signala
+    kasete in njegovega branja prek V/I vrat \texttt{0xFE}. Zato posebni
+    nalagalniki in zaščite, ki neposredno merijo dolžine impulzov ali berejo signal
+    EAR mimo standardnih ROMovih rutin, niso polno podprti, prav tako se pri nalaganju
+    programov nalagalni zasloni ne vidijo, temveč delovanje skoči neposredno na
+    izvajanje programa.
 
     \chapter{Zaključek}
 
-    \subsection{Evalvacija uspešnosti diplomskega dela (na podlagi ciljev iz uvoda)}
+    Cilj diplomskega dela je bil razviti delujoč emulator računalnika ZX
+    Spectrum 48K, ki poleg zaganjanja programov omogoča tudi vpogled v stanje sistema
+    in s tem služi kot razhroščevalno, učno in predstavitveno orodje. V okviru dela
+    so bili predstavljeni zgodovinski pomen računalnika ZX Spectrum, njegova
+    strojna zgradba in ključni deli sistema, nato pa še zasnova ter implementacija
+    emulatorja. Posebej so bili obravnavani pomnilnik, procesor Z80, vezje ULA, zaslon,
+    tipkovnica, kasetni podsistem in zvok, saj prav ti deli skupaj določajo
+    obnašanje emuliranega računalnika.
 
-    \subsection{Možne izboljšave}
-    Boljša emulacija časovnih ciklov s strani pomnilnika, procesorja in ULA za
-    boljšo sinhronizacijo in emulacijo strojnih napak dejanskega Spectruma: - 1. Memory
-    contention - fetching instructions and other general memory reads/writes - I/O
-    contention - Port \texttt{0xFE} (ULA port) contention based on address bus
-    high byte - Snow effect
+    Razviti emulator izpolnjuje glavne cilje diplomskega dela, saj omogoča nalaganje
+    in izvajanje programov za ZX Spectrum 48K, prikaz slike, uporabo tipkovnice,
+    osnovni zvočni izhod ter uporabo datotek posnetkov kaset. Implementacija procesorja
+    Z80 podpira dokumentirane in nedokumentirane dele nabora ukazov, njena
+    pravilnost pa je bila preverjana z namenskim testnim programom. Delovanje emulatorja
+    je bilo dodatno ovrednoteno z izvajanjem izbranih programov in iger, ki so
+    se pravilno naložili in uporabljali različne dele sistema.
 
-    Raje bi uporabil kaj drugega kot KMP, ker cross-platform funkcionalnosti po
-    mojem mnenju niso uporabne za razhroščevalnik (kar je glavna komponenta tega projekta),
-    prav tako je KMP za desktop privzeto bolj omejen tako v funkcionalnostih kot preformanceu
-    (moral iti nivo nižje od KMP za kaj takega). Tako bi razmišljal o drugih
-    frameworkih, kot so Electron + TS ali Dioxus/Tauri + Rust.
+    Poleg same emulacije je bil dosežen tudi cilj vpogleda v notranje stanje
+    sistema. Uporabniški vmesnik omogoča pregled registrov, zastavic, pomnilnika in
+    razstavljenih ukazov, uporabnik pa lahko izvajanje zaustavi, izvede posamezen
+    ukaz, uporabi prekinitvene točke ter po potrebi spremeni vrednosti registrov
+    ali pomnilnika. S tem emulator ni le način poganjanja stare programske opreme,
+    ampak tudi orodje za razumevanje, kako ti programi uporabljajo zmogljivosti procesorja,
+    pomnilnika in vhodno-izhodnih naprav. Tak pristop je pomemben tudi za digitalno
+    ohranjanje, saj ne ohranja samo možnosti izvajanja programov, temveč tudi znanje
+    o njihovem delovanju.
+
+    Delo hkrati pokaže, da popolna emulacija računalnika ni odvisna samo od
+    pravilne izvedbe ukazov procesorja. Za še natančnejšo emulacijo bi bilo treba
+    izboljšati časovni model dostopov do pomnilnika, procesorja in ULA. S tem bi bilo
+    mogoče bolje podpreti zadrževanje pomnilnika pri dostopih do zaslonskega dela
+    pomnilnika, zadrževanje V/I operacij prek vrat \texttt{0xFE} glede na stanje naslovnega
+    vodila ter strojne pojave, kot je učinek "sneženja" na zaslonu. Druga pomembna
+    nadgradnja bi bila prava emulacija nalaganja kaset prek zvočnih impulzov in branja
+    signala prek V/I vrat \texttt{0xFE}, namesto trenutnega "hitrega nalaganja" prek
+    ROMovega podprograma. Tak pristop bi povečal združljivost s posebnimi
+    nalagalniki in zaščitami, vendar bi zahteval tudi natančnejši ter zanesljivejši
+    časovni model, ki pa bi lahko bil tudi manj zanesljiv kot trenutna
+    implementacija "hitrega nalaganja".
+
+    Možna izboljšava je tudi ponoven razmislek o izbrani tehnologiji, v kateri je
+    emulator implementiran. Kotlin Multiplatform omogoča delitev emulacijske
+    logike in uporabniškega vmesnika med platformami, vendar se je pri namizni razhroščevalni
+    aplikaciji pokazalo, da medplatformnost ni nujno najpomembnejša lastnost. Ker
+    je osrednja funkcionalnost projekta razhroščevanje, bi bilo pri nadaljnjem
+    razvoju smiselno razmisliti tudi o tehnologijah, ki omogočajo več neposrednega
+    nadzora nad namiznim okoljem in izrisovanjem uporabniškega vmesnika, na
+    primer ogrodje Electron in uporaba jezika TypeScript, pri katerem pa bi bilo potrebno
+    preveriti hitrost delovanja emulacije napram drugim jezikom, ali pa ogrodji
+    Dioxus oziroma Tauri in uporaba jezika Rust, pri katerem bi bilo potrebno preveriti
+    prijaznost uporabe teh ogrodij za razvijalca.
+
+    Kljub navedenim omejitvam razviti emulator uspešno poveže delujočo emulacijo računalnika
+    ZX Spectrum 48K z vpogledom v notranje stanje sistema. Rezultat dela je zato
+    uporaben tako za izvajanje izbrane programske opreme kot za raziskovanje
+    delovanja računalnika, procesorja Z80 in programov, napisanih za računalnik
+    ZX Spectrum 48K.
 
     %\cleardoublepage
     %\addcontentsline{toc}{chapter}{Literatura}
