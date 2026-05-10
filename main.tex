@@ -256,18 +256,27 @@ by
 
     \bigskip
     \noindent
-    \textbf{Opis:}\\ Besedilo teme diplomskega dela študent prepiše iz
-    študijskega informacijskega sistema, kamor ga je vnesel mentor. V nekaj
-    stavkih bo opisal, kaj pričakuje od kandidatovega diplomskega dela. Kaj so
-    cilji, kakšne metode naj uporabi, morda bo zapisal tudi ključno literaturo.
+    \textbf{Opis:}\\ V okviru diplomskega dela izdelajte emulator računalnika
+    Sinclair ZX Spectrum 48K, ki poleg poganjanja programov omogoča tudi vpogled v
+    notranje stanje sistema. Preučite zgradbo računalnika in njegovih komponent, potrebnih
+    za izvajanje programov v emuliranem sistemu. Opišite zasnovo in
+    implementacijo emulatorja ter razhroščevalnega uporabniškega vmesnika. Delovanje
+    emulatorja ovrednotite z izbranimi programi in igrami.
 
     \bigskip
     \noindent
-    \textbf{Title:} Emulation of Sinclair ZX Spectrum computer with system state insight
+    \textbf{Title:} Emulation of Sinclair ZX Spectrum computer with system state
+    insight
 
     \bigskip
     \noindent
-    \textbf{Description:}\\ opis diplome v angleščini
+    \textbf{Description:}\\ In this thesis, implement an emulator of the
+    Sinclair ZX Spectrum 48K computer that, in addition to running programs,
+    also provides insight into the internal state of the system. Study the architecture
+    of the computer, the Z80 processor, memory, the ULA chip and the input/output
+    devices required for running typical programs. Describe the design and implementation
+    of the emulator and its debugging user interface. Evaluate the emulator by
+    running selected programs and games.
 
     \vfill
 
@@ -282,10 +291,9 @@ by
     \vfill
     \null\it%
     \noindent
-    Na tem mestu zapišite, komu se zahvaljujete za pomoč pri izdelavi diplomske naloge
-    oziroma pri vašem študiju nasploh. Pazite, da ne boste koga pozabili.
-    Utegnil vam bo zameriti. Temu se da izogniti tako, da celotno zahvalo
-    izpustite. \rm\normalfont
+    Zahvaljujem se mentorju izr. prof. dr. Juriju Miheliču za strokovno vodstvo
+    pri izdelavi diplomske naloge. Zahvala gre tudi družini, punci in
+    prijateljem za podporo tekom študija.\rm\normalfont
 
     % prazna stran
     \clearemptydoublepage
@@ -313,23 +321,18 @@ by
         {\bf BASIC}   & Beginners' All-purpose Symbolic Instruction Code   & programski jezik BASIC                                     \\
         {\bf CPE}     & central processing unit                            & centralna procesna enota                                   \\
         {\bf CRC}     & cyclic redundancy check                            & ciklično preverjanje redundance                            \\
+        {\bf DC}      & direct current                                     & enosmerni tok                                              \\
         {\bf EAR}     & earphone                                           & vhod za signal iz kasetofona                               \\
-        {\bf FPGA}    & Field-Programmable Gate Array                      & uporabniško programirljivo vezje                           \\
         {\bf IFF}     & interrupt flip-flop                                & prekinitveni preklopnik                                    \\
-        {\bf INT}     & interrupt                                          & maskabilna prekinitev                                      \\
         {\bf KMP}     & Kotlin Multiplatform                               & večplatformska tehnologija Kotlin Multiplatform            \\
         {\bf LIFO}    & last in, first out                                 & oblika delovanja sklada po principu zadnji noter, prvi ven \\
         {\bf MIC}     & microphone                                         & izhod za signal proti kasetofonu                           \\
-        {\bf NMI}     & non-maskable interrupt                             & nemaskabilna prekinitev                                    \\
         {\bf PC}      & program counter                                    & programski števec                                          \\
-        {\bf PDF/A}   & Portable Document Format/Archive                   & arhivska različica zapisa PDF                              \\
+        {\bf PROM}    & programmable read-only memory                      & programirljiv bralni pomnilnik                             \\
         {\bf PSP}     & interrupt handler                                  & prekinitveno-servisni program                              \\
         {\bf RAM}     & random access memory                               & bralno-pisalni pomnilnik                                   \\
         {\bf ROM}     & read-only memory                                   & bralni pomnilnik                                           \\
-        {\bf SNA}     & snapshot                                           & posnetek stanja emulatorja                                 \\
         {\bf SP}      & stack pointer                                      & kazalec sklada                                             \\
-        {\bf TAP}     & tape                                               & zapis standardnih kasetnih blokov                          \\
-        {\bf TZX}     & ZX tape                                            & datotečni format zapisa kasete za ZX Spectrum              \\
         {\bf ULA}     & uncommitted logic array                            & logično vezje ULA                                          \\
         {\bf V/I}     & input/output                                       & vhod/izhod                                                 \\
     \end{tabular}
@@ -353,11 +356,18 @@ by
 
     %\noindent\textbf{Povzetek:}
     \noindent
-    V vzorcu je predstavljen postopek priprave diplomskega dela z uporabo okolja
-    \LaTeX. Vaš povzetek mora sicer vsebovati približno 100 besed, ta tukaj je
-    odločno prekratek. Dober povzetek vključuje: (1) kratek opis obravnavanega
-    problema, (2) kratek opis vašega pristopa za reševanje tega problema in (3) (najbolj
-    uspešen) rezultat ali prispevek diplomske naloge.
+    Diplomsko delo obravnava emulacijo računalnika Sinclair ZX Spectrum 48K z dodatnim
+    vpogledom v notranje stanje sistema. Namen dela je bil razviti emulator, ki ne
+    omogoča le zagona programov za ZX Spectrum, temveč tudi pregled in
+    spreminjanje vrednosti registrov, zastavic, pomnilnika ter razstavljenih
+    ukazov. V delu so predstavljeni zgodovinski pomen računalnika ZX Spectrum,
+    njegova strojna zgradba, pomnilniška organizacija, procesor Z80, vezje ULA,
+    zaslon, tipkovnica, kasetni podsistem in upravljanje zvoka. Emulator je implementiran
+    kot namizna aplikacija, ki podpira emulacijo sistema in razhroščevalni
+    uporabniški vmesnik. Delovanje je ovrednoteno z zagonom izbranih programov in
+    iger ter s testnimi programi delovanja procesorja Z80. Rezultat dela je
+    delujoč emulator, uporaben za poganjanje stare programske opreme,
+    razumevanje delovanja sistema in digitalno ohranjanje računalniške dediščine.
 
     \bigskip
 
@@ -382,9 +392,18 @@ by
 
     %\noindent\textbf{Abstract:}
     \noindent
-    This sample document presents an approach to typesetting your BSc thesis
-    using \LaTeX. A proper abstract should contain around 100 words which makes this
-    one way too short.
+    This thesis addresses the emulation of the Sinclair ZX Spectrum 48K computer with
+    additional insight into the internal state of the system. The goal was to
+    develop an emulator that not only runs programs for the ZX Spectrum, but also
+    allows inspection and modification of register values, flags, memory and disassembled
+    instructions. The thesis presents the historical importance of the ZX
+    Spectrum, its hardware architecture, memory organization, Z80 processor, ULA
+    chip, display, keyboard, tape subsystem and sound control. The emulator is
+    implemented as a desktop application that supports system emulation and a
+    debugging user interface. Its operation is evaluated by running selected programs
+    and games, and with test programs for the Z80 processor. The result is a working
+    emulator, useful for running legacy software, understanding the operation of the
+    system and digitally preserving computing heritage.
     \bigskip
 
     \noindent
@@ -559,8 +578,9 @@ by
     zahteva procesor, tudi dejansko izvede, hkrati pa bere pomnilnik za sestavo
     televizijske slike in pošilja ustrezne signale televizijskemu vmesniku ~\cite{zxspectrumintroduction}.
 
-    PAL kodirnik je skupina komponent, ki pretvarja televizijski izhod iz
-    logičnega čipa v obliko, primerno za barvne televizije ~\cite{zxspectrumintroduction}.
+    PAL kodirnik analognega televizijskega barvnega sistema je skupina komponent,
+    ki pretvarja televizijski izhod iz logičnega čipa v obliko, primerno za barvne
+    televizije ~\cite{zxspectrumintroduction}.
 
     Regulator napetosti pretvarja rahlo nestabilno napetost napajanja v
     popolnoma konstantnih pet voltov za zanesljivo delovanje sistema ~\cite{zxspectrumintroduction}.
@@ -1340,13 +1360,13 @@ by
     potisne PC na sklad, pridobi naslov PSP iz tabele in izvede skok nanj. Ta
     način odziva zahteva 19 čakalnih period ~\cite{z80cpuusermanual}.
 
-    Prekinitve NMI imajo višjo prioriteto kot INT in jih ni mogoče programsko onemogočiti,
-    saj se uporablja za predvsem za takojšnje odzive na najpomembnejše signale, ki
-    se morajo obravnavati s čim manj zakasnitve. CPE ga zato obravnava že po
-    koncu izvajanja trenutnega ukaza. Pri tem se najprej IFF1 onemogoči (in
-    njegova prejšnja vrednost shrani v IFF2), kar za čas izvajanja PSP prepreči
-    navadne prekinitve, nato se vrednost registra PC shrani na sklad, izvajanje
-    pa preusmeri na pomnilniški naslov \texttt{0x0066} ~\cite{z80cpuusermanual}.
+    Prekinitve NMI imajo višjo prioriteto kot maskabilne prekinitve INT in jih ni
+    mogoče programsko onemogočiti, saj se uporablja za predvsem za takojšnje
+    odzive na najpomembnejše signale, ki se morajo obravnavati s čim manj zakasnitve.
+    CPE ga zato obravnava že po koncu izvajanja trenutnega ukaza. Pri tem se najprej
+    IFF1 onemogoči (in njegova prejšnja vrednost shrani v IFF2), kar za čas
+    izvajanja PSP prepreči navadne prekinitve, nato se vrednost registra PC shrani
+    na sklad, izvajanje pa preusmeri na pomnilniški naslov \texttt{0x0066} ~\cite{z80cpuusermanual}.
 
     \section{Implementacija v emulatorju}
 
@@ -1454,8 +1474,9 @@ by
     \chapter{ULA}
     \label{ula}
 
-    ULA je predhodnik modernejših FPGA z veliko manj vrati. ULA predstavlja vmesnik
-    med procesorjem in video krmilnikom, tipkovnico in zvočnikom.
+    ULA je predhodnik modernejših uporabniško programirljivih vezij z veliko
+    manj vrati. ULA predstavlja vmesnik med procesorjem in video krmilnikom,
+    tipkovnico in zvočnikom.
 
     Procesorja pri branju in pisanju iz pomnilniških lokacij ne zanima s katerim
     delom pomnilnika dela, pa naj bo to ROM ali RAM. Ve le, da obstaja 65536 pomnilniških
