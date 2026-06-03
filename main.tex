@@ -1508,10 +1508,18 @@ by
     število T-stanj in metodo \texttt{execute}, ki izvede vse potrebne spremembe
     na stanju sistema ob izvedbi. Emulator ukaze z isto namembnostjo, a
     različnimi operandi, implementira z 230 definicijami ukazov. Definicija
-    ukaza je ločena od njegove izvedbe z vmesnikom \texttt{InstructionDefinition}
-    in vsebuje bitni vzorec ukaznega zloga oziroma zaporedja zlogov in metodo za dekodiranje
-    operandov. Vpogled v dekodirane ukaze je prikazan na sliki
-    \ref{subspectruminterface_pic5}.
+    ukaza je ločena od njegove izvedbe z vmesnikom \texttt{InstructionDefinition},
+    ki opiše, kateri biti v prebranih zlogih tvorijo kodo ukaza oziroma opcode in
+    kateri biti predstavljajo operande. Na primer, vzorec \texttt{00rrr110
+    nnnnnnnn} ustreza ukazu \texttt{LD r,n}, pri katerem fiksni biti določijo
+    vrsto ukaza, biti \texttt{r} se dekodirajo v ciljni register, biti \texttt{n}
+    pa v neposredno enozložno vrednost.
+
+    \begin{verbatim}
+override val bitPattern = BitPattern.of("00rrr110 nnnnnnnn")
+val destinationRegister = bitPattern.getRegisterCode(word, 'r')
+val sourceUByte = bitPattern.getUByte(word, 'n')
+    \end{verbatim}
 
     \begin{figure}[htb]
         \begin{center}
@@ -1522,12 +1530,13 @@ by
         \label{subspectruminterface_pic5}
     \end{figure}
 
-    Bitni vzorci so opisani z razredom \texttt{BitPattern}. V njem so fiksni biti
-    zapisani kot ničle in enice, ostali znaki pa predstavljajo zajeta polja, na primer
-    kodo registra, pogoj skoka, neposredni zlog ali 16-bitni operand. Dekodirnik
-    v objektu \texttt{Instructions} iz pomnilnika prebere toliko zlogov, kot jih
-    zahteva posamezen vzorec, prebrano vrednost primerja z registriranimi vzorci in
-    ob ujemanju ustvari konkreten objekt ukaza.
+    Bitni vzorci so opisani z razredom \texttt{BitPattern}. V njem so fiksni
+    biti zapisani kot ničle in enice, ostali znaki pa predstavljajo zajeta polja,
+    na primer kodo registra, pogoj skoka, neposredni zlog ali 16-bitni operand. Dekodirnik
+    v objektu \texttt{Instructions} iz pomnilnika prebere toliko zlogov, kot jih zahteva
+    posamezen vzorec, prebrano vrednost primerja z registriranimi vzorci in ob
+    ujemanju ustvari konkreten objekt ukaza. Vpogled v dekodirane ukaze je prikazan
+    na sliki \ref{subspectruminterface_pic5}.
 
     Posebna obravnava je potrebna pri predponah kodov ukazov. Predponi \texttt{DD}
     in \texttt{FD} pomenita, da se nekateri dostopi do \texttt{HL}, \texttt{H}
