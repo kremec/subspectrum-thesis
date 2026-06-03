@@ -1538,14 +1538,16 @@ val sourceUByte = bitPattern.getUByte(word, 'n')
     ujemanju ustvari konkreten objekt ukaza. Vpogled v dekodirane ukaze je prikazan
     na sliki \ref{subspectruminterface_pic5}.
 
-    Posebna obravnava je potrebna pri predponah kodov ukazov. Predponi \texttt{DD}
-    in \texttt{FD} pomenita, da se nekateri dostopi do \texttt{HL}, \texttt{H}
+    Posebna obravnava je potrebna pri predponah kodov ukazov. Predponi \texttt{0xDD}
+    in \texttt{0xFD} pomenita, da se nekateri dostopi do \texttt{HL}, \texttt{H}
     in \texttt{L} začasno preusmerijo na \texttt{IX} oziroma \texttt{IY}. To je
     v emulatorju izvedeno z začasnim načinom indeksne predpone v objektu \texttt{Registers}.
-    Dekodirnik zna obravnavati tudi kombinacije s predponama \texttt{CB} in \texttt{ED}
-    ter več zaporednih indeksnih predpon. Tak ukaz se ovije v pomožni objekt, ki
-    ohrani izvorne zloge, prišteje dodatna T-stanja za predpone in nastavi pravilen
-    način dostopa do indeksnih registrov le za čas izvedbe takega ukaza.
+    Dekodirnik zna obravnavati tudi kombinacije s predponama \texttt{0xCB}, ki
+    označuje bitnih, rotacijskih in zamikalnih ukazov, ter \texttt{0xED}, ki
+    označuje razširjene ukaze Z80, med katere spadajo tudi nekateri blokovni in vhodno-izhodni
+    ukazi. Podpira tudi več zaporednih indeksnih predpon. Tak ukaz se ovije v pomožni
+    objekt, ki ohrani izvorne zloge, prišteje dodatna T-stanja za predpone in nastavi
+    pravilen način dostopa do indeksnih registrov le za čas izvedbe takega ukaza.
 
     Izvajanje enega koraka (naslednjega ukaza) se začne z branjem trenutnega programskega
     števca \texttt{PC}. Če je na tem naslovu nastavljena prekinitvena točka, se
