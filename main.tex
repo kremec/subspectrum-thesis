@@ -712,7 +712,7 @@ by
     registrov \texttt{Registers}, pomnilniškega prostora \texttt{Memory} in V/I
     vrat \texttt{IO}.
 
-    Časovni del emulacije vodi \texttt{ULATiming}, ki beleži T-stanja in procesorju
+    Časovni del emulacije vodi \texttt{ULATiming}, ki beleži urine periode in procesorju
     posreduje periodične prekinitve. Deli sistema, ki so pri pravem računalniku povezani
     z vezjem ULA in perifernimi učinki, so razdeljeni v ločene objekte za lažje
     razumevanje sestavnih delov sistema. \texttt{ULAKeyboard} skrbi za matriko
@@ -739,10 +739,10 @@ by
     V običajnem primeru \texttt{Processor.step} prebere ukaz na naslovu
     programskega števca, ga dekodira, poveča register \texttt{R}, premakne
     programski števec za dolžino ukaza, izvede učinek ukaza in poveča števec izvedenih
-    ukazov. Na koncu posodobi število T-stanj glede na dolžino ukaza in preveri, ali
-    je na koncu ukaza treba sprožiti prekinitev. S tem je emulacija organizirana
-    okoli posameznega procesorskega ukaza, pri čemer se časovni model posodablja z
-    vsoto T-stanj izvedenih ukazov.
+    ukazov. Na koncu posodobi število urinih period glede na dolžino ukaza in
+    preveri, ali je na koncu ukaza treba sprožiti prekinitev. S tem je emulacija
+    organizirana okoli posameznega procesorskega ukaza, pri čemer se časovni model
+    posodablja z vsoto urinih period izvedenih ukazov.
 
     \section{Tok podatkov med emulacijo in vmesnikom}
 
