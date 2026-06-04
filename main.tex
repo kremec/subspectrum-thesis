@@ -1717,7 +1717,9 @@ val sourceUByte = bitPattern.getUByte(word, 'n')
 
     V ROMu so med naslovoma 3D00 in 3FFF shranjeni točkovni vzorci vseh znakov razen
     grafičnih simbolov. Naslov posameznega znaka, ki ima kod $x$ (npr. znak 'a' ima
-    kod 0x61) izračunamo po formuli $8x+3C00$ ~\cite{strojnijezikzaprocesorz80}.
+    kod 0x61) izračunamo po formuli $8x+3C00$. Definicije uporabniško definiranih
+    grafičnih znakov pa se nahajajo med naslovoma\\ \texttt{0xFF58} in \texttt{0xFFFF}
+    ~\cite{strojnijezikzaprocesorz80, zxspectrumbasicprogramming}.
 
     \subsection{Atributi znakov}
     Vsak znak ima določene sledeče atribute v enem zlogu, njihova bitna
