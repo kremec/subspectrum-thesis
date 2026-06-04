@@ -2035,15 +2035,16 @@ val sourceUByte = bitPattern.getUByte(word, 'n')
     bita nastavi na 0, ob spustu pa ga nastavi na 1. S tem je stanje tipkovnice shranjeno
     v enaki obliki, kot jo pri branju pričakuje emulirani Spectrum.
 
-    Branje tipkovnice je vključeno v splošni model V/I vrat. Vsa branja gredo skozi
-    razred \texttt{IOPortSet}, ki pri naslovih z nižjim zlogom \texttt{0xFE}
-    najprej pokliče metodo \texttt{getKeyboardPortValue}. Ta iz višjega zloga
-    naslova določi izbrane skupine tipk in njihove vrednosti združi z operacijo
-    AND, kar ohrani ničle pritisnjenih tipk tudi takrat, ko program hkrati bere
-    več polovic vrstic tipk hkrati. Spodnjim petim bitom rezultata emulator doda še
-    fiksno vrednost višjih bitov \texttt{0b101}, pri čemer D7 in D5 nista uporabljena,
-    a vedno nastavljena na 1, D6 pa predstavlja vhod vtičnice EAR, ki ga
-    emulator ne emulira.
+    Branje tipkovnice je vključeno v splošni model uporabe V/I vrat. Vsa branja gredo
+    skozi razred \texttt{IOPortSet}. Če je spodnji zlog dvozložnega V/I naslova ukaza
+    enak \texttt{0xFE}, razred me drugim pokliče metodo \texttt{getKeyboardPortValue}.
+    Ta iz zgornjega zloga naslova določi izbrane skupine tipk: vsak bit z
+    vrednostjo 0 izbere eno izmed osmih skupin. Vrednosti izbranih skupin združi z
+    operacijo AND, kar ohrani ničle pritisnjenih tipk tudi pri branju več skupin
+    hkrati. Rezultat dopolni do osmih bitov: biti na položajih med 0 in 4 so
+    biti tipk, bita na položajih 5 in 7 nista uporabljena in sta vedno nastavljena
+    na vrednost 1, bit na položaju 6 pa predstavlja vhod vtičnice EAR, ki ga emulator
+    ne emulira in ga nastavi na vrednost 0.
 
     Vhod iz uporabniškega vmesnika se v matriko prenese prek dogodkov dejanske
     tipkovnice na oknih emulatorja. Metoda \texttt{handlePreviewKeyEvent}
