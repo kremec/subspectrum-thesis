@@ -2211,13 +2211,15 @@ val sourceUByte = bitPattern.getUByte(word, 'n')
             \setlength{\tabcolsep}{3pt}
             \begin{tabular}{|l|r|r|r|r|r|}
                 \hline
-                Del                     & Datotek & Vrstic & Vrstic kode & Komentarjev & Praznih vrstic \\
+                Del                                 & Datotek & Vrstic & Vrstic kode & Komentarjev & Praznih vrstic \\
                 \hline
-                Celoten repozitorij     & 518     & 79.843 & 71.000      & 492         & 8.351          \\
-                \texttt{composeApp/src} & 511     & 79.275 & 70.667      & 330         & 8.278          \\
-                \texttt{commonMain}     & 281     & 50.546 & 47.927      & 60          & 2.559          \\
-                \texttt{commonTest}     & 214     & 28.344 & 22.425      & 270         & 5.649          \\
-                \texttt{jvmMain}        & 5       & 279    & 233         & 0           & 46             \\
+                Celoten repozitorij                 & 518     & 79.843 & 71.000      & 492         & 8.351          \\
+                \hspace{1em}\texttt{composeApp/src} & 511     & 79.275 & 70.667      & 330         & 8.278          \\
+                \hspace{2em}\texttt{commonMain}     & 281     & 50.546 & 47.927      & 60          & 2.559          \\
+                \hspace{2em}\texttt{commonTest}     & 214     & 28.344 & 22.425      & 270         & 5.649          \\
+                \hspace{2em}\texttt{jvmMain}        & 5       & 279    & 233         & 0           & 46             \\
+                \hspace{2em}Druge datoteke          & 11      & 106    & 82          & 0           & 24             \\
+                \hspace{1em}Podporne datoteke       & 7       & 568    & 333         & 162         & 73             \\
                 \hline
             \end{tabular}
         \end{center}
@@ -2230,7 +2232,7 @@ val sourceUByte = bitPattern.getUByte(word, 'n')
     je 511 datotek oziroma 70.727 vrstic kode, kar predstavlja približno 99,6 \% vse
     kode v repozitoriju. Preostanek predstavljajo predvsem podporne datoteke: zagonska
     skripta \texttt{gradlew} v jeziku Shell obsega 106 vrstic kode, \texttt{gradlew.bat}
-    73 vrstic kode, datoteke XML 44 vrstic kode, konfiguracija TOML 25 vrstic
+    73 vrstic kode, datoteka XML 44 vrstic kode, konfiguracija TOML 25 vrstic
     kode, datoteki HTML in CSS pa skupaj 19 vrstic kode.
 
     Tabela \ref{subspectrumsourcecode_tab2} prikazuje še razdelitev glavnih modulov
