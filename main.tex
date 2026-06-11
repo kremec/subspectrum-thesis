@@ -1011,24 +1011,26 @@ by
 
     \section{Registri in zastavice}
 
-    \subsection{Razporeditev registrov, njihove velikosti in pomen}
-
-    Večina operacij Z80 je 8-bitnih, torej dela z vrednostmi med \texttt{0x00}
-    in \texttt{0xFF}, kar lahko predstavlja bodisi nepredznačen obseg vrednosti
-    od 0 do 255, bodisi predznačen obseg vrednosti od -128 do 127 ~\cite{strojnijezikzaprocesorz80}.
+    \subsection{Podatkovni tipi procesorja Z80}
+    Večina operacij Z80 je 8-bitnih, torej dela z vrednostmi med \texttt{0x00} in
+    \texttt{0xFF}, kar lahko predstavlja bodisi nepredznačen obseg vrednosti od 0
+    do 255, bodisi predznačen obseg vrednosti od -128 do 127 ~\cite{strojnijezikzaprocesorz80}.
 
     Nekatere operacije pa so 16-bitne, torej CPE dela z vrednostmi med \texttt{0x0000}
-    in \texttt{0xFFFF}, kar lahko predstavlja bodisi nepredznačen obseg vrednosti
-    od 0 do 65535, bodisi predznačen obseg vrednosti od -32768 do 32767. 16-bitna
-    števila največkrat potrebujemo za naslavljanje pomnilniških celic ~\cite{strojnijezikzaprocesorz80}.
+    in \texttt{0xFFFF}, kar lahko predstavlja bodisi nepredznačen obseg
+    vrednosti od 0 do 65535, bodisi predznačen obseg vrednosti od -32768 do
+    32767. 16-bitna števila največkrat potrebujemo za naslavljanje pomnilniških
+    celic ~\cite{strojnijezikzaprocesorz80}.
 
-    Posebnost so vrednosti števil v obliki plavajoče vejice $x=m\times 2^{n}$, ki
-    zavzemajo kar 5 zlogov (prvi zlog definira eksponent in vsebuje $128+n$, ostali
-    4 zlogi pa vsebujejo mantiso z vrednostjo $[\frac{1 }{2}, 1)$). Ker 5-zložnih
-    vrednosti ne moremo shraniti v posamezen register ali registrski par, za
-    njihovo shranjevanje uporabljamo bodisi registre A, E, D, C in B bodisi računski
-    sklad v pomnilniku. Vendar pa tak tip podatka ni specifičen za procesor Z80, temveč
-    za podprograme ROMa računalnika ZX Spectrum ~\cite{strojnijezikzaprocesorz80}.
+    Posebnost so vrednosti števil v obliki plavajoče vejice $x=m\times 2^{n}$,
+    ki zavzemajo kar 5 zlogov (prvi zlog definira eksponent in vsebuje $128+n$,
+    ostali 4 zlogi pa vsebujejo mantiso z vrednostjo $[\frac{1 }{2}, 1)$). Ker 5-zložnih
+    vrednosti ne moremo shraniti v posamezen register ali registrski par, za njihovo
+    shranjevanje uporabljamo bodisi registre A, E, D, C in B bodisi računski
+    sklad v pomnilniku. Vendar pa tak tip podatka ni specifičen za procesor Z80,
+    temveč za podprograme ROMa računalnika ZX Spectrum ~\cite{strojnijezikzaprocesorz80}.
+
+    \subsection{Razporeditev registrov, njihove velikosti in pomen}
 
     Procesor Z80 vsebuje 208 bitov bralno-pisalnega pomnilnika, implementiranega kot
     statični RAM, ki predstavlja 18 8-bitnih registrov in 4 16-bitne registre ~\cite{z80cpuusermanual}.
