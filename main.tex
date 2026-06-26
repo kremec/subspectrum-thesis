@@ -214,7 +214,7 @@ by
     \thispagestyle{empty}
 
     \vspace*{5cm}
-    {\small \noindent To delo je ponujeno pod licenco \textit{Creative Commons Priznanje avtorstva-Deljenje pod enakimi pogoji 2.5 Slovenija} (ali novej\v so razli\v cico). To pomeni, da se tako besedilo, slike, grafi in druge sestavine dela kot tudi rezultati diplomskega dela lahko prosto distribuirajo, reproducirajo, uporabljajo, priobčujejo javnosti in predelujejo, pod pogojem, da se jasno in vidno navede avtorja in naslov tega dela in da se v primeru spremembe, preoblikovanja ali uporabe tega dela v svojem delu, lahko distribuira predelava le pod licenco, ki je enaka tej. Podrobnosti licence so dostopne na spletni strani \href{http://creativecommons.si}{creativecommons.si} ali na Inštitutu za intelektualno lastnino, Streliška 1, 1000 Ljubljana.
+    {\small \noindent To delo je ponujeno pod licenco \textit{Creative Commons Priznanje avtorstva -- Deljenje pod enakimi pogoji 2.5 Slovenija} (ali novej\v so razli\v cico). To pomeni, da se tako besedilo, slike, grafi in druge sestavine dela kot tudi rezultati diplomskega dela lahko prosto distribuirajo, reproducirajo, uporabljajo, priobčujejo javnosti in predelujejo, pod pogojem, da se jasno in vidno navede avtorja in naslov tega dela in da se v primeru spremembe, preoblikovanja ali uporabe tega dela v svojem delu, lahko distribuira predelava le pod licenco, ki je enaka tej. Podrobnosti licence so dostopne na spletni strani \href{http://creativecommons.si}{creativecommons.si} ali na Inštitutu za intelektualno lastnino, Streliška 1, 1000 Ljubljana.
 
     \vspace*{1cm} \begin{center}% 0.66 / 0.89 = 0.741573033707865
     \CcImageCc{0.741573033707865}\hspace*{1ex}\CcImageBy{1}\hspace*{1ex}\CcImageSa{1}%
@@ -260,9 +260,9 @@ by
     \textbf{Opis:}\\ Računalnik ZX Spectrum 48K je podjetje Sinclair predstavilo
     leta 1982. Bil je eden prvih uporabnih in širše dostopnih računalnikov po
     svetu in tudi v Sloveniji. V diplomskem delu izdelajte program za njegovo emulacijo,
-    ki naj poleg nalaganja in izvajanja programov, omogoča tudi vpogled v notranje
-    stanje emuliranega sistema in funkcionalnosti razhroščevanja. Predstavite
-    računalnik in njegove komponente. Opišite zasnovo in izvedbo emulatorja, ter
+    ki naj poleg nalaganja in izvajanja programov omogoča tudi vpogled v
+    notranje stanje emuliranega sistema in funkcionalnosti razhroščevanja. Predstavite
+    računalnik in njegove komponente. Opišite zasnovo in izvedbo emulatorja ter
     primerno ovrednotite njegovo uporabnost in pravilnost delovanja.
 
     \bigskip
@@ -294,8 +294,8 @@ by
     \null\it%
     \noindent
     Zahvaljujem se mentorju izr. prof. dr. Juriju Miheliču za strokovno vodstvo
-    pri izdelavi diplomske naloge. Zahvala gre tudi družini, punci in
-    prijateljem za podporo tekom študija.\rm\normalfont
+    pri izdelavi diplomske naloge. Zahvala gre tudi družini, dekletu in
+    prijateljem za podporo med študijem.\rm\normalfont
 
     % prazna stran
     \clearemptydoublepage
@@ -319,7 +319,7 @@ by
     \begin{tabular}{p{0.12\textwidth}|p{.37\textwidth}|p{.43\textwidth}}
         {\bf kratica} & {\bf angleško}                                     & {\bf slovensko}                                            \\
         \hline
-        {\bf ASCII}   & American Standard Code for Information Interchange & ameriški standardni kod za izmenjavo informacij            \\
+        {\bf ASCII}   & American Standard Code for Information Interchange & ameriški standardni nabor za izmenjavo informacij          \\
         {\bf BASIC}   & Beginners' All-purpose Symbolic Instruction Code   & programski jezik BASIC                                     \\
         {\bf CPE}     & central processing unit                            & centralna procesna enota                                   \\
         {\bf CRC}     & cyclic redundancy check                            & ciklično preverjanje redundance                            \\
@@ -435,35 +435,35 @@ by
 
     Namen diplomskega dela je razviti delujoč emulator in razhroščevalnik
     sistema ZX Spectrum 48K. Emulator mora podpirati poganjanje programov,
-    napisanih za Spectrum in razhroščevanje z vpogledom v notranje stanje
-    sistema. Zaradi poudarka na razhroščevanju mora pri tem omogočati pregled in spreminjanje
-    vrednosti registrov ter pomnilnika, pregled in razlago pomena naloženih
-    ukazov in delov pomnilnika. Tak vpogled ni pomemben le za boljše razumevanje sistema,
-    temveč tudi za ohranjanje znanja o njegovem delovanju. Delovanje emulatorja se
-    ovrednoti z zagonom nekaj izbranih programov in iger, s čimer potrdimo
+    napisanih za Spectrum, in razhroščevanje z vpogledom v notranje stanje sistema.
+    Zaradi poudarka na razhroščevanju mora pri tem omogočati pregled in
+    spreminjanje vrednosti registrov ter pomnilnika, pregled in razlago pomena naloženih
+    ukazov in delov pomnilnika. Tak vpogled ni pomemben le za boljše razumevanje
+    sistema, temveč tudi za ohranjanje znanja o njegovem delovanju. Delovanje
+    emulatorja se ovrednoti z zagonom nekaj izbranih programov in iger, s čimer potrdimo
     pravilno delovanje emulacije.
 
-    V nadaljnjih poglavjih je najprej predstavljen računalnik ZX Spectrum, njegov
-    vpliv na slovensko in svetovno okolje ter pomen ohranjanja takega znanja.
-    Sledi pregled sorodnih del in primerjava razvitega emulatorja z obstoječimi
-    emulatorji, nato pa še poglavje o zasnovi in splošni zgradbi emulatorja.
-    Zatem so obravnavani posamezni deli sistema, to so pomnilnik, procesor Z80
-    in ULA, ki obravnava časovnik, zaslon, tipkovnico, kasete in zvok. Na koncu je
-    emulator ovrednoten z vidika obsega izvorne kode, pravilnosti emulacije, notranjega
-    vpogleda in časovnih omejitev.
+    V nadaljnjih poglavjih je najprej predstavljen računalnik ZX Spectrum,
+    njegov vpliv na slovensko in svetovno okolje ter pomen ohranjanja takega
+    znanja. Sledi pregled sorodnih del in primerjava razvitega emulatorja z obstoječimi
+    emulatorji, nato pa še poglavje o zasnovi in splošni zgradbi emulatorja. Zatem
+    so obravnavani posamezni deli sistema, to so pomnilnik, procesor Z80 in ULA,
+    ki obravnava časovnik, zaslon, tipkovnico, kasete in zvok. Na koncu je
+    emulator ovrednoten z vidika obsega izvorne kode, pravilnosti emulacije,
+    notranjega vpogleda in časovnih omejitev.
 
     \chapter{ZX Spectrum}
     \label{zxspectrum}
 
     \section{Zgodovinski pregled}
 
-    Sinclair Research je pred ZX Spectrumom že uveljavil nizkocenovne domače
-    računalnike, kot sta ZX80 in ZX81, ki sta poleg računalnika ZX Spectruma
-    vidna na sliki \ref{i4cysinclairomputers_pic1}. Bila sta bila namenjena predvsem
-    učenju programiranja in prvi uporabi računalnika doma. ZX Spectrum je bil
-    predstavljen aprila 1982 kot zmogljivejši naslednik ZX81, napram kateremu je na
-    trg prinesel barvno grafiko, po kateri je tudi dobil ime, višjo ločljivost zaslonske
-    slike, zvok in bolj razvito podporo okolju BASIC ~\cite{sinclairstory}.
+    Sinclair Research je pred ZX Spectrumom že uveljavil nizkocenovne domače računalnike,
+    kot sta ZX80 in ZX81, ki sta poleg računalnika ZX Spectruma prikazana na sliki
+    \ref{i4cysinclairomputers_pic1}. Bila sta bila namenjena predvsem učenju
+    programiranja in prvi uporabi računalnika doma. ZX Spectrum je bil predstavljen
+    aprila 1982 kot zmogljivejši naslednik ZX81 in je na trg prinesel barvno grafiko,
+    po kateri je tudi dobil ime, višjo ločljivost zaslonske slike, zvok in bolj
+    razvito podporo okolju BASIC ~\cite{sinclairstory}.
 
     \begin{figure}[htb]
         \begin{center}
@@ -474,7 +474,7 @@ by
     \end{figure}
 
     Prvotni Spectrum je bil na voljo v različicah s 16 KB in 48 KB RAMa, obe pa sta
-    uporabljali procesor Zilog Z80 in 16 KB ROMa. Računalnik se je dalo
+    uporabljali procesor Zilog Z80 in 16 KB ROMa. Računalnik je bilo mogoče
     priključiti na navaden televizor, programe pa je praviloma nalagal s kasete,
     kar je pomembno vplivalo na način uporabe in razširjanja programske opreme. Zaradi
     nizke cene in velike programske knjižnice je Spectrum postal eden najprepoznavnejših
@@ -486,7 +486,7 @@ by
     implementacijo okolja BASIC, izboljšal zvočni čip in dodal možnosti za
     priklop zunanjih naprav. Ker je model 48K predstavljal osrednjo in najbolj razširjeno
     različico Spectruma ter osnovo za velik del Spectrumove programske opreme,
-    se prav zato nadaljnja obravnava in implementacija emulatorja osredotočata
+    se ravno zato nadaljnja obravnava in implementacija emulatorja osredotočata
     na ta model ~\cite{sinclairstory, zxspectrum128introduction}.
 
     \subsection{Vpliv na slovenski prostor}
@@ -501,10 +501,10 @@ by
     Program ni bil le uporabniški pripomoček, temveč primer doma razvite programske
     opreme, ki je iz Spectruma, takrat večinoma uporabljanega za igranje iger,
     naredila delovno orodje. INES je bil januarja 1985 objavljen kot kasetni program,
-    ki je omogočal obdelavo besedil spremeljive dolžine (primer delovanja je viden
+    ki je omogočal obdelavo besedil spremenljive dolžine (primer delovanja je viden
     na sliki \ref{subspectruminterface_pic2}), slik ter manjših podatkovnih zbirk.
-    Podpora šumnikom in jugoslovanskim črkam je bila posebej pomembna za domačo
-    rabo ~\cite{mojmikroines1985jakopin, mojmikroines1984, mojmikroines1985saje}.
+    Posebej pomembna za domačo rabo je bila podpora šumnikom in jugoslovanskim
+    črkam ~\cite{mojmikroines1985jakopin, mojmikroines1984, mojmikroines1985saje}.
 
     \begin{figure}[htb]
         \begin{center}
@@ -517,7 +517,7 @@ by
 
     Tehnično je z INES pokazal, kje so bile postavljene meje učinkovitosti BASICa
     za uporabo v zahtevnejših programih -- iskanje po besedilu je bilo v BASICu
-    bistveno počasnejše napram implementaciji v strojnem jeziku. Ta premik od tolmačenega
+    bistveno počasnejše glede na implementacijo v strojnem jeziku. Ta premik od tolmačenega
     BASICa proti programiranju v strojnem jeziku se je poznal skozi vso razvojno pot
     programov od TESS, BESS do INES, ter kasneje programov STEVE za Atari ST in EVA
     za modernejše osebne računalnike ~\cite{jakopininessteveeva, jakopinines,
@@ -545,17 +545,17 @@ by
     \subsection{Računalnik ZX Spectrum}
 
     Računalnik ZX Spectrum ima na zadnji strani več vtičnic in priključkov: vtičnico
-    9V DC IN, ki se prek napajalne enote priključi v električno omrežje, 3,5 milimeterska
-    vtičnica EAR, ki se lahko poveže z izhodno vtičnico za slušalke ali zvočnik
-    na kasetofonu, 3,5 milimeterska vtičnica MIC, ki se poveže z vhodno vtičnico
-    za mikrofon na kasetofonu, vtičnico za televizijo in robni priključek za povezavo
-    z dodatno opremo. Povezave med osnovnimi deli sistema so vidne na sliki
+    9V DC IN, ki se prek napajalne enote priključi v električno omrežje, 3,5 milimetrsko
+    vtičnico EAR se lahko poveže z izhodno vtičnico za slušalke ali zvočnik na kasetofonu,
+    3,5 milimetrsko vtičnico MIC se poveže z vhodno vtičnico za mikrofon na
+    kasetofonu, vtičnico za televizijo in robni priključek za povezavo z dodatno opremo.
+    Povezave med osnovnimi deli sistema so vidne na sliki
     \ref{zxspectrumintroduction_pic1} ~\cite{zxspectrumintroduction}.
 
     Ko računalnik ugasnemo, se vse v njem shranjene informacije izgubijo, če jih pred
-    tem ne prenesemo na zunanji medij, kot je na primer kaseta. Če se kadarkoli zapletemo
+    tem ne prenesemo na zunanji medij, kot je na primer kaseta. Če se kadar koli zapletemo
     pri uporabi računalnika, ga lahko le izključimo iz električnega omrežja in
-    nazaj vklopimo, ter tako ponastavimo brez skrbi poškodbe računalniku ~\cite{zxspectrumintroduction}.
+    vklopimo nazaj ter ga s tem ponastavimo brez skrbi za poškodbo računalnika ~\cite{zxspectrumintroduction}.
 
     \begin{figure}[htb]
         \begin{center}
@@ -565,29 +565,30 @@ by
         \label{zxspectrumintroduction_pic1}
     \end{figure}
 
-    CPE Z80 predstavlja možgane računalnika, ki nadzira vse operacije, izvaja aritmetične
-    račune, sprejema odločitve in na splošno upravlja, kaj naj računalnik naredi.
-    Razporeditev glavnih notranjih komponent računalnika je vidna na sliki
-    \ref{zxspectrumintroduction_pic2} ~\cite{zxspectrumintroduction}.
+    CPE Z80 predstavlja možgane računalnika, ki nadzira vse operacije, izvaja
+    aritmetične račune, sprejema odločitve in na splošno upravlja, kaj naj
+    računalnik naredi. Razporeditev glavnih notranjih komponent računalnika je vidna
+    na sliki \ref{zxspectrumintroduction_pic2} ~\cite{zxspectrumintroduction}.
 
-    ROM vsebuje 16384 zlogov (16K) navodil v strojnem kodu Z80, ki sestavljajo
-    osnovni program računalnika, in procesorju narekuje, kaj naj stori v vseh
-    predvidljivih okoliščinah. Ta program je edinstven za ZX Spectrum ~\cite{zxspectrumintroduction}.
+    ROM vsebuje 16384 zlogov (16K) navodil v strojnem kodu Z80, ki sestavljajo osnovni
+    program računalnika, in procesorju narekuje, kaj naj stori v vseh predvidljivih
+    okoliščinah. Ta program je edinstven za ZX Spectrum ~\cite{zxspectrumintroduction}.
 
-    RAM obsega osem čipov za shranjevanje podatkov, ki jih procesor želi obdržati,
-    kot so programi v BASICu, spremenljivke, slika za televizijski zaslon in
-    različni elementi, ki spremljajo stanje računalnika ~\cite{zxspectrumintroduction}.
+    RAM obsega osem čipov za shranjevanje podatkov, ki jih procesor želi
+    obdržati, kot so programi v BASICu, spremenljivke, slika za televizijski zaslon
+    in različni elementi, ki spremljajo stanje računalnika ~\cite{zxspectrumintroduction}.
 
-    Vezje ULA deluje kot komunikacijski center sistema, ki poskrbi, da se vse, kar
-    zahteva procesor, tudi dejansko izvede, hkrati pa bere pomnilnik za sestavo televizijske
-    slike in pošilja ustrezne signale televizijskemu vmesniku ~\cite{zxspectrumintroduction}.
+    Vezje ULA deluje kot komunikacijski center sistema, ki poskrbi, da se vse,
+    kar zahteva procesor, tudi dejansko izvede, hkrati pa bere pomnilnik za
+    sestavo televizijske slike in pošilja ustrezne signale televizijskemu
+    vmesniku ~\cite{zxspectrumintroduction}.
 
     PAL kodirnik analognega televizijskega barvnega sistema je skupina komponent,
-    ki pretvarja televizijski izhod iz logičnega čipa v obliko, primerno za
-    barvne televizije ~\cite{zxspectrumintroduction}.
+    ki pretvarja televizijski izhod iz logičnega čipa v obliko, primerno za barvne
+    televizije ~\cite{zxspectrumintroduction}.
 
-    Regulator napetosti pretvarja rahlo nestabilno napetost napajanja v konstantnih
-    pet voltov za zanesljivo delovanje sistema ~\cite{zxspectrumintroduction}.
+    Regulator napetosti pretvarja rahlo nestabilno napetost napajanja v
+    konstantnih pet voltov za zanesljivo delovanje sistema ~\cite{zxspectrumintroduction}.
 
     UHF/VHF modulator prenaša sliko na televizijski zaslon ~\cite{zxspectrumintroduction}.
 
@@ -604,66 +605,66 @@ by
     \subsection{Dodatna oprema}
     Obstaja še druga oprema, ki se lahko uporabi s Spectrumom ~\cite{zxspectrumbasicprogramming}.
 
-    ZX Microdrive je naprava za hitro množično shranjevanje in je veliko bolj prilagodljiva
-    pri načinu uporabe kot kasetni snemalnik ~\cite{zxspectrumbasicprogramming}.
+    ZX Microdrive je naprava za hitro množično shranjevanje in je veliko bolj
+    prilagodljiva pri načinu uporabe kot kasetni snemalnik ~\cite{zxspectrumbasicprogramming}.
 
-    Omrežni priključek se uporablja za povezovanje več računalnikov ZX Spectrum, da
-    lahko med seboj komunicirajo ~\cite{zxspectrumbasicprogramming}.
+    Omrežni priključek se uporablja za povezovanje več računalnikov ZX Spectrum,
+    da lahko med seboj komunicirajo ~\cite{zxspectrumbasicprogramming}.
 
-    Vmesnik RS232 omogoča standardno povezavo računalnika s tipkovnicami, tiskalniki,
-    računalniki in drugimi zunanjimi napravami, tudi če niso bili zasnovani posebej
-    za Spectrum ~\cite{zxspectrumbasicprogramming}.
+    Vmesnik RS232 omogoča standardno povezavo računalnika s tipkovnicami,
+    tiskalniki, računalniki in drugimi zunanjimi napravami, tudi če ti niso bili
+    zasnovani posebej za Spectrum ~\cite{zxspectrumbasicprogramming}.
 
     \chapter{Pregled področja}
     \label{sorodnadela}
 
     \section{Razvoj emulatorjev}
 
-    Pri razvoju emulatorjev je treba izbrati, kako bo gostiteljski sistem
-    izvajal programsko kodo emuliranega sistema. Pri tolmačenju ukazov emulator ukaze
-    gosta bere, dekodira in izvaja zaporedno, običajno tako, da po vsakem ukazu
-    posodobi stanje procesorja, pomnilnika in povezanih naprav. Implementacijo
-    takega pristopa je praviloma lažje povezati z razhroščevalnikom, saj ima program
-    po vsakem izvedenem ukazu jasen vpogled v registre, pomnilnik in druge dele
-    stanja ~\cite{bellardqemu, smithnairvirtualmachines}.
+    Pri razvoju emulatorjev je treba izbrati, kako bo gostiteljski sistem izvajal
+    programsko kodo emuliranega sistema. Pri tolmačenju ukazov emulator ukaze
+    gosta bere, dekodira in izvaja zaporedno, običajno tako, da po vsakem ukazu posodobi
+    stanje procesorja, pomnilnika in povezanih naprav. Implementacijo takega pristopa
+    je praviloma lažje povezati z razhroščevalnikom, saj ima program po vsakem
+    izvedenem ukazu jasen vpogled v registre, pomnilnik in druge dele stanja ~\cite{bellardqemu,
+    smithnairvirtualmachines}.
 
-    Druga možnost je dinamično prevajanje, kjer se deli kode gosta med
-    izvajanjem prevedejo v kodo gostiteljskega sistema. Tak pristop je lahko hitrejši,
-    vendar je zahtevnejši za implementacijo, oteži natančno ustavljanje po posameznih
-    ukazih in je smiseln predvsem pri sistemih, kjer bi bilo tolmačenje ukazov
-    prepočasno. Podobni kompromisi med hitrostjo, prenosljivostjo in
-    zahtevnostjo implementacije so značilni tudi za splošnejše virtualne stroje
-    in dinamične prevajalnike ~\cite{bellardqemu, smithnairvirtualmachines}.
+    Druga možnost je dinamično prevajanje, kjer se deli kode gosta med izvajanjem
+    prevedejo v kodo gostiteljskega sistema. Tak pristop je lahko hitrejši, vendar
+    je zahtevnejši za implementacijo, oteži natančno ustavljanje po posameznih
+    ukazih in je smiseln predvsem pri sistemih, kjer bi bilo tolmačenje ukazov prepočasno.
+    Podobni kompromisi med hitrostjo, prenosljivostjo in zahtevnostjo implementacije
+    so značilni tudi za splošnejše virtualne stroje in dinamične prevajalnike ~\cite{bellardqemu,
+    smithnairvirtualmachines}.
 
-    Za emulator ZX Spectruma 48K je primeren pristop tolmačenja ukazov. Izvorni
-    procesor Z80 deluje pri frekvenci približno 3,5 MHz, zato je mogoče ukaze na sodobnem
-    računalniku izvajati dovolj hitro tudi brez dinamičnega prevajanja. Hkrati
-    je cilj tega diplomskega dela tudi vpogled v notranje stanje sistema, zato je
-    izvajanje po korakih pomembnejše od največje možne hitrosti. Tak način
-    omogoča preprostejšo povezavo procesorja, pomnilnika, V/I vrat, časovnika in uporabniškega
-    vmesnika razhroščevalnika.
+    Za emulator ZX Spectruma 48K je primeren pristop tolmačenja ukazov. Izvorni procesor
+    Z80 deluje pri frekvenci približno 3,5 MHz, zato je mogoče ukaze na sodobnem
+    računalniku izvajati dovolj hitro tudi brez dinamičnega prevajanja. Hkrati je
+    cilj tega diplomskega dela tudi vpogled v notranje stanje sistema, zato je
+    izvajanje po korakih pomembnejše od največje možne hitrosti. Tak način omogoča
+    preprostejšo povezavo procesorja, pomnilnika, V/I vrat, časovnika in
+    uporabniškega vmesnika razhroščevalnika.
 
     \section{Obstoječi emulatorji za ZX Spectrum}
 
-    Obstaja veliko število emulatorjev računalnika ZX Spectrum, ki se razlikujejo
-    po namenu. Nekateri so namenjeni predvsem udobnemu poganjanju iger in
-    programov, drugi čim natančnejši emulaciji različnih modelov in zunanjih naprav,
-    tretji pa vgradnji emulacije v spletne strani ali razvojnemu delu. Tako je,
-    poleg zmožnosti zagona poljubnega programa, pomembno tudi razlikovanje v podpori
-    različnih modelov računalnika ZX Spectrum, podpora različnim datotečnim
-    formatom, natančnost emulacije ter možnosti vpogleda v notranje stanje sistema.
+    Obstaja veliko število emulatorjev računalnika ZX Spectrum, ki se
+    razlikujejo po namenu. Nekateri so namenjeni predvsem udobnemu poganjanju iger
+    in programov, drugi čim natančnejši emulaciji različnih modelov in zunanjih
+    naprav, tretji pa vgradnji emulacije v spletne strani ali razvojnemu delu.
+    Tako je, poleg zmožnosti zagona poljubnega programa, pomembno tudi
+    razlikovanje v podpori različnih modelov računalnika ZX Spectrum, podpora različnim
+    datotečnim formatom, natančnost emulacije ter možnosti vpogleda v notranje
+    stanje sistema.
 
-    Med najbolj uveljavljenimi emulatorji sta Fuse in Spectaculator. Fuse je
-    odprtokodni namizni emulator namenjen splošni uporabi in široki združljivo-sti,
-    saj podpira vse glavne modele računalnika ZX Spectrum. Spectaculator je
-    komercialni zaprtokodni emulator za platformo Windows in mobilne naprave, pri
-    katerem je večji poudarek na uporabniški izkušnji: udobnem nalaganju
-    programov, virtualnem kasetofonu, shranjevanju stanja in pripravljenosti za
-    igranje. Posebno skupino predstavljajo spletni emulatorji, na primer
-    JSSpeccy 3. Ta je odprtokoden emulator, razvit v okolju WebAssembly, ki se
-    izvaja neposredno v brskalniku, zato je primeren za enostavnejše predstavitve
-    programov brez namestitve samostojne aplikacije ~\cite{fuseemulator, spectaculator,
-    jsspeccy3}.
+    Med najbolj uveljavljenimi emulatorji sta Fuse in Spectaculator. Fuse je odprtokodni
+    namizni emulator, namenjen splošni uporabi in široki združljivo-sti, saj podpira
+    vse glavne modele računalnika ZX Spectrum. Spectaculator je komercialni
+    zaprtokodni emulator za platformo Windows in mobilne naprave, pri katerem je večji
+    poudarek na uporabniški izkušnji: udobnem nalaganju programov, virtualnem kasetofonu,
+    shranjevanju stanja in pripravljenosti za igranje. Posebno skupino predstavljajo
+    spletni emulatorji, na primer JSSpeccy 3. Ta je odprtokoden emulator, razvit v
+    okolju WebAssembly, ki se izvaja neposredno v brskalniku, zato je primeren za
+    enostavnejše predstavitve programov brez namestitve samostojne aplikacije ~\cite{fuseemulator,
+    spectaculator, jsspeccy3}.
 
     Ti obstoječi zreli emulatorji so večinoma namenjeni široki združljivosti, udobni
     uporabi ter podpori številnim modelom, formatom in dodatnim napravam. Odprtokodni
@@ -720,41 +721,40 @@ by
     razumevanje sestavnih delov sistema. \texttt{ULAKeyboard} skrbi za matriko
     tipkovnice in prenos podatkov o pritiskih tipk, \texttt{ULAScreen} skrbi za
     zaslonski del pomnilnika, \texttt{ULATapeDeck} skrbi za nalaganje kasetnih
-    datotek in \texttt{ULABeeper}, ki skrbi za zvočni izhod. Uporabniški vmesnik za
-    namen prikaza stanja sistema in funkcionalnosti razhroščevalnika uporablja isto
-    stanje, ki ga uporablja emulator.
+    datotek in \texttt{ULABeeper} skrbi za zvočni izhod. Uporabniški vmesnik za
+    namen prikaza stanja sistema in funkcionalnosti razhroščevalnika uporablja
+    isto stanje, ki ga uporablja emulator.
 
     \section{Izvajalna zanka}
 
-    Ob zagonu emulator najprej ponastavi stanje sistema in v pomnilnik naloži izbrani
-    ROM. Osrednji del izvajanja je metoda \texttt{Processor.step}. Ta najprej
-    preveri, ali je programski števec na prekinitveni točki. Če je procesor v
-    neprekinjenem teku, se izvajanje ustavi in uporabniški vmesnik lahko prikaže trenutno
+    Ob zagonu emulator najprej ponastavi stanje sistema in v pomnilnik naloži
+    izbrani ROM. Osrednji del izvajanja je metoda \texttt{Processor.step}. Ta najprej
+    preveri, ali je programski števec na prekinitveni točki. Če je procesor v neprekinjenem
+    teku, se izvajanje ustavi in uporabniški vmesnik lahko prikaže trenutno
     stanje sistema.
 
-    Nato procesor obravnava morebitno nemaskirno in običajno prekinitev. Pred
-    dekodiranjem ukaza se preveri še možnost hitrega nalaganja kasete prek
-    standardnih ROMovih rutin. Če kasetni podsistem prepozna klic ustrezne rutine,
-    lahko učinek nalaganja izvede neposredno, brez emulacije celotnega zvočnega signala
-    kasete.
+    Nato procesor obravnava morebitno nemaskirno in običajno prekinitev. Pred dekodiranjem
+    ukaza se preveri še možnost hitrega nalaganja kasete prek standardnih ROMovih
+    rutin. Če kasetni podsistem prepozna klic ustrezne rutine, lahko učinek nalaganja
+    izvede neposredno, brez emulacije celotnega zvočnega signala kasete.
 
-    V običajnem primeru \texttt{Processor.step} prebere ukaz na naslovu
-    programskega števca, ga dekodira, poveča register \texttt{R}, premakne
-    programski števec za dolžino ukaza, izvede učinek ukaza in poveča števec izvedenih
-    ukazov. Na koncu posodobi število urinih period glede na dolžino ukaza in
-    preveri, ali je na koncu ukaza treba sprožiti prekinitev. S tem je emulacija
-    organizirana okoli posameznega procesorskega ukaza, pri čemer se časovni model
-    posodablja z vsoto urinih period izvedenih ukazov.
+    V običajnem primeru \texttt{Processor.step} prebere ukaz na naslovu programskega
+    števca, ga dekodira, poveča register \texttt{R}, premakne programski števec za
+    dolžino ukaza, izvede učinek ukaza in poveča števec izvedenih ukazov. Na koncu
+    posodobi število urinih period glede na dolžino ukaza in preveri, ali je na
+    koncu ukaza treba sprožiti prekinitev. S tem je emulacija organizirana okoli posameznega
+    procesorskega ukaza, pri čemer se časovni model posodablja z vsoto urinih
+    period izvedenih ukazov.
 
     \section{Tok podatkov med emulacijo in vmesnikom}
 
-    Na sliki \ref{subspectruminterface_pic1} vidimo primer vmesnika emulatorja. Podokno
-    za registre prikazuje vrednosti splošnih in posebnih registrov ter zastavic,
-    podokno za pomnilnik prikazuje vrednosti pomnilniških lokacij po naslovih, podokno
-    z razstavljenimi ukazi pa prikazuje ukaze, dekodirane iz trenutne vsebine
-    pomnilnika. Grafični izhod emuliranega računalnika je prikazan v ločenem oknu
-    zaslona. Ko procesor ne teče, lahko uporabnik neposredno spremeni vrednosti registrov,
-    pomnilniških celic in ukaznih zlogov.
+    Na sliki \ref{subspectruminterface_pic1} vidimo primer vmesnika emulatorja.
+    Podokno za registre prikazuje vrednosti splošnih in posebnih registrov ter
+    zastavic, podokno za pomnilnik prikazuje vrednosti pomnilniških lokacij po naslovih,
+    podokno z razstavljenimi ukazi pa prikazuje ukaze, dekodirane iz trenutne vsebine
+    pomnilnika. Grafični izhod emuliranega računalnika je prikazan v ločenem
+    oknu zaslona. Ko procesor ne teče, lahko uporabnik neposredno spremeni
+    vrednosti registrov, pomnilniških celic in ukaznih zlogov.
 
     \begin{figure}[htb]
         \begin{center}
@@ -764,78 +764,78 @@ by
         \label{subspectruminterface_pic1}
     \end{figure}
 
-    Iz orodne vrstice lahko uporabnik ponovno naloži ROM ali kasetni program,
-    ponastavi stanje sistema, izvede posamezen procesorski korak, ki izvede
-    trenutni ukaz, zažene in ustavi tek procesorja, v katerem se ti koraki
-    ponavljajo do zaustavitve ali prekinitvene točke, preklopi hitrost izvajanja emulacije,
-    odpre okno zaslona ter nastavi način tipkovnice in omogoči zvok.
+    Iz orodne vrstice lahko uporabnik ponovno naloži ROM ali kasetni program, ponastavi
+    stanje sistema, izvede posamezen procesorski korak, ki izvede trenutni ukaz,
+    zažene in ustavi tek procesorja, v katerem se ti koraki ponavljajo do zaustavitve
+    ali prekinitvene točke, preklopi hitrost izvajanja emulacije, odpre okno zaslona
+    ter nastavi način tipkovnice in omogoči zvok.
 
-    Ob spremembah stanja sistema, bodisi zaradi izvajanja ukazov ali neposrednega
-    spreminjanja stanja sistema preko uporabniškega vmesnika razhroščevalnika,
-    so le-te vidne v istem trenutku, kar pripomore k lažji uporabi emulatorja in njegovih
-    funkcionalnosti.
+    Ob spremembah stanja sistema, bodisi zaradi izvajanja ukazov bodisi
+    neposrednega spreminjanja stanja sistema preko uporabniškega vmesnika
+    razhroščevalnika, so te vidne v istem trenutku, kar pripomore k lažji
+    uporabi emulatorja in njegovih funkcionalnosti.
 
     \chapter{Pomnilnik}
     \label{pomnilnik}
 
     \section{Območja pomnilnika}
 
-    Pomnilnik hrani podatke v obliki zlogov (vredosti med 0 in 255), ki se nahajajo
-    na dvozložnih pomnilniških naslovih med \texttt{0x0000} in \texttt{0xFFFF}.
+    Pomnilnik hrani podatke v obliki zlogov (vrednosti med 0 in 255), ki se
+    nahajajo na dvozložnih pomnilniških naslovih med \texttt{0x0000} in \texttt{0xFFFF}.
     ~\cite{zxspectrumbasicprogramming}
 
-    V računalniku ZX Spectrum je pomnilnik razdeljen na ROM, ki se nanaša na naslovni
-    prostor med \texttt{0x0000} in \texttt{0x3FFF}, ter RAM, ki se nanaša na naslovni
-    prostor med \texttt{0x4000} in \texttt{0xFFFF} ~\cite{zxspectrumbasicprogramming}.
+    V računalniku ZX Spectrum je pomnilnik razdeljen na ROM, ki se nanaša na
+    naslovni prostor med \texttt{0x0000} in \texttt{0x3FFF}, ter RAM, ki se
+    nanaša na naslovni prostor med \texttt{0x4000} in \texttt{0xFFFF} ~\cite{zxspectrumbasicprogramming}.
 
-    Branje vrednosti iz pomnilnika deluje pri delu s podatki v ROMu in RAMu, pisanje
-    vrednosti v pomnilnik pa deluje le v RAMu (ukaz pisanja v ROM se bo izvedel, a
-    brez učinka) ~\cite{strojnijezikzaprocesorz80}.
+    Branje vrednosti iz pomnilnika deluje pri delu s podatki v ROMu in RAMu,
+    pisanje vrednosti v pomnilnik pa deluje le v RAMu (ukaz pisanja v ROM se bo izvedel,
+    a brez učinka) ~\cite{strojnijezikzaprocesorz80}.
 
-    RAM je nadalje razdeljen na območja z različnimi nameni uporabe, pomembnejša
-    območja pa so sledeča ~\cite{strojnijezikzaprocesorz80, zxspectrumbasicprogramming}:
+    RAM je nadalje razdeljen na območja z različnimi nameni uporabe, pomembnejša območja
+    pa so sledeča ~\cite{strojnijezikzaprocesorz80, zxspectrumbasicprogramming}:
     \begin{itemize}
         \item zaslonska datoteka med naslovoma \texttt{0x4000} in \texttt{0x57FF}
-            vsebuje podatke za prikaz vsebine na zaslon,
+            vsebuje podatke za prikaz vsebine na zaslon;
 
         \item atributi položajev znakov med naslovoma \texttt{0x5800} in \texttt{0x5AFF}
-            hranijo informacije o prikazu zaslona,
+            hranijo informacije o prikazu zaslona;
 
         \item medpomnilnik tiskalnika med naslovoma \texttt{0x5B00} in \texttt{0x5BFF}
             hrani znake, ki jih mora tiskalnik natisniti, kadar pa tiskalnika ne uporabljamo,
-            ostaja ta prostor neizkoriščen,
+            ostaja ta prostor neizkoriščen;
 
         \item sistemske spremenljivke med naslovoma \texttt{0x5C00} in \texttt{0x5CB5}
-            vsebujejo razne informacije o stanju računalnika,
+            vsebujejo razne informacije o stanju računalnika;
 
         \item sistem BASIC med naslovoma \texttt{0x5CCB} in \texttt{RAMTOP} vsebuje
             uporabniški program v BASICu, njegove spremenljivke in druge podatke
-            ter sklad za aritmetični kalkulator,
+            ter sklad za aritmetični kalkulator;
 
         \item prosti pomnilnik med naslovoma \texttt{RAMTOP+1} in \texttt{0xFF57}
-            je zavarovan pred vplivi programa v BASICu in pred posegi nadzornega programa,
+            je zavarovan pred vplivi programa v BASICu in pred posegi nadzornega programa;
 
         \item strojni sklad, ki se začenja 2 zloga pod vrhom prostega pomnilnika,
-            uporablja procesor Z80 in zaseda spremenljivo območje pod naslovom \texttt{SP},
+            uporablja procesor Z80 in zaseda spremenljivo območje pod naslovom \texttt{SP};
 
         \item računski sklad med naslovoma \texttt{0x5C92} in \texttt{0x5CAF} predstavlja
             30 zlogov velik prostor z začetkom na naslovu, shranjenem v
             sistemski spremenljivki MEMBOT, ki se uporablja za računske operacije
-            v plavajoči vejici,
+            v plavajoči vejici;
 
         \item definicije uporabniško definiranih grafičnih znakov med naslovoma\\
             \texttt{0xFF58} in \texttt{0xFFFF}.
     \end{itemize}
 
-    Pri vnosu več podatkov v dano območje, kot je njegova privzeta velikost, se ostala
-    območja premaknejo navzgor, in obratno pri brisanju podatkov ~\cite{zxspectrumbasicprogramming}.
+    Pri vnosu več podatkov v dano območje, kot je njegova privzeta velikost, se
+    ostala območja premaknejo navzgor, obratno pa velja pri brisanju podatkov ~\cite{zxspectrumbasicprogramming}.
 
     \section{ROM}
 
-    V ROMu shranjen nadzorni program poleg pravilnega zagona opravlja tudi mnoge
-    druge naloge osnovnega delovanja sistema, kot so izrisovanje slike na zaslon,
-    spremljanje pritiskov tipk, tolmačenje pognanega programa v BASICu in posredovanje
-    napak o njegovem izvajanju, delo s plavajočo vejico, itd ~\cite{strojnijezikzaprocesorz80,
+    V ROMu shranjen nadzorni program poleg pravilnega zagona opravlja tudi mnoge druge
+    naloge osnovnega delovanja sistema, kot so izrisovanje slike na zaslon, spremljanje
+    pritiskov tipk, tolmačenje pognanega programa v BASICu in posredovanje napak
+    o njegovem izvajanju, delo s plavajočo vejico itd ~\cite{strojnijezikzaprocesorz80,
     zxspectrumintroduction}.
 
     Procesor ne pozna sintakse in pravil izvajanja BASICa. Programe v BASICu zato
@@ -847,37 +847,36 @@ by
     Zlogi na pomnilniških naslovih med \texttt{0x5C00} in \texttt{0x5CB5} se uporabljajo
     za hrambo in spreminjanje informacij o stanju oziroma delovanju sistema ~\cite{zxspectrumbasicprogramming}.
 
-    Bolj pomembne sistemske spremenljivke so sledeče ~\cite{strojnijezikzaprocesorz80,
+    Bolj pomembne sistemske spremenljivke so naslednje ~\cite{strojnijezikzaprocesorz80,
     zxspectrumbasicprogramming}:
     \begin{itemize}
         \item VARS na naslovu \texttt{0x5C4B}, ki vsebuje naslov začetka spremenljivk
-            programa BASIC,
+            programa BASIC;
 
         \item PROG na naslovu \texttt{0x5C53}, ki vsebuje naslov začetka programa
-            v BASICu,
+            v BASICu;
 
         \item E\_LINE na naslovu \texttt{0x5C59}, ki vsebuje naslov konca programa
-            v BASICu,
+            v BASICu;
 
         \item RAMTOP na naslovu \texttt{0x5CB2}, ki vsebuje naslov zadnjega zloga
-            sistema BASIC,
+            sistema BASIC;
 
         \item P-RAMT na naslovu \texttt{0x5CB4}, ki vsebuje naslov zadnjega zloga
-            fizičnega pomnilnika,
+            fizičnega pomnilnika;
 
-        \item BORDCR na naslovu \texttt{0x5C48}, katerih prvi trije biti definirajo
-            barvo obrobe zaslona,
+        \item BORDCR na naslovu \texttt{0x5C48}, kjer prvi trije biti definirajo barvo
+            obrobe zaslona;
 
         \item FRAMES na naslovih \texttt{0x5C78}-\texttt{0x5C7A}, ki vsebuje 3-zložni
             števec prikazanih slikovnih okvirov, ki se pri evropskem video standardu
             poveča vsakih 20 ms oziroma vsako 1/50 sekunde. Števec je bolj
             natančen kot naivna programska implementacija, vendar se začasno ustavi
             med spuščanjem zvoka oziroma operacijami s kasetofonom, tiskalnikom
-            in drugimi zunanjimi, zaradi česar izgublja na natančnosti.
+            in drugimi zunanjimi, zaradi česar izgublja na natančnosti;
 
         \item ATTR\_P na naslovu \texttt{0x5C8D}, ki vsebuje definicije uporabljanih
-            barv papirja in papirja, ter drugih atributov stalnega prikaza
-            znakov,
+            barv papirja in papirja ter drugih atributov stalnega prikaza znakov;
 
         \item CHARS na naslovu \texttt{0x5C36}, ki vsebuje naslov začetka definicije
             nabora znakov.
@@ -942,7 +941,7 @@ by
     razhrošče-valnik podpira še anotiran pogled (viden na sliki \ref{subspectruminterface_pic4}).
     Stalna območja pomnilnika, kot so ROM, zaslonska datoteka, atributi, medpomnilnik
     tiskalnika in sistemske spremenljivke, so zapisana v registru območij, meje dinamičnih
-    območij pa se izračunajo iz vrednosti določenih sistemskih spremeljivk ter skladovnega
+    območij pa se izračunajo iz vrednosti določenih sistemskih spremenljivk ter skladovnega
     kazalca \texttt{SP}. Zato lahko vmesnik predstavitev teh območij prilagodi trenutnemu
     programu v BASICu, njegovim spremenljivkam, delovnemu prostoru, računskemu
     skladu, prostemu pomnilniku, strojnemu skladu in uporabniško definiranim
@@ -973,7 +972,7 @@ by
 
     Ko je procesor zaustavljen, ima uporabnik v teh podoknih možnost neposredno urejati
     vsebino pomnilniških celic, kar velja tudi za območje pomnilnika z ROMom, na katerega
-    navadno izvajanje uporabniškega programa sicer nima vpliva.
+    običajno izvajanje uporabniškega programa ne vpliva.
 
     \chapter{Centralna procesna enota Z80}
     \label{cpe}
@@ -1015,11 +1014,11 @@ by
     \subsection{Podatkovni tipi procesorja Z80}
     Večina operacij Z80 je 8-bitnih, torej dela z vrednostmi med \texttt{0x00} in
     \texttt{0xFF}, kar lahko predstavlja bodisi nepredznačen obseg vrednosti od 0
-    do 255, bodisi predznačen obseg vrednosti od -128 do 127 ~\cite{strojnijezikzaprocesorz80}.
+    do 255 bodisi predznačen obseg vrednosti od --128 do 127 ~\cite{strojnijezikzaprocesorz80}.
 
     Nekatere operacije pa so 16-bitne, torej CPE dela z vrednostmi med \texttt{0x0000}
     in \texttt{0xFFFF}, kar lahko predstavlja bodisi nepredznačen obseg
-    vrednosti od 0 do 65535, bodisi predznačen obseg vrednosti od -32768 do
+    vrednosti od 0 do 65535 bodisi predznačen obseg vrednosti od --32768 do
     32767. 16-bitna števila največkrat potrebujemo za naslavljanje pomnilniških
     celic ~\cite{strojnijezikzaprocesorz80}.
 
@@ -1034,26 +1033,26 @@ by
     \subsection{Razporeditev registrov, njihove velikosti in pomen}
 
     Procesor Z80 vsebuje 208 bitov bralno-pisalnega pomnilnika, implementiranega kot
-    statični RAM, ki predstavlja 18 8-bitnih registrov in 4 16-bitne registre ~\cite{z80cpuusermanual}.
+    statični RAM, ki predstavlja osemnajst 8-bitnih registrov in štiri 16-bitne
+    registre ~\cite{z80cpuusermanual}.
 
     Ti notranji registri se delijo na dva registrska nabora, od katerih vsak
     vsebuje 6 splošnonamenskih registrov (registri B, C, D, E, H in L), akumulator
-    (register A) in register zastavic (register F), ter 6 posebnonamenskih
-    registrov, ki so 16-bitni programski števec (register PC), 16-bitni kazalec
-    sklada (register SP), 16-bitna indeksna registra IX in IY, osvežitveni
-    register R in register naslova strani prekinitev I. Razporeditev notranjih registrov
-    je vidna na sliki \ref{z80cpuusermanual_pic2} ~\cite{strojnijezikzaprocesorz80,
-    z80cpuusermanual}.
+    (register A) in register zastavic (register F) ter 6 posebnonamenskih registrov,
+    ki so 16-bitni programski števec (register PC), 16-bitni kazalec sklada (register
+    SP), 16-bitna indeksna registra IX in IY, osvežitveni register R in register naslova
+    strani prekinitev I. Razporeditev notranjih registrov je vidna na sliki
+    \ref{z80cpuusermanual_pic2} ~\cite{strojnijezikzaprocesorz80, z80cpuusermanual}.
 
-    Pri tem lahko splošnonamenske 8-bitne registre uporabljamo posamično, ali pa pare
+    Pri tem lahko splošnonamenske 8-bitne registre uporabljamo posamično ali pa pare
     8-bitnih registrov združimo v 16-bitne registrske pare BC, DE in HL ~\cite{strojnijezikzaprocesorz80,
     z80cpuusermanual}.
 
     Med uporabo osnovnega in zamenljivega registrskega nabora (katerega imena
     registrov označujemo z apostrofom ob imenih) se lahko preklaplja. Ta
     značilnost procesorja Z80 je posebej potrebna v sistemih, ki zahtevajo hiter odziv
-    na prekinitve. Ob pričetku obdelave prekinitev ali izvajanja podprograma je
-    potrebno star izvajalni kontekst (vrednosti registrov) shraniti do obnovitve
+    na prekinitve. Ob začetku obdelave prekinitev ali izvajanja podprograma je
+    treba star izvajalni kontekst (vrednosti registrov) shraniti do obnovitve
     pred vrnitvijo iz podprograma. Zamenljiva registrska nabora tako omogočata mnogo
     hitrejšo menjavo konteksta napram hrambi in obnavljanju vrednosti vseh registrov
     v pomnilniku ~\cite{strojnijezikzaprocesorz80, z80cpuusermanual}.
@@ -1085,11 +1084,11 @@ by
     upočasnjevanja delovanja CPE (osveževanje se dogaja med dekodiranjem prej pridobljenega
     ukaza) ~\cite{z80cpuusermanual}.
 
-    Za 16-bitne registre in registrske pare velja, da je višji zlog shranjen v
-    registru/registrskem paru prvi, nižji pa drugi. Pri tem je potrebno
-    opozoriti, da je tak vrstni red ravno obraten kot pri hranjenju 16-bitne vrednosti
-    v pomnilniku, kjer prva pomnilniška celica vsebuje nižji del vrednosti, druga
-    pa višjega ~\cite{strojnijezikzaprocesorz80, z80cpuusermanual}.
+    Za 16-bitne registre in registrske pare velja, da je višji zlog, shranjen v registru/registrskem
+    paru, prvi, nižji pa drugi. Pri tem je treba opozoriti, da je tak vrstni red ravno
+    obraten kot pri hranjenju 16-bitne vrednosti v pomnilniku, kjer prva
+    pomnilniška celica vsebuje nižji del vrednosti, druga pa višjega ~\cite{strojnijezikzaprocesorz80,
+    z80cpuusermanual}.
 
     Indeksna registra IX in IY hranita 16-bitni naslov, ki se uporablja v indeksnem
     načinu naslavljanja kot bazni kazalec, iz katerega po prištetju odmika (dodaten
@@ -1097,24 +1096,23 @@ by
     pomnilniški naslov operanda ~\cite{z80cpuusermanual}.
 
     Programski števec PC hrani naslov trenutnega ukaza, ki se pridobiva iz
-    pomnilnika, in se samodejno poveča, ko se njegova vsebina prenese na
-    naslovno vodilo. PC se uporablja tudi za klice in vračanje iz podprogramov,
-    pri čemer se povratni naslov hrani na skladu v pomnilniku ~\cite{strojnijezikzaprocesorz80,
-    z80cpuusermanual}.
+    pomnilnika in se samodejno poveča, ko se njegova vsebina prenese na naslovno vodilo.
+    PC se uporablja tudi za klice in vračanje iz podprogramov, pri čemer se povratni
+    naslov hrani na skladu v pomnilniku ~\cite{strojnijezikzaprocesorz80, z80cpuusermanual}.
 
-    Kazalec sklada SP hrani naslov vrhnje vrednosti na skladu. Sklad, organiziran
-    v obliki LIFO, omogoča preprosto izvajanje večstopenjskih prekinitev, teoretično
-    neomejeno gnezdenje podprogramov in poenostavitev mnogih vrst manipulacije podatkov
-    ~\cite{strojnijezikzaprocesorz80, z80cpuusermanual}.
+    Kazalec sklada SP hrani naslov vrhnje vrednosti na skladu. Sklad,
+    organiziran v obliki LIFO, omogoča preprosto izvajanje večstopenjskih prekinitev,
+    teoretično neomejeno gnezdenje podprogramov in poenostavitev mnogih vrst
+    manipulacije podatkov ~\cite{strojnijezikzaprocesorz80, z80cpuusermanual}.
 
     \subsection{Zastavice}
 
-    Zastavice, hranjene v registrih F in F', predstavljajo informacijo o stanju
-    bodisi vsebine registra A, ali o ravnokar opravljeni računski operaciji.
+    Zastavice, hranjene v registrih F in F', predstavljajo informacijo o stanju bodisi
+    vsebine registra A bodisi o ravnokar opravljeni računski operaciji.
     Razporeditev bitov v registru zastavic je prikazana v tabeli
-    \ref{z80cpuusermanual_tab1}. Kljub temu, da ima register F možnost
-    shranjevanja 8 bitov, za dokumentirane zastavice uporablja le 6 bitov (bita
-    3 in 5 se ne uporabljata) ~\cite{strojnijezikzaprocesorz80, z80cpuusermanual}:
+    \ref{z80cpuusermanual_tab1}. Kljub temu da ima register F možnost shranjevanja
+    8 bitov, za dokumentirane zastavice uporablja le 6 bitov (bita 3 in 5 se ne uporabljata)
+    ~\cite{strojnijezikzaprocesorz80, z80cpuusermanual}:
 
     \begin{table}[htb]
         \begin{center}
@@ -1132,21 +1130,21 @@ by
 
     \begin{itemize}
         \item zastavica znaka S (angl. Sign flag) je dvignjena, ko je rezultat operacije
-            negativen,
+            negativen;
 
         \item ničelna zastavica Z (angl. Zero flag) je dvignjena, ko je rezultat operacije
-            enak nič,
+            enak nič;
 
         \item zastavica polprenosa H (angl. Half carry flag) je dvignjena, ko se je
-            v zadnji operaciji spremenil 5. bit registra,
+            v zadnji operaciji spremenil 5. bit registra;
 
         \item zastavica parnosti/prepolnjenja P/V (angl. Parity/oVerflow flag)
             na bitu 2 je dvignjena, ko je v rezultatu operacije parno število bitov
             ali ko se je spremenil najvišji bit registra (kar pomeni možnost
-            preliva),
+            preliva);
 
         \item zastavica odštevanja N (angl. subtract flag) je dvignjena, ko je zadnja
-            operacija bila odštevanje,
+            operacija bila odštevanje;
 
         \item zastavica prenosa C (angl. Carry flag) je dvignjena, ko se je v zadnji
             operaciji zgodil prenos.
@@ -1155,157 +1153,155 @@ by
     Zastavice omogočajo vejanje programa prek pogojnih skokov z možnimi pogoji ~\cite{strojnijezikzaprocesorz80}:
 
     \begin{itemize}
-        \item Z (angl. Zero) ob dvignjeni ničelni zastavici,
+        \item Z (angl. Zero) ob dvignjeni ničelni zastavici;
 
-        \item NZ (angl. Not Zero) ob spuščeni ničelni zastavici,
+        \item NZ (angl. Not Zero) ob spuščeni ničelni zastavici;
 
-        \item C (angl. Carry) ob dvignjeni zastavici prenosa,
+        \item C (angl. Carry) ob dvignjeni zastavici prenosa;
 
-        \item NC (angl. Not Carry) ob spuščeni zastavici prenosa,
+        \item NC (angl. Not Carry) ob spuščeni zastavici prenosa;
 
-        \item M (angl. Minus) ob dvignjeni zastavici znaka,
+        \item M (angl. Minus) ob dvignjeni zastavici znaka;
 
-        \item P (angl. Positive) ob spuščeni zastavici znaka,
+        \item P (angl. Positive) ob spuščeni zastavici znaka;
 
-        \item PE (angl. Parity Even) ob dvignjeni zastavici parnosti,
+        \item PE (angl. Parity Even) ob dvignjeni zastavici parnosti;
 
         \item PO (angl. Parity Odd) ob spuščeni zastavici parnosti.
     \end{itemize}
 
     \subsection{Nedokumentirane zastavice}
 
-    Uradna dokumentacija procesorja Z80 bita 5 in 3 registrov zastavic F in F', ki
-    ju bomo označevali kot YF in XF, pogosto obravnava kot neuporabljena, vendar ju
-    dejanski procesor vseeno nastavlja in uporablja. Ti zastavici nista pogojni
-    zastavici v enakem smislu kot ničelna zastavica Z ali zastavica prenosa C, saj
-    Z80 nima pogojnih skokov, klicev ali vrnitev, ki bi neposredno preverjali YF ali
-    XF. Zaradi tega se zdita bita za običajno programiranje nepomembna, pri emulaciji
-    pa sta pomembna za programe, ki uporabljajo stranske učinke ukazov. Zato ju emulator,
-    ki želi natančno posnemati procesor, kljub pomanjkljivi uradni dokumentaciji ne
-    sme obravnavati kot neuporabljena ~\cite{theundocumentedz80documented}.
+    Uradna dokumentacija procesorja Z80 bita 5 in 3 registrov zastavic F in F',
+    ki ju bomo označevali kot YF in XF, pogosto obravnava kot neuporabljena,
+    vendar ju dejanski procesor vseeno nastavlja in uporablja. Ti zastavici nista
+    pogojni zastavici v enakem smislu kot ničelna zastavica Z ali zastavica prenosa
+    C, saj Z80 nima pogojnih skokov, klicev ali vrnitev, ki bi neposredno
+    preverjali YF ali XF. Zaradi tega se zdita bita za običajno programiranje nepomembna,
+    pri emulaciji pa sta pomembna za programe, ki uporabljajo stranske učinke ukazov.
+    Zato ju emulator, ki želi natančno posnemati procesor, kljub pomanjkljivi
+    uradni dokumentaciji ne sme obravnavati kot neuporabljena ~\cite{theundocumentedz80documented}.
 
-    Pri običajnih aritmetično-logičnih ukazih z 8-bitnim rezultatom se YF in XF
-    praviloma nastavita iz bitov 5 in 3 tega rezultata. Pri ukazih primerjave se rezultat
-    ne shrani v akumulator, zato se YF in XF nastavita iz bitov 5 in 3
-    primerjanega operanda. Pri 16-bitni aritmetiki se YF in XF nastavita tako,
-    kot da bi ju določila operacija nad višjima zlogoma operandov. Pri ukazih preverjanja
-    stanja posameznega bita se YF nastavi, kadar ukaz preverja bit 5 in je ta
-    bit postavljen, XF pa kadar preverja bit 3 in je ta bit postavljen. A to ne
-    velja pri indeksnem naslavljanju, kjer se YF in XF nastavita iz bitov 5 in 3 višjega
-    zloga efektivnega naslova indeksiranega naslavljanja, ter pri ukazu \texttt{BIT
-    n,(HL)}, kjer se YF in XF nastavita iz vrednosti nedokumentiranega
-    notranjega registra, povezanega z nekaterimi predhodnimi 16-bitnimi aritmetičnimi
-    ukazi ter uporabljenimi efektivnimi naslovi. Pri bločnih ukazih prenosov in
-    primerjav se YF in XF nastavita iz vmesnih vrednosti prenosov ali izračunov
-    primerjav. Pri bločnih vhodno-izhodnih ukazih se po prenosu zloga najprej zmanjša
-    register B, nato pa se YF nastavi iz bita 5 nove vrednosti registra B, XF pa iz
-    njenega bita 3 ~\cite{theundocumentedz80documented}.
+    Pri običajnih aritmetično-logičnih ukazih z 8-bitnim rezultatom se YF in XF praviloma
+    nastavita iz bitov 5 in 3 tega rezultata. Pri ukazih primerjave se rezultat
+    ne shrani v akumulator, zato se YF in XF nastavita iz bitov 5 in 3 primerjanega
+    operanda. Pri 16-bitni aritmetiki se YF in XF nastavita tako, kot da bi ju določila
+    operacija nad višjima zlogoma operandov. Pri ukazih preverjanja stanja
+    posameznega bita se YF nastavi, kadar ukaz preverja bit 5 in je ta bit postavljen,
+    XF pa, kadar preverja bit 3 in je ta bit postavljen. A to ne velja pri
+    indeksnem naslavljanju, kjer se YF in XF nastavita iz bitov 5 in 3 višjega zloga
+    efektivnega naslova indeksiranega naslavljanja, ter pri ukazu \texttt{BIT n,(HL)},
+    kjer se YF in XF nastavita iz vrednosti nedokumentiranega notranjega
+    registra, povezanega z nekaterimi predhodnimi 16-bitnimi aritmetičnimi ukazi ter
+    uporabljenimi efektivnimi naslovi. Pri bločnih ukazih prenosov in primerjav
+    se YF in XF nastavita iz vmesnih vrednosti prenosov ali izračunov primerjav. Pri
+    bločnih vhodno-izhodnih ukazih se po prenosu zloga najprej zmanjša register B,
+    nato pa se YF nastavi iz bita 5 nove vrednosti registra B, XF pa iz njenega bita
+    3 ~\cite{theundocumentedz80documented}.
 
     \section{Ukazi}
     ZX Spectrum omogoča uporabo visokonivojskega jezika BASIC. Jezik je bil leta 1964
-    razvit na Dartmouth College v New Hampshiru, in je bil v svojem času zelo
-    razširjen na osebnih računalnikih. Ima več različic, med katerimi obstajajo
-    manjše razlike, kot na primer zahteva po zapisu ukazne besede LET pri dodeljevanju
-    vrednosti spremenljivkam, kar v mnogih drugih različicah jezika BASIC lahko
-    opustimo. A različica BASICa za ZX Spectrum vseeno ni daleč od (neobstoječega
-    standarda) jezika BASIC, zato ne bi smeli imeti preveč težav pri
-    prilagajanju katerega koli BASIC programa za delovanje na ZX Spectrumu ~\cite{zxspectrumintroduction}.
+    razvit na Dartmouth College v New Hampshiru in je bil v svojem času zelo razširjen
+    na osebnih računalnikih. Ima več različic, med katerimi obstajajo manjše razlike,
+    kot na primer zahteva po zapisu ukazne besede LET pri dodeljevanju vrednosti
+    spremenljivkam, kar lahko opustimo v mnogih drugih različicah jezika BASIC.
+    A različica BASICa za ZX Spectrum vseeno ni daleč od (neobstoječega standarda)
+    jezika BASIC, zato ne bi smeli imeti preveč težav pri prilagajanju katerega koli
+    BASIC programa za delovanje na ZX Spectrumu ~\cite{zxspectrumintroduction}.
 
-    Za programiranje na Spectrumu lahko uporabljamo tudi strojni jezik, ki v
-    večini primerov omogoča hitrejše izvajanje, učinkovitejšo izrabo pomnilnika,
-    krajše programe (za hrambo v pomnilniku omejene velikosti) ter neodvisnost
-    od nadzornega programa, ki je potreben za izvajanje programov v BASICu. A
-    prinaša tudi nekatere slabosti, kot so slabša berljivost programov,
-    omejenost na izvajanje programa v sistemih z istim procesorjem, ter nasploh daljši
-    programi (za hrambo v pomnilniku) ~\cite{strojnijezikzaprocesorz80}.
+    Za programiranje na Spectrumu lahko uporabljamo tudi strojni jezik, ki v večini
+    primerov omogoča hitrejše izvajanje, učinkovitejšo izrabo pomnilnika, krajše programe
+    (za hrambo v pomnilniku omejene velikosti) ter neodvisnost od nadzornega programa,
+    ki je potreben za izvajanje programov v BASICu. A prinaša tudi nekatere slabosti,
+    kot so slabša berljivost programov, omejenost na izvajanje programa v sistemih
+    z istim procesorjem ter nasploh daljši programi (za hrambo v pomnilniku) ~\cite{strojnijezikzaprocesorz80}.
 
     Berljivost strojnega programa lahko izboljšamo s pisanjem v zbirnem jeziku, ki
     predstavlja preslikavo strojnega jezika v ljudem razumljivejšo obliko, v
     kateri vsak zbirni ukaz ustreza enemu strojnemu ukazu (in obratno). Zbirni jezik
     je tako razumljivejši ljudem, a ga moramo pred izvajanjem prevesti v
-    zaporedje zlogov strojnega koda, bodisi ročno, bodisi z uporabo zbirnika. Najbolj
-    razširjen zbirnik za uporabo v Spectrumu je bil program GENS ~\cite{strojnijezikzaprocesorz80,
+    zaporedje zlogov strojnega koda, bodisi ročno bodisi z uporabo zbirnika.
+    Najbolj razširjen zbirnik za uporabo v Spectrumu je bil program GENS ~\cite{strojnijezikzaprocesorz80,
     zxspectrumbasicprogramming}.
 
     \subsection{Število ukazov in sklopi, njihove dolžine}
 
-    Procesor Z80 lahko izvaja 158 različnih dokumentiranih, in mnogo
-    nedokumentiranih, ukazov, vključno z vsemi 78 ukazi procesorja 8080A ~\cite{z80cpuusermanual}.
+    Procesor Z80 lahko izvaja 158 različnih dokumentiranih in mnogo
+    nedokumentiranih ukazov, vključno z vsemi 78 ukazi procesorja 8080A ~\cite{z80cpuusermanual}.
 
-    Vsak ukaz je sestavljen iz zaporedja osnovnih strojnih M-stanj, ta pa so
-    sinhrona s časovnimi T-stanji (angl. Transition state), ki predstavljajo čas
-    ene urine periode kremenčevega kristala v CPE. Pri frekvenci 3,5 MHz procesorja
-    Z80 eno stanje T traja približno 0,2857 mikrosekunde in predstavlja osnovno merilo
-    hitrosti operacij ~\cite{strojnijezikzaprocesorz80}.
+    Vsak ukaz je sestavljen iz zaporedja osnovnih strojnih M-stanj, ta pa so sinhrona
+    s časovnimi T-stanji (angl. Transition state), ki predstavljajo čas ene urine
+    periode kremenčevega kristala v CPE. Pri frekvenci 3,5~MHz procesorja Z80
+    eno stanje T traja približno 0,2857 mikrosekunde in predstavlja osnovno
+    merilo hitrosti operacij ~\cite{strojnijezikzaprocesorz80}.
 
     Ukaze delimo na več skupin ~\cite{z80cpuusermanual}:
     \begin{itemize}
         \item ukaze nalaganja in izmenjav, ki premikajo podatke med izvorno in
-            ciljno lokacijo, bodisi med posameznimi registri ali registri in pomnilnikom,
+            ciljno lokacijo, bodisi med posameznimi registri bodisi registri in pomnilnikom;
 
         \item aritmetične in logične ukaze, ki jih procesor izvaja nad podatki v
             akumulatorju in drugih splošnonamenskih registrih ali pomnilniških
-            lokacijah. Rezultat dane operacije se razen v par izjemah shrani v akumulator,
+            lokacijah. Rezultat dane operacije se razen v nekaj izjemah shrani v akumulator,
             glede na rezultat operacije pa se nastavijo tudi ustrezne zastavice
-            v registru zastavic,
+            v registru zastavic;
 
         \item ukaze rotacije in zamikov, ki omogočajo levo ali desno, aritmetično
             ali logično, rotacijo ali zamik vrednosti poljubnega registra ali
-            pomnilniške lokacije z ali brez prenosa,
+            pomnilniške lokacije z ali brez prenosa;
 
         \item ukaze manipulacije bitov, ki omogočajo nastavitev, ponastavitev ali
             preveritev vrednosti poljubnega bita vrednosti v akumulatorju,
-            drugem splošnonamenskem registru ali pomnilniški lokaciji,
+            drugem splošnonamenskem registru ali pomnilniški lokaciji;
 
         \item ukaze skokov, klicev in vrnitev, ki se uporabljajo za skoke med več
             lokacijami v programu. Edinstvena vrsta klicev so ukazi skupine
             ponovnih zagonov, ki lahko kot nov naslov izvajanja določi le enega od
-            8 ločenih naslovov, ki se nahajajo na prvi strani pomnilnika,
+            8 ločenih naslovov, ki se nahajajo na prvi strani pomnilnika;
 
         \item ukaze prenosov in iskanja blokov, ki se uporabljajo za prenos
             celih blokov podatkov iz enega mesta pomnilnika na drugo oziroma
             iskanje poljubnega 8-bitnega znaka v bloku podatkov v pomnilniku. Ob dosegu
             konca definiranega bloka ali najdenega znaka se ukaz samodejno prekine,
-            prav tako se lahko izvajanje takega ukaza kadarkoli prekine in
+            prav tako se lahko izvajanje takega ukaza kadar koli prekine in
             kasneje nadaljuje, kar omogoča vmesno uporabo procesorja za druge operacije.
-            Ukazi te skupine pridejo prav pri obdelavi velikih nizov podatkov,
+            Ukazi te skupine pridejo prav pri obdelavi velikih nizov podatkov;
 
         \item ukaze vhoda in izhoda, ki omogočajo prenose podatkov (posameznih ali
             blokov) med pomnilniškimi lokacijami ali splošnimi registri
-            procesorja in zunanjimi V/I napravami,
+            procesorja in zunanjimi V/I napravami;
 
         \item nadzorni oziroma kontrolni ukazi, ki omogočajo upravljanje
             različnih načinov delovanja procesorja, med drugim omogočanje in onemogočanje
-            prekinitev, nastavljanje načina odziva na prekinitve, itd.
+            prekinitev, nastavljanje načina odziva na prekinitve itd.
     \end{itemize}
 
-    Podskupina ukazov ponovnih zagonov RST (angl. ReSTart) opravlja isto nalogo
-    kot brezpogojni klici, le da lahko z njimi kličemo le 8 naslovov v začetku ROMa
+    Podskupina ukazov ponovnih zagonov RST (angl. ReSTart) opravlja isto nalogo kot
+    brezpogojni klici, le da lahko z njimi kličemo le 8 naslovov v začetku ROMa
     ~\cite{strojnijezikzaprocesorz80}:
     \begin{itemize}
-        \item RST \texttt{0x00} učinkuje kot izklop in ponovnen vklop
-            računalnika,
+        \item RST \texttt{0x00} učinkuje kot izklop in ponoven vklop računalnika;
 
         \item RST \texttt{0x08} služi za prikaz sporočila o napaki BASICa, katere
             8-bitni kod napake sledi ukazu kot operand, ter za uporabljanje
             mikrotračnih enot in omrežja Spectrumov preko vmesnika na zadnji
-            strani računalnika,
+            strani računalnika;
 
         \item RST \texttt{0x10} na zaslon izpiše znak, katerega kod je v registru
-            A,
+            A;
 
         \item RST \texttt{0x18} register A napolni z vrednostjo zloga, katerega naslov
-            je v sistemski spremenljivki CH-ADD,
+            je v sistemski spremenljivki CH-ADD;
 
-        \item RST \texttt{0x20} se uporablja pri tolmačenju programov v BASICu,
+        \item RST \texttt{0x20} se uporablja pri tolmačenju programov v BASICu;
 
         \item RST \texttt{0x28} se uporablja za računanje s plavajočo vejico na
             računskem skladu, zlogi operandi pa določajo kode operacij, ki se
-            morajo izvesti,
+            morajo izvesti;
 
         \item RST \texttt{0x30} preuredi delovni pomnilniški prostor tako, da dobimo
             v njem toliko prostih zlogov, kolikor je vrednost registrskega para
-            BC,
+            BC;
 
         \item RST \texttt{0x38} preleti tipkovnico (kontrola pritisnjenih tipk)
             in poveča šte-vec časa.
@@ -1313,54 +1309,54 @@ by
 
     \subsection{Tipi naslavljanj}
 
-    Naslavljanje se nanaša na način definicije naslova podatkov v registrih,
-    pomnilniku ali V/I vratih, ki se bodo uporabili pri izvedbi določenega ukaza ~\cite{z80cpuusermanual}:
+    Naslavljanje se nanaša na način definicije naslova podatkov v registrih, pomnilniku
+    ali V/I vratih, ki se bodo uporabili pri izvedbi določenega ukaza ~\cite{z80cpuusermanual}:
     \begin{itemize}
         \item registrsko naslavljanje (oblike \texttt{LD r, r}) določi enega ali
             več registrov, ki se uporabijo za dano operacijo ~\cite{strojnijezikzaprocesorz80,
-            z80cpuusermanual},
+            z80cpuusermanual};
 
         \item sprotno ali takojšnje naslavljanje (oblike \texttt{LD r, n}) v
             zlogu, ki sledi št. strojnega ukaza, vsebuje 8-bitno vrednost operanda
-            ~\cite{strojnijezikzaprocesorz80, z80cpuusermanual},
+            ~\cite{strojnijezikzaprocesorz80, z80cpuusermanual};
 
         \item razširjeno takojšnje naslavljanje (oblike \texttt{LD rr, nn}) v
             zlogih, ki sledita št. strojnega ukaza, vsebuje 16-bitno vrednost operanda
-            ~\cite{z80cpuusermanual},
+            ~\cite{z80cpuusermanual};
 
         \item zunanje ali razširjeno naslavljanje (oblike \texttt{LD A, (nn)}) v
             zlogih, ki sledita št. strojnega ukaza, vsebuje pomnilniški naslov operanda,
             kar omogoča prenašanje vrednosti iz registra v pomnilniško celico in
             obratno ter skok ali prenos podatkov med poljubnima pomnilniškima
-            lokacijama ~\cite{strojnijezikzaprocesorz80, z80cpuusermanual},
+            lokacijama ~\cite{strojnijezikzaprocesorz80, z80cpuusermanual};
 
         \item registrsko posredno naslavljanje (oblik \texttt{LD r, (rr)} in \texttt{LD
             (rr), r}) določi registrski par, katerega vrednost predstavlja
-            pomnilniški naslov operanda ~\cite{strojnijezikzaprocesorz80, z80cpuusermanual},
+            pomnilniški naslov operanda ~\cite{strojnijezikzaprocesorz80, z80cpuusermanual};
 
         \item relativno naslavljanje (oblike \texttt{JR d}) v zlogu, ki sledi št.
             strojnega ukaza, vsebuje odmik v obliki dvojiškega komplementa, ki
             se prišteje vrednosti registra PC za določitev pomnilniške lokacije
             operanda. To poleg prenosljivosti programa omogoča tudi skoke na bližnje
-            pomnilniške lokacije z le dvozložnim ukazom ~\cite{z80cpuusermanual},
+            pomnilniške lokacije z le dvozložnim ukazom ~\cite{z80cpuusermanual};
 
         \item indeksno naslavljanje (oblike \texttt{LD r, (IX+dis)} in \texttt{LD
-            (IX+dis), r}) je le oblika registerskega posrednega naslavljanja z dodanim
+            (IX+dis), r}) je le oblika registrskega posrednega naslavljanja z dodanim
             odmikom. V zlogu, ki sledi št. strojnega ukaza, vsebuje odmik v predstavitvi
             dvojiškega komplementa, ki se prišteje vrednosti izbranega
             indeksnega registra za določitev pomnilniške lokacije operanda. To poleg
             prenosljivosti programa omogoča tudi poenostavitev dela s tabelami podatkov
-            ~\cite{strojnijezikzaprocesorz80, z80cpuusermanual},
+            ~\cite{strojnijezikzaprocesorz80, z80cpuusermanual};
 
         \item bitno naslavljanje (oblike \texttt{BIT b, r}) s pomočjo
-            registrskega, registerskega posrednega ali indeksnega naslavljanja lahko
-            določi poljubni bit poljubne pomnilniška lokacije ali registra za izvedbo
-            bitne operacije ~\cite{z80cpuusermanual},
+            registrskega, registrskega posrednega ali indeksnega naslavljanja lahko
+            določi poljubni bit poljubne pomnilniške lokacije ali registra za izvedbo
+            bitne operacije ~\cite{z80cpuusermanual};
 
         \item spremenjeno naslavljanje ničelne strani (oblike \texttt{RST p}) se
             nanaša na posebne enozložne ukaze RST za skok na poljubno od 8
             lokacij v strani 0 pomnilnika, kjer se nahajajo pogosto uporabljeni podprogrami
-            ROMa ~\cite{z80cpuusermanual},
+            ROMa ~\cite{z80cpuusermanual};
 
         \item implicitno naslavljanje (oblike \texttt{RLA}) se uporablja pri
             mnogih ukazih, ki implicitno določijo registre z operandi,
@@ -1368,57 +1364,57 @@ by
             implicitno shrani v akumulator) ~\cite{z80cpuusermanual}.
     \end{itemize}
 
-    Ker mnoge operacije zahtevajo več kot en operand, se lahko hkrati uporabi tudi
-    več tipov naslavljanj ~\cite{z80cpuusermanual}.
+    Ker mnoge operacije zahtevajo več kot en operand, se lahko hkrati uporabi
+    tudi več tipov naslavljanj ~\cite{z80cpuusermanual}.
 
     \subsection{Nedokumentirani ukazi}
 
-    Poleg uradno navedenega nabora ukazov ima Z80 tudi množico operacijskih kod,
-    ki so v uradni dokumentaciji izpuščene ali označene kot neuporabljene. Na pravem
-    procesorju te operacijske kode kljub temu lahko izvedejo nove ali podvojene že
-    dokumentirane ukaze. To se zgodi zato, ker procesor tudi pri nedokumentiranih
-    kombinacijah bitov uporabi isto dekodirno logiko kot pri uradnem naboru ukazov.
-    Predpona določi skupino ukazov, naslednji zlogi pa določijo operacijo,
-    register ali način naslavljanja ~\cite{theundocumentedz80documented}.
+    Poleg uradno navedenega nabora ukazov ima Z80 tudi množico operacijskih kod, ki
+    so v uradni dokumentaciji izpuščene ali označene kot neuporabljene. Na
+    pravem procesorju lahko te operacijske kode kljub temu izvedejo nove ali
+    podvojene že dokumentirane ukaze. To se zgodi zato, ker procesor tudi pri
+    nedokumentiranih kombinacijah bitov uporabi isto dekodirno logiko kot pri
+    uradnem naboru ukazov. Predpona določi skupino ukazov, naslednji zlogi pa
+    določijo operacijo, register ali način naslavljanja ~\cite{theundocumentedz80documented}.
 
-    Pri predponi \texttt{0xCB} nedokumentirane kode od \texttt{0xCB30} do \texttt{0xCB37}
-    med drugim definirajo ukaze logičnih pomikov v levo \texttt{SLL}. Pri
-    predponi \texttt{0xDD} se uporabe registra HL v ukazih praviloma nadomestijo z
-    IX, pri predponi \texttt{0xFD} pa z IY, vključno z dostopi do posameznih
-    polovic oziroma zlogov indeksnih registrov. Pri predponi \texttt{0xED}
-    nekatere kode predstavljajo dvojnike uradnih ukazov, preostale neuporabljene kode
-    pa se obnašajo kot zaporedja brez učinka. Posebnost sta ukazni kodi \texttt{0xED70}
-    in \texttt{0xED71}, od katerih prva prebere vrednost iz V/I vrat in z njo nastavi
-    samo zastavice, druga pa na V/I vrata zapiše vrednost nič. Pri štirizložnih skupinah
-    s predponama \texttt{0xDD 0xCB} in \texttt{0xFD 0xCB} se bitne operacije izvedejo
-    nad indeksirano pomnilniško lokacijo, pri delu ukazov pa zadnji zlog določi
-    še dodatni ciljni register ~\cite{theundocumentedz80documented}.
+    Pri predponi \texttt{0xCB} nedokumentirane kode od \texttt{0xCB30} do
+    \texttt{0xCB37} med drugim definirajo ukaze logičnih pomikov v levo \texttt{SLL}.
+    Pri predponi \texttt{0xDD} se uporabe registra HL v ukazih praviloma
+    nadomestijo z IX, pri predponi \texttt{0xFD} pa z IY, vključno z dostopi do posameznih
+    polovic oziroma zlogov indeksnih registrov. Pri predponi \texttt{0xED} nekatere
+    kode predstavljajo dvojnike uradnih ukazov, preostale neuporabljene kode pa
+    se obnašajo kot zaporedja brez učinka. Posebnost sta ukazni kodi \texttt{0xED70}
+    in \texttt{0xED71}, od katerih prva prebere vrednost iz V/I vrat in z njo
+    nastavi samo zastavice, druga pa na V/I vrata zapiše vrednost nič. Pri
+    štirizložnih skupinah s predponama \texttt{0xDD 0xCB} in \texttt{0xFD 0xCB}
+    se bitne operacije izvedejo nad indeksirano pomnilniško lokacijo, pri delu ukazov
+    pa zadnji zlog določi še dodatni ciljni register ~\cite{theundocumentedz80documented}.
 
     \section{Prekinitve}
 
-    Prekinitve omogočajo prekinitev operacij CPE, izvajanja PSP in vrnitev v prvotno
-    stanje izvajanje programa. Prekinitev lahko sproži zunanja naprava ali
-    nadzorni program računalnika. Na primer, CPE vsako 1/50 sekunde pogleda
-    stanje posebne notranje zastavice IFF1. Če je njena vrednost 1, sproži
-    prekinitev in izvrši ukaz RST 38H, s katerim pridobi stanje tipkovnice ~\cite{strojnijezikzaprocesorz80,
+    Prekinitve omogočajo prekinitev operacij CPE, izvajanja PSP in vrnitev v
+    prvotno stanje izvajanje programa. Prekinitev lahko sproži zunanja naprava ali
+    nadzorni program računalnika. Na primer, CPE vsako 1/50 sekunde pogleda stanje
+    posebne notranje zastavice IFF1. Če je njena vrednost 1, sproži prekinitev in
+    izvrši ukaz RST 38H, s katerim pridobi stanje tipkovnice ~\cite{strojnijezikzaprocesorz80,
     z80cpuusermanual}.
 
-    Ker se zaradi tega delovna hitrost procesorja nekoliko zmanjša, lahko program
-    z ukazom DI prekinitve onemogoči in kasneje z ukazom EI nazaj omogoči.
-    Program lahko prav tako z ukazom HALT prekine izvajanje strojnega programa
-    do naslednje prekinitve. Med tem CPE izvaja operacije NOP za namen delovanja osveževanja
-    pomnilnika ~\cite{strojnijezikzaprocesorz80, z80cpuusermanual}.
+    Ker se zaradi tega delovna hitrost procesorja nekoliko zmanjša, lahko
+    program z ukazom DI prekinitve onemogoči in kasneje z ukazom EI ponovno
+    omogoči. Program lahko prav tako z ukazom HALT prekine izvajanje strojnega programa
+    do naslednje prekinitve. Med tem CPE izvaja operacije NOP za namen delovanja
+    osveževanja pomnilnika ~\cite{strojnijezikzaprocesorz80, z80cpuusermanual}.
 
     \subsection{Načini prekinitev in njihovo delovanje}
 
-    Z80 CPE podpira 2 vrsti prekinitev:
+    Z80 CPE podpira dve vrsti prekinitev:
 
-    Maskirne prekinitve INT, ki jih je mogoče programsko onemogočiti, z nastavljanjem
-    vrednosti IFF1 prek ukazov EI in DI, saj se uporablja kot zahteva za
-    prekinitev s strani zunanjih naprav. CPE ima poleg notranje zastavice IFF1,
-    ki se dejansko uporablja pri izvajanju, še IFF2 kot začasno shrambo vrednosti
-    IFF1. Glavna stanja obeh notranjih zastavic in spremembe ob pomembnih ukazih
-    so vidne v tabeli \ref{z80cpuusermanual_tab2} ~\cite{z80cpuusermanual}.
+    Maskirne prekinitve INT, ki jih je mogoče programsko onemogočiti, z
+    nastavljanjem vrednosti IFF1 prek ukazov EI in DI, saj se uporabljajo kot zahteva
+    za prekinitev s strani zunanjih naprav. CPE ima poleg notranje zastavice
+    IFF1, ki se dejansko uporablja pri izvajanju, še IFF2 kot začasno shrambo
+    vrednosti IFF1. Glavna stanja obeh notranjih zastavic in spremembe ob pomembnih
+    ukazih so vidne v tabeli \ref{z80cpuusermanual_tab2} ~\cite{z80cpuusermanual}.
 
     \begin{table}[htb]
         \begin{center}
@@ -1446,56 +1442,57 @@ by
         \label{z80cpuusermanual_tab2}
     \end{table}
 
-    CPE je lahko nastavljen v enega izmed 3 možnih načinov obravnavanja
-    maskirnih prekinitev ~\cite{z80cpuusermanual}.
+    CPE je lahko nastavljen v enega izmed treh možnih načinov obravnavanja maskirnih
+    prekinitev ~\cite{z80cpuusermanual}.
 
-    V načinu 0 lahko prekinitvena naprava na podatkovno vodilo postavi poljuben ukaz,
-    ki ga CPE izvede. Ker mora izbran ukaz imeti le 1 zlog, je to pogosto ukaz
-    klica PSP. CPE pri izvedbi tega ukaza samodejno doda 2 čakalni periodi, da
-    bi zagotovil dovolj časa za izvedbo zunanje verižne povezave za nadzor
-    prioritet ~\cite{z80cpuusermanual}.
+    V načinu 0 lahko prekinitvena naprava na podatkovno vodilo postavi poljuben
+    ukaz, ki ga CPE izvede. Ker mora izbran ukaz imeti le en zlog, je to pogosto ukaz
+    klica PSP. CPE pri izvedbi tega ukaza samodejno doda dve čakalni periodi, da bi
+    zagotovil dovolj časa za izvedbo zunanje verižne povezave za nadzor prioritet
+    ~\cite{z80cpuusermanual}.
 
-    V načinu 1 CPE začne izvajati ukaz na pomnilniškem naslovu \texttt{0x0038}. Posledično
-    je odziv razen lokacije klica identičen odzivu na nemaskirne prekinitve, ki
-    kliče podprogram na pomnilniškem naslovu \texttt{0x0066}. CPE tudi v tem
-    primeru doda 2 čakalni periodi ~\cite{z80cpuusermanual}.
+    V načinu 1 CPE začne izvajati ukaz na pomnilniškem naslovu \texttt{0x0038}.
+    Posledično je odziv razen lokacije klica identičen odzivu na nemaskirne
+    prekinitve, ki kliče podprogram na pomnilniškem naslovu \texttt{0x0066}. CPE tudi
+    v tem primeru doda dve čakalni periodi ~\cite{z80cpuusermanual}.
 
-    Način 2 omogoča klic podprograma v uporabniško vzdrževani tabeli 16-bitnih začetnih
-    naslovov PSP na poljubnem mestu v pomnilniku. Naslovi PSP v tabeli se morajo
-    nahajati na sodih naslovih, ker vsak zavzema 2 zloga. Zgornji zlog 16-bitnega
-    naslova PSP določa vrednost registra I, spodnji zlog pa sama prekinitvena naprava.
-    Ko prekinitvena naprava zagotovi spodnji del kazalca, CPE samodejno potisne PC
-    na sklad, pridobi naslov PSP iz tabele in izvede skok nanj. Ta način odziva zahteva
-    19 čakalnih period ~\cite{z80cpuusermanual}.
+    Način 2 omogoča klic podprograma v uporabniško vzdrževani tabeli 16-bitnih
+    začetnih naslovov PSP na poljubnem mestu v pomnilniku. Naslovi PSP v tabeli se
+    morajo nahajati na sodih naslovih, ker vsak zavzema dva zloga. Zgornji zlog 16-bitnega
+    naslova PSP določa vrednost registra I, spodnji zlog pa sama prekinitvena
+    naprava. Ko prekinitvena naprava zagotovi spodnji del kazalca, CPE samodejno
+    potisne PC na sklad, pridobi naslov PSP iz tabele in izvede skok nanj. Ta
+    način odziva zahteva 19 čakalnih period ~\cite{z80cpuusermanual}.
 
-    Prekinitve NMI imajo višjo prioriteto kot maskirne prekinitve INT in jih ni
-    mogoče programsko onemogočiti, saj se uporablja za predvsem za takojšnje odzive
-    na najpomembnejše signale, ki se morajo obravnavati s čim manj zakasnitve. CPE
-    ga zato obravnava že po koncu izvajanja trenutnega ukaza. Pri tem se najprej
-    IFF1 onemogoči (in njegova prejšnja vrednost shrani v IFF2), kar za čas izvajanja
-    PSP prepreči navadne prekinitve, nato se vrednost registra PC shrani na
-    sklad, izvajanje pa preusmeri na pomnilniški naslov \texttt{0x0066} ~\cite{z80cpuusermanual}.
+    Prekinitve NMI imajo višjo prioriteto kot maskirne prekinitve INT in jih ni mogoče
+    programsko onemogočiti, saj se uporabljajo predvsem za takojšnje odzive na
+    najpomembnejše signale, ki se morajo obravnavati s čim manj zakasnitve. CPE
+    ga zato obravnava že po koncu izvajanja trenutnega ukaza. Pri tem se najprej onemogoči
+    IFF1 (in njegova prejšnja vrednost shrani v IFF2), kar za čas izvajanja PSP
+    prepreči navadne prekinitve, nato se vrednost registra PC shrani na sklad,
+    izvajanje pa preusmeri na pomnilniški naslov \texttt{0x0066} ~\cite{z80cpuusermanual}.
 
     \section{Implementacija v emulatorju}
 
-    Procesor je v emulatorju predstavljen z objektom \texttt{Processor}. Ta ne
-    hrani vseh podatkov procesorja neposredno v sebi, ampak povezuje ločene modele
-    registrov, pomnilnika, V/I vrat in časovnika. Časovni model je implementiran
-    v objektu \texttt{ULATiming}, ki hrani skupno število izvedenih T-stanj, trenutno
-    pozicijo znotraj slikovnega okvira in števec prikazanih okvirjev. Emulator
+    Procesor je v emulatorju predstavljen z objektom \texttt{Processor}. Ta ne hrani
+    vseh podatkov procesorja neposredno v sebi, ampak povezuje ločene modele
+    registrov, pomnilnika, V/I vrat in časovnika. Časovni model je implementiran v
+    objektu \texttt{ULATiming}, ki hrani skupno število izvedenih T-stanj,
+    trenutni položaj znotraj slikovnega okvira in števec prikazanih okvirjev. Emulator
     privzeto uporablja frekvenco procesorja 3,5 MHz in dolžino okvirja 69888 T-stanj,
-    kar ustreza modelu računalnika 48K z evropskim video standardom. V objektu
-    \texttt{Processor} so shranjena predvsem stanja, ki vodijo izvajanje, kot so omogočenost
-    maskirih prekinitev \texttt{IFF1} in \texttt{IFF2}, trenutni prekinitveni
-    način, stanje \texttt{HALT}, prekinitvene točke in števec izvedenih ukazov.
+    kar ustreza modelu računalnika 48K z evropskim video standardom. V objektu \texttt{Processor}
+    so shranjena predvsem stanja, ki vodijo izvajanje, kot so omogočenost
+    maskirnih prekinitev \texttt{IFF1} in \texttt{IFF2}, trenutni prekinitveni način,
+    stanje \texttt{HALT}, prekinitvene točke in števec izvedenih ukazov.
 
-    Registri so zbrani v objektu \texttt{Registers}. Ta vsebuje glavni in zamenljiv
-    registrski nabor ter posebne registre \texttt{I}, \texttt{R}, indeksna registra
-    \texttt{IX} in \texttt{IY}, \texttt{SP}, \texttt{PC} in nedokumentirani notranji
-    register \texttt{MEMPTR}. Zastavice niso ločen podatkovni tip, ampak
-    posamezni biti v registru \texttt{F}. Dostop do njih je zato implementiran z
-    metodami za branje in nastavljanje posameznih bitov. Vpogled v stanje registrov
-    in zastavic je prikazan na sliki \ref{subspectruminterface_pic6}.
+    Registri so zbrani v objektu \texttt{Registers}. Ta vsebuje glavni in
+    zamenljiv registrski nabor ter posebne registre \texttt{I}, \texttt{R},
+    indeksna registra \texttt{IX} in \texttt{IY}, \texttt{SP}, \texttt{PC} in
+    nedokumentirani notranji register \texttt{MEMPTR}. Zastavice niso ločen
+    podatkovni tip, ampak posamezni biti v registru \texttt{F}. Dostop do njih je
+    zato implementiran z metodami za branje in nastavljanje posameznih bitov.
+    Vpogled v stanje registrov in zastavic je prikazan na sliki
+    \ref{subspectruminterface_pic6}.
 
     \begin{figure}[htb]
         \begin{center}
@@ -1506,18 +1503,17 @@ by
         \label{subspectruminterface_pic6}
     \end{figure}
 
-    Procesor Z80 podpira več kot tisoč različnih dokumentiranih in
-    nedokumentiranih strojnih ukazov. Posamezen strojni ukaz je predstavljen z vmesnikom
-    \texttt{Instruction}. Ukaz pozna naslov, zloge, iz katerih je bil dekodiran,
-    število T-stanj in metodo \texttt{execute}, ki izvede vse potrebne spremembe
-    na stanju sistema ob izvedbi. Emulator ukaze z isto namembnostjo, a
-    različnimi operandi, implementira z 230 definicijami ukazov. Definicija
-    ukaza je ločena od njegove izvedbe z vmesnikom \texttt{InstructionDefinition},
-    ki opiše, kateri biti v prebranih zlogih tvorijo kodo ukaza oziroma opcode in
-    kateri biti predstavljajo operande. Na primer, vzorec \texttt{00rrr110
-    nnnnnnnn} ustreza ukazu \texttt{LD r,n}, pri katerem fiksni biti določijo
-    vrsto ukaza, biti \texttt{r} se dekodirajo v ciljni register, biti \texttt{n}
-    pa v neposredno enozložno vrednost.
+    Procesor Z80 podpira več kot tisoč različnih dokumentiranih in nedokumentiranih
+    strojnih ukazov. Posamezen strojni ukaz je predstavljen z vmesnikom \texttt{Instruction}.
+    Ukaz pozna naslov, zloge, iz katerih je bil dekodiran, število T-stanj in metodo
+    \texttt{execute}, ki izvede vse potrebne spremembe na stanju sistema ob izvedbi.
+    Emulator ukaze z isto namembnostjo, a različnimi operandi, implementira z
+    230 definicijami ukazov. Definicija ukaza je ločena od njegove izvedbe z vmesnikom
+    \texttt{InstructionDefinition}, ki opiše, kateri biti v prebranih zlogih
+    tvorijo kodo ukaza oziroma opcode in kateri biti predstavljajo operande. Na primer,
+    vzorec \texttt{00rrr110 nnnnnnnn} ustreza ukazu \texttt{LD r,n}, pri katerem fiksni
+    biti določijo vrsto ukaza, biti \texttt{r} se dekodirajo v ciljni register,
+    biti \texttt{n} pa v neposredno enozložno vrednost.
 
     \begin{verbatim}
 override val bitPattern = BitPattern.of("00rrr110 nnnnnnnn")
@@ -1534,79 +1530,78 @@ val sourceUByte = bitPattern.getUByte(word, 'n')
         \label{subspectruminterface_pic5}
     \end{figure}
 
-    Bitni vzorci so opisani z razredom \texttt{BitPattern}. V njem so fiksni
-    biti zapisani kot ničle in enice, ostali znaki pa predstavljajo zajeta polja,
-    na primer kodo registra, pogoj skoka, neposredni zlog ali 16-bitni operand. Dekodirnik
-    v objektu \texttt{Instructions} iz pomnilnika prebere toliko zlogov, kot jih zahteva
-    posamezen vzorec, prebrano vrednost primerja z registriranimi vzorci in ob
-    ujemanju ustvari konkreten objekt ukaza. Vpogled v dekodirane ukaze je prikazan
-    na sliki \ref{subspectruminterface_pic5}.
+    Bitni vzorci so opisani z razredom \texttt{BitPattern}. V njem so fiksni biti
+    zapisani kot ničle in enice, ostali znaki pa predstavljajo zajeta polja, na primer
+    kodo registra, pogoj skoka, neposredni zlog ali 16-bitni operand. Dekodirnik
+    v objektu \texttt{Instructions} iz pomnilnika prebere toliko zlogov, kot jih
+    zahteva posamezen vzorec, prebrano vrednost primerja z registriranimi vzorci in
+    ob ujemanju ustvari konkreten objekt ukaza. Vpogled v dekodirane ukaze je
+    prikazan na sliki \ref{subspectruminterface_pic5}.
 
     Posebna obravnava je potrebna pri predponah kodov ukazov. Predponi \texttt{0xDD}
-    in \texttt{0xFD} pomenita, da se nekateri dostopi do \texttt{HL}, \texttt{H}
-    in \texttt{L} začasno preusmerijo na \texttt{IX} oziroma \texttt{IY}. To je
-    v emulatorju izvedeno z začasnim načinom indeksne predpone v objektu \texttt{Registers}.
-    Dekodirnik zna obravnavati tudi kombinacije s predponama \texttt{0xCB}, ki
-    označuje bitnih, rotacijskih in zamikalnih ukazov, ter \texttt{0xED}, ki
-    označuje razširjene ukaze Z80, med katere spadajo tudi nekateri blokovni in vhodno-izhodni
-    ukazi. Podpira tudi več zaporednih indeksnih predpon. Tak ukaz se ovije v pomožni
-    objekt, ki ohrani izvorne zloge, prišteje dodatna T-stanja za predpone in nastavi
+    in \texttt{0xFD} pomenita, da se nekateri dostopi do \texttt{HL}, \texttt{H} in
+    \texttt{L} začasno preusmerijo na \texttt{IX} oziroma \texttt{IY}. To je v emulatorju
+    izvedeno z začasnim načinom indeksne predpone v objektu \texttt{Registers}. Dekodirnik
+    zna obravnavati tudi kombinacije s predponama \texttt{0xCB}, ki označuje bitnih,
+    rotacijskih in zamikalnih ukazov, ter \texttt{0xED}, ki označuje razširjene ukaze
+    Z80, med katere spadajo tudi nekateri blokovni in vhodno-izhodni ukazi. Podpira
+    tudi več zaporednih indeksnih predpon. Tak ukaz se ovije v pomožni objekt, ki
+    ohrani izvorne zloge, prišteje dodatna T-stanja za predpone in nastavi
     pravilen način dostopa do indeksnih registrov le za čas izvedbe takega ukaza.
 
-    Izvajanje enega koraka (naslednjega ukaza) se začne z branjem trenutnega programskega
-    števca \texttt{PC}. Če je na tem naslovu nastavljena prekinitvena točka, se
-    neprekinjen tek ustavi. Nato ima prednost morebitna nemaskirna prekinitev.
-    Če je ni, se preverijo še pogoji za hitro nalaganje kasetnih podatkov. Šele
-    nato se ukaz dekodira iz pomnilnika, števec osveževanja \texttt{R} se poveča
-    za število dejansko prebranih ukaznih zlogov, programski števec pa se pomakne
-    za dolžino ukaza.
+    Izvajanje enega koraka (naslednjega ukaza) se začne z branjem trenutnega
+    programskega števca \texttt{PC}. Če je na tem naslovu nastavljena
+    prekinitvena točka, se neprekinjen tek ustavi. Nato ima prednost morebitna
+    nemaskirna prekinitev. Če je ni, se preverijo še pogoji za hitro nalaganje
+    kasetnih podatkov. Šele nato se ukaz dekodira iz pomnilnika, števec
+    osveževanja \texttt{R} se poveča za število dejansko prebranih ukaznih zlogov,
+    programski števec pa se pomakne za dolžino ukaza.
 
-    Po predpripravi ukaza se izvede metoda \texttt{execute}. Ta lahko spremeni registre,
-    zapisuje v pomnilnik, bere ali piše V/I vrata. Po izvedbi se poveča števec
-    izvedenih ukazov za namene razhroščevalnika, časovniku ULA pa se prišteje število
-    T-stanj ukaza. Ko število T-stanj preseže dolžino okvirja, časovnik poveča števec
-    okvirjev, označi čakajočo prekinitev in o tem obvesti dele uporabniškega
-    vmesnika, ki so vezani na osveževanje slike. Pogoji za izvedbo maskirne
-    prekinitve se preverjajo ob koncu izvajanja trenutnega ukaza, zato časovnik povezuje
-    hitrost izvajanja, periodične prekinitve in osveževanje zaslonskega prikaza.
+    Po predpripravi ukaza se izvede metoda \texttt{execute}. Ta lahko spremeni
+    registre, zapisuje v pomnilnik, bere ali piše V/I vrata. Po izvedbi se poveča
+    števec izvedenih ukazov za namene razhroščevalnika, časovniku ULA pa se
+    prišteje število T-stanj ukaza. Ko število T-stanj preseže dolžino okvirja,
+    časovnik poveča števec okvirjev, označi čakajočo prekinitev in o tem obvesti dele
+    uporabniškega vmesnika, ki so vezani na osveževanje slike. Pogoji za izvedbo maskirne
+    prekinitve se preverjajo ob koncu izvajanja trenutnega ukaza, zato časovnik
+    povezuje hitrost izvajanja, periodične prekinitve in osveževanje zaslonskega prikaza.
 
-    Pri vseh maskirnih prekinitvah se trenutna vrednost registra \texttt{PC} najprej
-    zapiše na sklad, nato se onemogočita \texttt{IFF1} in \texttt{IFF2}. Maskirna
-    prekinitev ponastavi vrednost le \texttt{IFF1}, na sklad shrani vrednost registra
-    \texttt{PC} in nadaljuje izvajanje na naslovu \texttt{0x0066}. Ukaza \texttt{EI}
-    in \texttt{DI} nastavita še notranjo zastavico, zaradi katere se maskirna prekinitev
-    ne obdela takoj za njima.
+    Pri vseh maskirnih prekinitvah se trenutna vrednost registra \texttt{PC}
+    najprej zapiše na sklad, nato se onemogočita \texttt{IFF1} in \texttt{IFF2}.
+    Maskirna prekinitev ponastavi vrednost le \texttt{IFF1}, na sklad shrani
+    vrednost registra \texttt{PC} in nadaljuje izvajanje na naslovu \texttt{0x0066}.
+    Ukaza \texttt{EI} in \texttt{DI} nastavita še notranjo zastavico, zaradi
+    katere se maskirna prekinitev ne obdela takoj za njima.
 
-    Ukaz \texttt{HALT} je izveden tako, da programski števec vrne na naslov ukaza
-    \texttt{HALT} in nastavi stanje zaustavitve. Dokler ne pride do prekinitve,
-    se zato ob vsakem koraku znova izvaja isti ukaz, v tem primeru ukaz \texttt{NOP}.
-    Ob prekinitvi se stanje \texttt{HALT} zaključi, na sklad pa se zapiše naslov naslednjega
-    ukaza, kot pri pravem procesorju.
+    Ukaz \texttt{HALT} je izveden tako, da programski števec vrne na naslov
+    ukaza \texttt{HALT} in nastavi stanje zaustavitve. Dokler ne pride do
+    prekinitve, se ob vsakem koraku znova izvaja isti ukaz, v tem primeru ukaz
+    \texttt{NOP}. Ob prekinitvi se stanje \texttt{HALT} zaključi, na sklad pa se
+    zapiše naslov naslednjega ukaza, kot pri pravem procesorju.
 
-    Poleg izvajanja ukazov po korakih emulator podpira tudi neprekinjen tek. V tem
-    načinu delovanja procesor ponavlja izvajanje ukazov, dokler uporabnik
-    emulatorja ne zaustavi. V načinu delovanja emulatorja ob standardni hitrosti primerja
-    število izvedenih T-stanj z realnim časom izvajanja in po potrebi počaka z izvajanjem
-    nadaljnjega ukaza, da se izvajanje približa frekvenci 3,5 MHz. V načinu delovanja
-    emulatorja ob najvišji možni hitrosti tega čakanja ni, zato emulator izvaja
-    ukaze tako hitro, kot dopušča gostiteljski sistem.
+    Poleg izvajanja ukazov po korakih emulator podpira tudi neprekinjen tek. V
+    tem načinu delovanja procesor ponavlja izvajanje ukazov, dokler uporabnik emulatorja
+    ne zaustavi. V načinu delovanja emulatorja ob standardni hitrosti primerja
+    število izvedenih T-stanj z realnim časom izvajanja in po potrebi počaka z
+    izvajanjem nadaljnjega ukaza, da se izvajanje približa frekvenci 3,5 MHz. V
+    načinu delovanja emulatorja ob najvišji možni hitrosti tega čakanja ni, zato emulator
+    izvaja ukaze tako hitro, kot dopušča gostiteljski sistem.
 
     \chapter{Vezje ULA}
     \label{ula}
 
-    Vezje ULA je predhodnik modernejših večjih uporabniško programirljivih vezij in
-    predstavlja vmesnik med procesorjem in video krmilnikom, tipkovnico in
-    zvočnikom.
+    Vezje ULA je predhodnik modernejših večjih uporabniško programirljivih vezij
+    in predstavlja vmesnik med procesorjem in video krmilnikom, tipkovnico in zvočnikom.
 
-    Procesorja pri branju in pisanju iz pomnilniških lokacij ne zanima s katerim
-    delom pomnilnika dela, pa naj bo to ROM ali RAM. Ve le, da obstaja 65536 pomnilniških
-    celic, v katerih lahko obdeluje shranjene podatke. Na popolnoma enak način dela
-    tudi s 65536 V/I naslovi, od katerih je odvisno delovanje zunanjih naprav, kot
-    so tipkovnica, zvočnik, kasetofon prek vtičnic EAR in MIC, tiskalnik in
-    drugi robni vmesniki in naprave pa prek robnega priključka, dostopni na zadnji
-    strani računalnika ~\cite{zxspectrumbasicprogramming} ~\cite{strojnijezikzaprocesorz80}.
+    Procesorja pri branju in pisanju iz pomnilniških lokacij ne zanima, s
+    katerim delom pomnilnika dela, pa naj bo to ROM ali RAM. Ve le, da obstaja 65536
+    pomnilniških celic, v katerih lahko obdeluje shranjene podatke. Na popolnoma enak
+    način dela tudi s 65536 V/I naslovi, od katerih je odvisno delovanje
+    zunanjih naprav, kot so tipkovnica, zvočnik, kasetofon prek vtičnic EAR in MIC,
+    tiskalnik in drugi robni vmesniki in naprave pa prek robnega priključka, dostopni
+    na zadnji strani računalnika ~\cite{zxspectrumbasicprogramming} ~\cite{strojnijezikzaprocesorz80}.
 
-    V/I naslovi so pri procesorju Z80 sestavljeni iz 16 bitov (A15, A14, ..., A1,
+    V/I naslovi so pri procesorju Z80 sestavljeni iz 16 bitov (A15, A14 ... A1,
     A0), vendar imajo posamezni biti različen pomen. Nižji zlog naslova označuje eno
     izmed 256 možnih V/I vrat. Ker se v večini primerov za določitev ciljne
     naprave operacije uporablja le ta spodnji zlog, se lahko različni V/I naslovi
@@ -1626,7 +1621,7 @@ val sourceUByte = bitPattern.getUByte(word, 'n')
     V času nastanka računalnika ZX Spectrum so se uporabljali UHF televizorji,
     kateremu je računalnik oddajal zaslonski signal na UHF kanalu 36. Pomembna
     je bila tudi različica računalnika, saj so se standardi televizorskih sistemov
-    razlikovali po državah in celinah -- evropski in britanski televizorji
+    razlikovali po državah in celinah -- evropski in britanski televizorji so
     takrat prikazovali 50 slik na sekundo, sistemi v ZDA, Kanadi in Japonski pa
     60 slik na sekundo. Zaradi tega so zanje delali drugačno verzijo računalnika ~\cite{zxspectrumintroduction}.
 
@@ -1634,32 +1629,31 @@ val sourceUByte = bitPattern.getUByte(word, 'n')
     Televizijski zaslon ima zunanji del, ki se imenuje obroba zaslona, in
     osrednji del, ki ga imenujemo papir oziroma zaslonska slika. Slednja je
     razdeljena na 768 položajev znakov (prek 24 vrstic in 32 stolpcev), na katerih
-    se prikazujejo znaki. Vsak znak je tako predstavljen kot 8x8 kvadrat točk, ki
+    se prikazujejo znaki. Vsak znak je tako predstavljen kot 8~x~8 kvadrat točk, ki
     ga lahko shranimo v 8 zlogih (vsak za eno vrstico točk), vsaka točka pa z
-    enim bitom, ki določa barvo točke -- barva papirja če ima pripadajoč bit
-    vrednost 0, bodisi v barvo črnila z vrednostjo bita 1 ~\cite{zxspectrumbasicprogramming,
+    enim bitom, ki določa barvo točke -- barva papirja, če ima pripadajoč bit vrednost
+    0, ali pa v barvo črnila pri vrednosti bita 1 ~\cite{zxspectrumbasicprogramming,
     zxspectrumintroduction}.
 
-    Ker je vsak položaj znaka velik 8x8 pik, bi lahko pričakovali, da so v
-    pomnilniku skupaj shranjeni vsi podatki za en položaj znaka -- vseh osem vrstic
-    osmih pik prvega položaja znaka, nato vseh osem vrstic osmih pik naslednjega
-    položaja znaka itd. Vendar pri računalniku ZX Spectrum vezje ULA podatke zaslonske
-    slike v pomnilniku pretvarja v televizijski video signal, ki je namenjen
-    rastrskemu grafičnem prikazu na CRT televizorju, pri katerem elektronski snop
-    sliko izrisuje po vodoravnih vrsticah točk, od leve proti desni. Zato so skupaj
-    shranjeni zlogi, ki predstavljajo isto vrstico pik pri zaporednih položajih
-    znakov čez celotno širino zaslona.
+    Ker je vsak položaj znaka velik 8~x~8 pik, bi lahko pričakovali, da so v pomnilniku
+    skupaj shranjeni vsi podatki za en položaj znaka -- vseh osem vrstic osmih
+    pik prvega položaja znaka, nato vseh osem vrstic osmih pik naslednjega položaja
+    znaka itd. Vendar pri računalniku ZX Spectrum vezje ULA podatke zaslonske
+    slike v pomnilniku pretvarja v televizijski video signal, ki je namenjen rastrskemu
+    grafičnemu prikazu na CRT televizorju, pri katerem elektronski snop sliko
+    izrisuje po vodoravnih vrsticah točk, od leve proti desni. Zato so skupaj
+    shranjeni zlogi, ki predstavljajo isto vrstico pik pri zaporednih položajih znakov
+    čez celotno širino zaslona.
 
     V pomnilniku so zato najprej shranjene prve vrstice pik zaporednih polo-žajev
-    znakov, nato druge vrstice pik istih položajev in tako naprej do osme vrstice
-    pik. A to zaporedje ne poteka čez vseh 24 vrstic znakov zapored, temveč je zaslonska
-    slika razdeljena na tri večje dele. Prvi del vsebuje podatke za vrstice
-    znakov 0 do 7, drugi za vrstice 8 do 15, tretji pa za vrstice 16 do 23.
-    Zaradi take razporeditve so biti naslova zloga za točko $(X, Y)$ v naslovu
-    premešani, kot prikazuje tabela \ref{zxspectrum_bitmap_addressing_tab}.
-    Razdelitev zaslona je prikazana na slikah
-    \ref{zxspectrumbasicprogramming_pic4} in
-    \ref{strojnijezikzaprocesorz80_pic1} ~\cite{zxspectrumbasicprogramming}.
+    znakov, nato druge vrstice pik istih položajev in tako naprej do osme
+    vrstice pik. A to zaporedje ne poteka čez vseh 24 vrstic znakov zapored,
+    temveč je zaslonska slika razdeljena na tri večje dele. Prvi del vsebuje podatke
+    za vrstice znakov 0 do 7, drugi za vrstice 8 do 15, tretji pa za vrstice 16 do
+    23. Zaradi take razporeditve so biti naslova zloga za točko $(X, Y)$ v naslovu
+    premešani, kot prikazuje tabela \ref{zxspectrum_bitmap_addressing_tab}. Razdelitev
+    zaslona je prikazana na slikah \ref{zxspectrumbasicprogramming_pic4} in \ref{strojnijezikzaprocesorz80_pic1}
+    ~\cite{zxspectrumbasicprogramming}.
 
     \begin{table}[htb]
         \begin{center}
@@ -1696,24 +1690,24 @@ val sourceUByte = bitPattern.getUByte(word, 'n')
 
     \newpage
 
-    Za lažje razumevanje kot vzemimo kot primer program v programskem jeziku BASIC:
+    Za lažje razumevanje vzemimo kot primer program v programskem jeziku BASIC:
 
     \begin{verbatim}
 10 CLS
 20 FOR i=0 TO 255: POKE 16384+i,255: NEXT i
     \end{verbatim}
-    Program naredi sledeče: najprej pobriše zaslon, nato pa v pomnilnik na začetek
-    zaslonske datoteke zapiše 256 zlogov, vsak od njih pa ima vrednost 255
-    oziroma 8 bitov vrednosti 1. Ob zagonu programa se na zaslonu izriše vzorec, viden
-    na sliki \ref{subspectruminterface_pic12}: 8 vrstic točk, razporejenih v prvih
-    8 vrhnjih vrstic položajev znakov, ki so se izrisovale po vrsticah od leve
-    proti desni. Če bi zanko izvajali dlje, bi se obarvale vrstice točk
-    neposredno pod temi vrsticami, in tako dalje. Primer tega je viden na sliki
-    \ref{subspectruminterface_pic13}, kjer smo zanko podaljšali iz 255 na 495 zaporednih
-    zlogov, s čimer se obarvajo nadaljnje vrstice točk do sredine osme vrstice
-    položajev znakov. Če bi zanko še podaljševali, bi se obarvale vse vrstice
-    točk položajev znakov zgornje tretjine zaslona, nato pa bi se vzorec ponovil še
-    v srednji in spodnji tretjini zaslona.
+    Program naredi naslednje: najprej pobriše zaslon, nato pa v pomnilnik na
+    začetek zaslonske datoteke zapiše 256 zlogov, vsak od njih ima vrednost 255 oziroma
+    8 bitov vrednosti 1. Ob zagonu programa se na zaslonu izriše vzorec, viden
+    na sliki \ref{subspectruminterface_pic12}: 8 vrstic točk, razporejenih v
+    prvih 8 vrhnjih vrstic položajev znakov, ki so se izrisovale po vrsticah od leve
+    proti desni. Če bi zanko izvajali dlje, bi se obarvale vrstice točk neposredno
+    pod temi vrsticami, in tako dalje. Primer tega je viden na sliki \ref{subspectruminterface_pic13},
+    kjer smo zanko podaljšali iz 255 na 495 zaporednih zlogov, s čimer se obarvajo
+    nadaljnje vrstice točk do sredine osme vrstice položajev znakov. Če bi zanko
+    še podaljševali, bi se obarvale vse vrstice točk položajev znakov zgornje tretjine
+    zaslona, nato pa bi se vzorec ponovil še v srednji in spodnji tretjini
+    zaslona.
 
     \begin{figure}[H]
         \begin{center}
@@ -1736,14 +1730,15 @@ val sourceUByte = bitPattern.getUByte(word, 'n')
     \subsection{Nabor znakov}
     Nabor 256 znakov, ki ga uporablja ZX Spectrum, sestavljajo ~\cite{zxspectrumbasicprogramming}:
     \begin{itemize}
-        \item pozamezni znaki iz standarda ASCII (razen simbolov £ in ©) ter grafični
+        \item posamezni znaki iz standarda ASCII (razen simbolov £ in ©) ter grafični
             simboli, značilni le za ZX Spectrum. Prvih 16 grafičnih simbolov je sistemsko
             definiranih (vidimo jih na sliki
-            \ref{zxspectrumbasicprogramming_pic1}), drugih 21 pa uporabniško-definiranih,
+            \ref{zxspectrumbasicprogramming_pic1}), drugih 21 pa je uporabniško
+            definiranih;
 
         \item žetoni, ki predstavljajo bodisi kontrolne znake z učinki na
             zunanje naprave, bodisi navodila računalniku v obliki celih besed (npr.
-            PRINT, STOP, ipd.)
+            PRINT, STOP ipd.).
     \end{itemize}
 
     \begin{figure}[htb]
@@ -1754,27 +1749,26 @@ val sourceUByte = bitPattern.getUByte(word, 'n')
         \label{zxspectrumbasicprogramming_pic1}
     \end{figure}
 
-    V ROMu so med naslovoma 3D00 in 3FFF shranjeni točkovni vzorci vseh znakov razen
+    V ROMu so med naslovoma 3D00 in 3FFF shranjeni točkovni vzorci vseh znakov, razen
     grafičnih simbolov. Naslov posameznega znaka, ki ima kod $x$ (npr. znak 'a' ima
-    kod 0x61) izračunamo po formuli $8x+3C00$. Definicije uporabniško definiranih
-    grafičnih znakov pa se nahajajo med naslovoma\\ \texttt{0xFF58} in \texttt{0xFFFF}
-    ~\cite{strojnijezikzaprocesorz80, zxspectrumbasicprogramming}.
+    kod 0x61), izračunamo po formuli $8x+3C00$. Definicije uporabniško
+    definiranih grafičnih znakov pa se nahajajo med naslovoma\\ \texttt{0xFF58}
+    in \texttt{0xFFFF} ~\cite{strojnijezikzaprocesorz80, zxspectrumbasicprogramming}.
 
     \subsection{Atributi znakov}
-    Vsak znak ima določene sledeče atribute v enem zlogu, njihova bitna
-    razporeditev pa je prikazana v tabeli
-    \ref{zxspectrum_attribute_addressing_tab} ~\cite{strojnijezikzaprocesorz80, zxspectrumbasicprogramming,
-    zxspectrumintroduction}:
+    Vsak znak ima določene naslednje atribute v enem zlogu, njihova bitna razporeditev
+    pa je prikazana v tabeli \ref{zxspectrum_attribute_addressing_tab} ~\cite{strojnijezikzaprocesorz80,
+    zxspectrumbasicprogramming, zxspectrumintroduction}:
     \begin{itemize}
         \item bit utripanja ima dve možni vrednosti: 0 za stalne barve ali 1 za
-            utripanje, ki se prikaže kot zaporedno zamenjavanje barve črnila in papirja,
+            utripanje, ki se prikaže kot zaporedno zamenjavanje barve črnila in papirja;
 
         \item bit svetlosti ima dve možni vrednosti: 0 za normalne ali 1 za
-            svetlejše barve,
+            svetlejše barve;
 
-        \item trojica bitov koda barve papirja (privzeto bela),
+        \item trojica bitov koda barve papirja (privzeto bela);
 
-        \item trojica bitov koda barve črnila (privzeto črna),
+        \item trojica bitov koda barve črnila (privzeto črna).
     \end{itemize}
 
     \begin{table}[htb]
@@ -1793,43 +1787,45 @@ val sourceUByte = bitPattern.getUByte(word, 'n')
         \label{zxspectrum_attribute_addressing_tab}
     \end{table}
 
-    ZX Spectrum lahko na (barvnem) zaslonu prikazuje osem barv, označene s kodi od
-    0 do 7 ~\cite{zxspectrumbasicprogramming, zxspectrumintroduction}:
+    ZX Spectrum lahko na (barvnem) zaslonu prikazuje osem barv, označenih s kodi
+    od 0 do 7 ~\cite{zxspectrumbasicprogramming, zxspectrumintroduction}:
     \begin{itemize}
-        \item 0, ki označuje črno
+        \item 0, ki označuje črno;
 
-        \item 1, ki označuje modro
+        \item 1, ki označuje modro;
 
-        \item 2, ki označuje rdečo
+        \item 2, ki označuje rdečo;
 
-        \item 3, ki označuje vijolično ali magenta
+        \item 3, ki označuje vijolično ali magenta;
 
-        \item 4, ki označuje zeleno
+        \item 4, ki označuje zeleno;
 
-        \item 5, ki označuje svetlo modro ali cian
+        \item 5, ki označuje svetlo modro ali cian;
 
-        \item 6, ki označuje rumeno
+        \item 6, ki označuje rumeno;
 
-        \item 7, ki označuje belo
+        \item 7, ki označuje belo.
     \end{itemize}
 
-    Čeprav so barve na prvi pogled razporejene v naključnem vrstnem redu, je tak zaradi
-    dveh razlogov. Prvi razlog se nanaša na uporabo računanika na črno-belih
-    zaslonih, kjer se barve v danem vrstnem redu prikažejo v lestvici odtenkov sivin.
-    Drugi razlog se opira na dejstvo, da lahko človeško oko resnično vidi le tri primarne
-    barve (modro, rdečo in zeleno), druge barve pa so le njihove mešanice. Tak
-    vrstni red barv omogoča "mešanje" barv s seštevanjem kodov primarnih barv. Na
-    primer, magenta je pravzaprav mešanica modre in rdeče barve, zato je njen kod
-    (3) vsota kodov za modro (1) in rdečo (2) ~\cite{zxspectrumbasicprogramming, zxspectrumintroduction}.
+    Čeprav so barve na prvi pogled razporejene v naključnem vrstnem redu, je
+    tako zaradi dveh razlogov. Prvi razlog se nanaša na uporabo računalnika na črno-belih
+    zaslonih, kjer se barve v danem vrstnem redu prikažejo v lestvici odtenkov
+    sivin. Drugi razlog se opira na dejstvo, da lahko človeško oko resnično vidi
+    le tri primarne barve (modro, rdečo in zeleno), druge barve pa so le njihove
+    mešanice. Tak vrstni red barv omogoča "mešanje" barv s seštevanjem kodov primarnih
+    barv. Na primer magenta je pravzaprav mešanica modre in rdeče barve, zato je njen
+    kod (3) vsota kodov za modro (1) in rdečo (2) ~\cite{zxspectrumbasicprogramming,
+    zxspectrumintroduction}.
 
     Kot barvo črnila ali papirja lahko nastavimo tudi vrednosti ~\cite{zxspectrumbasicprogramming}:
     \begin{itemize}
         \item 8, ki označuje "prozorno", pri kateri bo barva ob izpisu znaka ostala
-            nespremenjena glede na barvo prejšnjega znaka
+            nespremenjena glede na barvo prejšnjega znaka;
 
         \item 9, ki pomeni "kontrast", pri kateri bo barva nastavljena v kontrastu
-            z drugo - bela, če je druga barva temna (črna, modra, rdeča ali magenta)
-            ali črna, če je druga barva svetla (zelena, cian, rumena ali bela)
+            z drugo -- bela, če je druga barva temna (črna, modra, rdeča ali
+            magenta), ali črna, če je druga barva svetla (zelena, cian, rumena
+            ali bela).
     \end{itemize}
 
     Enozložna vrednost atributa se nanaša na vseh 64 pik položaja znaka, ne le
@@ -1849,11 +1845,11 @@ val sourceUByte = bitPattern.getUByte(word, 'n')
     ki jih proži ULA za posodobitev izrisa zaslonske slike, iz pomnilnika prebere
     območji zaslonske datoteke in datoteke atributov na naslovih \texttt{0x4000}-\texttt{0x57FF}
     in \texttt{0x5800}-\texttt{0x5AFF}. Funkcija za izračun indeksa zloga
-    zaslonske datoteke upošteva ne-linearen razpored vrstic, ki ga uporablja ZX Spectrum.
+    zaslonske datoteke upošteva nelinearen razpored vrstic, ki ga uporablja ZX Spectrum.
     Prikaz je narejen z grafično komponento platna ogrodja Compose, pri čemer se velikost
-    navidezne točke prilagodi velikosti okna, da ostane razmerje slike, uporabljano
-    v zaslonih po standardnih televizijah v času nastanka računalnika,
-    nespremenjeno. Tako se izognemo nepravilnim proporcijam navideznih točk in posledično
+    navidezne točke prilagodi velikosti okna, da ostane nespremenjeno razmerje
+    slike, uporabljano v zaslonih po standardnih televizijah v času nastanka računalnika.
+    Tako se izognemo nepravilnim proporcijam navideznih točk in posledično
     popačenju slike.
 
     \begin{figure}[htb]
@@ -1866,12 +1862,12 @@ val sourceUByte = bitPattern.getUByte(word, 'n')
 
     \section{Tipkovnica}
 
-    Znaki, ki jih ZX Spectrum prepozna in uporablja, ne vključujejo le posameznih
-    znakov, kot so črke, številke in simboli, ampak tudi sestavljene znake, kot so
-    ključne besede in imena funkcij ~\cite{zxspectrumbasicprogramming}.
+    Znaki, ki jih ZX Spectrum prepozna in uporablja, ne vključujejo le
+    posameznih znakov, kot so črke, številke in simboli, ampak tudi sestavljene znake,
+    kot so ključne besede in imena funkcij ~\cite{zxspectrumbasicprogramming}.
 
-    Tipkovnica Spectruma je na prvi pogled po položaju tipk črk in številk
-    podobna tipkovnici navadnega pisalnega stroja, vendar pa ima vsaka tipka Spectruma
+    Tipkovnica Spectruma je na prvi pogled po položaju tipk črk in številk podobna
+    tipkovnici navadnega pisalnega stroja, vendar pa ima vsaka tipka Spectruma
     več funkcij. Razporeditev tipk je vidna na sliki \ref{softspectrum48_pic1} ~\cite{zxspectrumintroduction}.
 
     \begin{figure}[htb]
@@ -1882,11 +1878,11 @@ val sourceUByte = bitPattern.getUByte(word, 'n')
         \label{softspectrum48_pic1}
     \end{figure}
 
-    Da bi lahko z omejenim številom tipk na tipkovnici lahko dostopali do vseh
-    znakov in ukazov, imajo nekatere tipke več različnih pomenov, do katerih
-    pridemo z uporabo modifikacijskih tipk CAPS SHIFT ali SYMBOL SHIFT ter
-    menjavanjem načina delovanja tipkovnice. Povezava med simboli na tipkah in načini
-    vnosa je vidna na sliki \ref{zxspectrumbasicprogramming_pic2} ~\cite{zxspectrumbasicprogramming}.
+    Da bi lahko z omejenim številom tipk na tipkovnici dostopali do vseh znakov in
+    ukazov, imajo nekatere tipke več različnih pomenov, do katerih pridemo z uporabo
+    modifikacijskih tipk CAPS SHIFT ali SYMBOL SHIFT ter menjavo načina delovanja
+    tipkovnice. Povezava med simboli na tipkah in načini vnosa je vidna na sliki
+    \ref{zxspectrumbasicprogramming_pic2} ~\cite{zxspectrumbasicprogramming}.
 
     \begin{figure}[htb]
         \begin{center}
@@ -1898,79 +1894,78 @@ val sourceUByte = bitPattern.getUByte(word, 'n')
 
     \subsection{Načini delovanja}
 
-    Kurzor, predstavljen kot utripajoča črka, hkrati označuje položaj izpisa
-    naslednjega vnešenega znaka in trenutni način delovanja tipkovnice s črko
-    kurzorja ~\cite{zxspectrumbasicprogramming, zxspectrumintroduction}.
-
-    Ko Spectrum prvič vklopite, ta po sporočilu o avtorskih pravicah pričaku-je
-    vnos ukaza, ki se začne s ključno besedo, katere so natisnjene pod glavnimi
-    simboli na tipkah. Za razliko od večine drugih računalnikov Spectrum omogoča vnos
-    ključnih besed z enim samim pritiskom na tipko. Kurzor s simbolom K (angl.
-    Keyword) predstavlja ta način delovanja za vnos ključnih besed, ki samodejno
-    nadomesti način L, ko naprava pričakuje vnos ukaza ali programske vrstice,
-    kar je odvisno od pozicije kurzorja v vrstici ~\cite{zxspectrumbasicprogramming,
+    Kurzor, predstavljen kot utripajoča črka, hkrati označuje položaj izpisa naslednjega
+    vnesenega znaka in trenutni način delovanja tipkovnice s črko kurzorja ~\cite{zxspectrumbasicprogramming,
     zxspectrumintroduction}.
 
-    V večini drugih primerov bomo v računalnik želeli vnašati besedilo, kar
-    naredimo v načinu delovanja za vnos navadnega besedila. V njem ima kurzor simbol
-    L (angl. Letter) ~\cite{zxspectrumintroduction} ~\cite{zxspectrumbasicprogramming}.
+    Ko Spectrum prvič vklopite, ta po sporočilu o avtorskih pravicah pričakuje vnos
+    ukaza, ki se začne s ključno besedo, katere so natisnjene pod glavnimi simboli
+    na tipkah. Za razliko od večine drugih računalnikov Spectrum omogoča vnos
+    ključnih besed z enim samim pritiskom na tipko. Kurzor s simbolom K (angl. Keyword)
+    predstavlja ta način delovanja za vnos ključnih besed, ki samodejno nadomesti
+    način L, ko naprava pričakuje vnos ukaza ali programske vrstice, kar je odvisno
+    od pozicije kurzorja v vrstici ~\cite{zxspectrumbasicprogramming, zxspectrumintroduction}.
 
-    Na načinu K in L velja, da je za vse kontrolne funkcije, ki so nad tipkami
-    obarvani belo, potrebna pritisnjena tipka CAPS SHIFT, za vse pomožne znake, ki
-    so pod tipkami obarvani rdeče, pa tipka SYMBOL SHIFT. Če želimo vnesti veliko
-    velikih črk, ne da bi držali tipko CAPS SHIFT, lahko vse črke vnašamo kot velike,
-    tako da najprej pritisnemo tipko CAPS LOCK (CAPS SHIFT in 2). CAPS SHIFT z drugimi
-    tipkami ne vpliva na ključne besede v načinu K, v načinu L pa pretvori male
-    črke v velike ~\cite{zxspectrumbasicprogramming, zxspectrumintroduction}.
+    V večini drugih primerov bomo v računalnik želeli vnašati besedilo, kar naredimo
+    v načinu delovanja za vnos navadnega besedila. V njem ima kurzor simbol L (angl.
+    Letter) ~\cite{zxspectrumintroduction} ~\cite{zxspectrumbasicprogramming}.
 
-    Način delovanja za vnos besedila z velikimi črkami, v katerem ima kurzor
-    simbol C (angl. Capitals), je različica načina L, v katerem se vse črke prikažejo
-    kot velike. Pritisk na tipko CAPS LOCK povzroči prehod iz načina L v način C
-    ali obratno ~\cite{zxspectrumbasicprogramming, zxspectrumintroduction}.
+    Na načinu K in L velja, da je za vse kontrolne funkcije, ki so nad tipkami obarvane
+    belo, potrebna pritisnjena tipka CAPS SHIFT, za vse pomožne znake, ki so pod
+    tipkami obarvani rdeče, pa tipka SYMBOL SHIFT. Če želimo vnesti veliko
+    velikih črk, ne da bi držali tipko CAPS SHIFT, lahko vse črke vnašamo kot
+    velike tako, da najprej pritisnemo tipko CAPS LOCK (CAPS SHIFT in 2). CAPS
+    SHIFT z drugimi tipkami ne vpliva na ključne besede v načinu K, v načinu L pa
+    pretvori male črke v velike ~\cite{zxspectrumbasicprogramming, zxspectrumintroduction}.
 
-    Poleg ključnih besed in besedila (malih in velikih črk ter številk) ima tipkovnica
-    tudi osem vnaprej definiranih grafičnih znakov, ki so na tipkovnici označeni
-    na številčnih tipkah od 1 do 8, ali pa uporabniško-določene grafične znake.
-    Ti se lahko natisnejo na zaslon na podoben način kot črke in številke. Za to je
-    treba tipkovnico preklopiti v način delovanja za vnos grafičnih znakov, kar
-    se naredi s pritiskom tipke GRAPHICS (kombinacija tipk CAPS SHIFT in 9). Ta način
-    traja, dokler se ponovno ne pritisne bodisi tipka GRAPHICS ali pa le tipka
-    9. Kurzor bo v tem načinu delovanja označen s simbolom G (angl. Graphics) ~\cite{zxspectrumbasicprogramming,
-    zxspectrumintroduction}.
+    Način delovanja za vnos besedila z velikimi črkami, v katerem ima kurzor simbol
+    C (angl. Capitals), je različica načina L, v katerem se vse črke prikažejo
+    kot velike. Pritisk na tipko CAPS LOCK povzroči prehod iz načina L v način C ali
+    obratno ~\cite{zxspectrumbasicprogramming, zxspectrumintroduction}.
 
-    Obstaja še en zadnji -- razširjeni -- način, ki ga označuje kurzor s simbolom
-    E (angl. Extended). Do njega pridemo s hkratnim pritiskom tipk CAPS SHIFT in SYMBOL
-    SHIFT, in traja le do vključno naslednjega pritiska tipke. Ta način omogoča uporabo
-    večine znanstvenih in programskih funkcij, ter pridobitev dodatnih znakov oz.
-    simbolov ~\cite{zxspectrumbasicprogramming, zxspectrumintroduction}.
+    Poleg ključnih besed in besedila (malih in velikih črk ter številk) ima
+    tipkovnica tudi osem vnaprej definiranih grafičnih znakov, ki so na tipkovnici
+    označeni na številčnih tipkah od 1 do 8, ali pa uporabniško določene
+    grafične znake. Ti se lahko natisnejo na zaslon na podoben način kot črke in številke.
+    Za to je treba tipkovnico preklopiti v način delovanja za vnos grafičnih
+    znakov, kar se naredi s pritiskom tipke GRAPHICS (kombinacija tipk CAPS
+    SHIFT in 9). Ta način traja, dokler se ponovno ne pritisne bodisi tipka GRAPHICS
+    bodisi le tipka 9. Kurzor bo v tem načinu delovanja označen s simbolom G (angl.
+    Graphics) ~\cite{zxspectrumbasicprogramming, zxspectrumintroduction}.
+
+    Obstaja še en zadnji -- razširjeni -- način, ki ga označuje kurzor s
+    simbolom E (angl. Extended). Do njega pridemo s hkratnim pritiskom tipk CAPS
+    SHIFT in SYMBOL SHIFT in traja le do vključno naslednjega pritiska tipke. Ta način
+    omogoča uporabo večine znanstvenih in programskih funkcij ter pridobitev dodatnih
+    znakov oz. simbolov ~\cite{zxspectrumbasicprogramming, zxspectrumintroduction}.
 
     \begin{itemize}
         \item zgoraj prikazan v zeleni barvi, če med tem ni pritisnjena tipka
-            SHIFT
+            SHIFT;
 
-        \item spodaj prikazan v rdeči barvi, če je pritisnjena ena od tipk SHIFT
+        \item spodaj prikazan v rdeči barvi, če je pritisnjena ena od tipk SHIFT;
 
-        \item simbol na številčni tipki, če je pritisnjena tipka SYMBOL SHIFT
+        \item simbol na številčni tipki, če je pritisnjena tipka SYMBOL SHIFT;
 
-        \item sicer da barvno kontrolno zaporedje
+        \item sicer da barvno kontrolno zaporedje.
     \end{itemize}
 
-    Kurzor s simbolom vprašaja pomeni, da je pri vnosu ukaza ali znaka prišlo do
-    napake ~\cite{zxspectrumintroduction}.
+    Kurzor s simbolom vprašaja pomeni, da je pri vnosu ukaza ali znaka prišlo do napake
+    ~\cite{zxspectrumintroduction}.
 
     \subsection{Branje stanja tipkovnice}
 
-    Za branje tipkovnice lahko uporabimo ROM-podprograme \texttt{KEY SCAN},
-    \texttt{KEY TEST} in \texttt{KEY CODE}. Podprogram \texttt{KEY SCAN} najprej
-    pregleda stanje tipkovnice in vrne podatek o pritisnjenih tipkah, pri čemer loči
-    med navadnimi tipkami, kombinacijami s tipkama \texttt{CAPS SHIFT} in \texttt{SYMBOL
-    SHIFT} ter primeri, ko ni pritisnjena nobena uporabna tipka. Rezultat nato
-    obdela \texttt{KEY TEST}, ki zavrže neuporabne ali nesmiselne vrednosti in
-    pripravi podatke za nadaljnjo obdelavo. Na koncu \texttt{KEY CODE} glede na
-    osnovno kodo tipke, pritisnjeno SHIFT-tipko in trenutni način delovanja tipkovnice
-    določi dejanski znak ter njegovo ASCII-kodo. Kodi tipk so zapisani v tabeli
-    \texttt{KEY TABLE} na pomnilniškem naslovu \texttt{0x0205}, vidni so tudi na sliki
-    \ref{strojnijezikzaprocesorz80_pic2} ~\cite{strojnijezikzaprocesorz80}.
+    Za branje tipkovnice lahko uporabimo ROM-podprograme \texttt{KEY SCAN}, \texttt{KEY
+    TEST} in \texttt{KEY CODE}. Podprogram \texttt{KEY SCAN} najprej pregleda stanje
+    tipkovnice in vrne podatek o pritisnjenih tipkah, pri čemer loči med
+    navadnimi tipkami, kombinacijami s tipkama \texttt{CAPS SHIFT} in \texttt{SYMBOL
+    SHIFT} ter primeri, ko ni pritisnjena nobena uporabna tipka. Rezultat nato obdela
+    \texttt{KEY TEST}, ki zavrže neuporabne ali nesmiselne vrednosti in pripravi podatke
+    za nadaljnjo obdelavo. Na koncu \texttt{KEY CODE} glede na osnovno kodo tipke,
+    pritisnjeno SHIFT tipko in trenutni način delovanja tipkovnice, določi dejanski
+    znak ter njegovo ASCII-kodo. Kodi tipk so zapisani v tabeli \texttt{KEY
+    TABLE} na pomnilniškem naslovu \texttt{0x0205}, vidni so tudi na sliki \ref{strojnijezikzaprocesorz80_pic2}
+    ~\cite{strojnijezikzaprocesorz80}.
 
     \begin{figure}[htb]
         \begin{center}
@@ -1981,10 +1976,10 @@ val sourceUByte = bitPattern.getUByte(word, 'n')
         \label{strojnijezikzaprocesorz80_pic2}
     \end{figure}
 
-    Podatke iz tipkovnice lahko poleg z uporabo podprogramov v ROMu pridobimo tudi
-    neposredno prek V/I vrat \texttt{0xFE}. Tipkovnica je razdeljena v 8 pol-vrstic
-    s 5 tipkami, podatke za pritisnjene tipke lahko zato pridobimo le v teh
-    petericah tipk naenkrat, te vidimo na sliki \ref{strojnijezikzaprocesorz80_pic3}
+    Podatke iz tipkovnice lahko namesto z uporabo podprogramov v ROMu pridobimo tudi
+    neposredno prek V/I vrat \texttt{0xFE}. Tipkovnica je razdeljena v 8 polvrstic
+    s 5 tipkami. Podatke za pritisnjene tipke lahko zato pridobimo le v teh
+    petericah tipk naenkrat. Prikazane so na sliki \ref{strojnijezikzaprocesorz80_pic3}
     ~\cite{strojnijezikzaprocesorz80}.
 
     \begin{figure}[htb]
@@ -1996,26 +1991,26 @@ val sourceUByte = bitPattern.getUByte(word, 'n')
     \end{figure}
 
     Skupino tipk pri tem določa zgornji zlog V/I naslova, v katerem mora
-    zaporedni bit, ki predstavlja številko željene skupine, imeti vrednost 0, vsi
-    ostali pa 1. Naslov se tako izračuna kot $254+256*(255-2^{n})\ ; \ \ n \in [0
-    , 7]$, ti so vidni tudi v tabeli \ref{spectrumkeyboard_tab1} ~\cite{strojnijezikzaprocesorz80,
+    zaporedni bit, ki predstavlja številko želene skupine, imeti vrednost 0, vsi ostali
+    pa 1. Naslov se tako izračuna kot $254+256*(255-2^{n})\ ; \ \ n \in [0 , 7]$,
+    ti so vidni tudi v tabeli \ref{spectrumkeyboard_tab1} ~\cite{strojnijezikzaprocesorz80,
     zxspectrumbasicprogramming}:
 
     \begin{itemize}
         \item naslov \texttt{0xFEFE} predstavlja tipke med tipkama CAPS SHIFT in
-            V,
+            V;
 
-        \item naslov \texttt{0xFDFE} predstavlja tipke med tipkama A in G,
+        \item naslov \texttt{0xFDFE} predstavlja tipke med tipkama A in G;
 
-        \item naslov \texttt{0xFBFE} predstavlja tipke med tipkama Q in T,
+        \item naslov \texttt{0xFBFE} predstavlja tipke med tipkama Q in T;
 
-        \item naslov \texttt{0xF7FE} predstavlja tipke med tipkama 1 in 5,
+        \item naslov \texttt{0xF7FE} predstavlja tipke med tipkama 1 in 5;
 
-        \item naslov \texttt{0xEFFE} predstavlja tipke med tipkama O in 6,
+        \item naslov \texttt{0xEFFE} predstavlja tipke med tipkama O in 6;
 
-        \item naslov \texttt{0xDFFE} predstavlja tipke med tipkama P in 7,
+        \item naslov \texttt{0xDFFE} predstavlja tipke med tipkama P in 7;
 
-        \item naslov \texttt{0xBFFE} predstavlja tipke med tipkama ENTER in H,
+        \item naslov \texttt{0xBFFE} predstavlja tipke med tipkama ENTER in H;
 
         \item naslov \texttt{0x7FFE} predstavlja tipke med tipkama SPACE in B.
     \end{itemize}
@@ -2055,7 +2050,7 @@ val sourceUByte = bitPattern.getUByte(word, 'n')
 
     Sicer lahko, z nastavitvijo zgornjega zloga V/I naslova z večimi ničlami,
     beremo tudi več skupin tipk hkrati, a posamezen bit rezultata v tem primeru predstavlja
-    zaporedno pritisnjeno tipko katerekoli izmed izbranih skupin tipk ~\cite{strojnijezikzaprocesorz80,
+    zaporedno pritisnjeno tipko katere koli izmed izbranih skupin tipk ~\cite{strojnijezikzaprocesorz80,
     zxspectrumbasicprogramming}.
 
     \subsection{Implementacija v emulatorju}
@@ -2070,7 +2065,7 @@ val sourceUByte = bitPattern.getUByte(word, 'n')
 
     Branje tipkovnice je vključeno v splošni model uporabe V/I vrat. Vsa branja gredo
     skozi razred \texttt{IOPortSet}. Če je spodnji zlog dvozložnega V/I naslova ukaza
-    enak \texttt{0xFE}, razred me drugim pokliče metodo \texttt{getKeyboardPortValue}.
+    enak \texttt{0xFE}, razred med drugim pokliče metodo \texttt{getKeyboardPortValue}.
     Ta iz zgornjega zloga naslova določi izbrane skupine tipk: vsak bit z
     vrednostjo 0 izbere eno izmed osmih skupin. Vrednosti izbranih skupin združi z
     operacijo AND, kar ohrani ničle pritisnjenih tipk tudi pri branju več skupin
@@ -2091,19 +2086,19 @@ val sourceUByte = bitPattern.getUByte(word, 'n')
     podpira še "dejanski"~način, v katerem se namesto položaja fizične tipke za določitev
     vnosa uporabi znak, ki ga posreduje gostiteljski operacijski sistem (z upoštevanjem
     uporabnikove razporeditve tipk). Metoda \texttt{getMatrixKeysForCharacter}
-    ga nato preslika v eno ali več tipk, na primer pri velikih črkah in simbolih,
+    ga nato preslika v eno ali več tipk, na primer pri velikih črkah in simbolih v
     matrike emuliranih tipk.
 
     \section{Kasete}
 
-    ZX Spectrum za trajno hrambo uporabniškega programa uporablja navadne zvočne kasete.
-    Programe lahko na kaseto shranimo, preverimo za možne napake pri prenosih,
-    ter jih iz nje kasneje naložimo v pomnilnik in zaženemo ~\cite{zxspectrumbasicprogramming,
+    ZX Spectrum za trajno hrambo uporabniškega programa uporablja navadne zvočne
+    kasete. Programe lahko na kaseto shranimo, preverimo za možne napake pri
+    prenosih ter jih iz nje kasneje naložimo v pomnilnik in zaženemo ~\cite{zxspectrumbasicprogramming,
     zxspectrumintroduction}.
 
     Kasetne posnetke ločimo od posnetkov stanja, kot sta datotečna formata SNA
     in Z80. Posnetek stanja hrani le stanje pomnilnika, registrov in drugih
-    indikatorjev stanja sistema, kasetni format pa le hrani podatke kasete v obliki,
+    indikatorjev stanja sistema, kasetni format pa hrani le podatke kasete v obliki,
     v kakršni bi jih računalnik prebral iz kasete. S tem se ohrani ne le vrstni red
     nalaganja blokov, temveč tudi morebitne posebne nalagalnike programov ~\cite{worldofspectrumformats,
     z80format}.
@@ -2121,7 +2116,7 @@ val sourceUByte = bitPattern.getUByte(word, 'n')
     delovanja posebnih nalagalnikov ~\cite{worldofspectrumformats}.
 
     Pri nalaganju kaset s standardnim podprogramom iz ROMa se branje uvodnega
-    dela bloka na zaslonu prikazujejo kot rdeče in svetlo modre črte, branje dejanskih
+    dela bloka na zaslonu prikazuje kot rdeče in svetlo modre črte, branje dejanskih
     podatkov pa kot modre in rumene črte v območju obrobe zaslona. Vzorca sta
     vidna na sliki \ref{howtapeloadingword_pic1} ~\cite{zxspectrumbasicprogramming,
     zxspectrumintroduction}.
@@ -2188,7 +2183,7 @@ val sourceUByte = bitPattern.getUByte(word, 'n')
     Ta podpira izvajanje le enega tona naenkrat fiksne amplitude oziroma
     glasnosti, določimo pa tako dolžino izvajanja tona v sekundah kot frekvenco oziroma
     višino tona v poltonih nad srednjim C. Osrednja podprta frekvenca je srednji
-    C s kodom 0, lahko pa pridobimo katerikoli polton nad ali pod to osrednjo frekvenco.
+    C s kodom 0, lahko pa pridobimo kateri koli polton nad ali pod to osrednjo frekvenco.
     Kodi tonov so vidni na sliki \ref{zxspectrumbasicprogramming_pic3} ~\cite{zxspectrumbasicprogramming,
     zxspectrumintroduction}.
 
@@ -2333,11 +2328,11 @@ val sourceUByte = bitPattern.getUByte(word, 'n')
     skupine ukazov z različnimi začetnimi stanji, iz končnega stanja izračunata kontrolno
     vsoto CRC in jo primerjata z referenčno vrednostjo, pridobljeno na pravem
     procesorju Z80. Preizkus ne pove, katera podrobnost ukaza je napačna, temveč samo,
-    da se rezultat razlikuje od referenčnega izvajanja. Izvajanje testov programa
-    \texttt{zexall}, ki zaradi obsežnosti kljub nastavitvi emulatorja na najhitrejšo
-    možno hitrost emulacije procesorja na računalniku MacBook Pro M4 Pro s 24 GB pomnilnika
-    za testiranje le prvih petih od 68 skupin ukazov traja približno 10 minut,
-    je vidno na sliki \ref{subspectruminterface_pic11} ~\cite{z80exerciseravery, spectrumz80exerciser}.
+    da se rezultat razlikuje od referenčnega izvajanja. Izvajanje le prvih petih od
+    68 skupin ukazov testov programa \texttt{zexall} zaradi obsežnosti, kljub nastavitvi
+    emulatorja na najhitrejšo možno hitrost emulacije procesorja na računalniku MacBook
+    Pro M4 Pro s 24 GB pomnilnika, traja približno 10 minut, kar je prikazano na sliki
+    \ref{subspectruminterface_pic11} ~\cite{z80exerciseravery, spectrumz80exerciser}.
 
     \begin{figure}[htb]
         \begin{center}
@@ -2348,120 +2343,118 @@ val sourceUByte = bitPattern.getUByte(word, 'n')
         \label{subspectruminterface_pic11}
     \end{figure}
 
-    Preizkusi z izbranimi programi preverjajo pravilnost vedenja celotnega
-    sistema: nalaganje programa, izvajanje ukazov, spreminjanje pomnilnika,
-    prikaz slike, uporabo tipkovnice in osnovni zvočni izhod. Preizkusa \texttt{zexdoc}
-    in \texttt{zexall} pa sta ožje usmerjena v pravilnost ukazov CPE, predvsem v končne
-    vrednosti registrov, zastavic in pomnilnika po izvedbi ukazov. Noben od teh preizkusov
-    sam zase ne potrjuje popolne časovne natančnosti celotnega računalnika,
-    potrjujeta pa, da so najpomembnejši funkcionalni deli emulatorja za izbrane programe
-    izvedeni dovolj pravilno.
+    Preizkusi z izbranimi programi preverjajo pravilnost vedenja celotnega sistema:
+    nalaganje programa, izvajanje ukazov, spreminjanje pomnilnika, prikaz slike,
+    uporabo tipkovnice in osnovni zvočni izhod. Preizkusa \texttt{zexdoc} in
+    \texttt{zexall} pa sta ožje usmerjena v pravilnost ukazov CPE, predvsem v
+    končne vrednosti registrov, zastavic in pomnilnika po izvedbi ukazov. Noben
+    od teh preizkusov sam zase ne potrjuje popolne časovne natančnosti celotnega
+    računalnika, potrjujeta pa, da so najpomembnejši funkcionalni deli
+    emulatorja za izbrane programe izvedeni dovolj pravilno.
 
     \section{Notranji vpogled in razhroščevanje}
 
-    Pomemben del evalvacije je tudi preverjanje vpogleda v stanje sistema, saj je
-    razhroščevalnik eden od glavnih ciljev diplomskega dela. Med izvajanjem
-    programov se vmesnik pravilno posodablja glede na stanje procesorja in
-    pomnilnika. Podokno z registri prikazuje spremembe splošnih registrov,
-    posebnih registrov in zastavic po posameznih ukazih, podokno s pomnilnikom prikazuje
-    spremembe vsebine pomnilniških celic, razstavljeni ukazi pa sledijo vsebini
-    pomnilnika. To omogoča opazovanje izvajanja programa na ravni, ki je pri
-    uporabi pravega računalnika brez dodatne opreme težje dosegljiva.
+    Pomemben del evalvacije je tudi preverjanje vpogleda v stanje sistema, saj
+    je razhroščevalnik eden od glavnih ciljev diplomskega dela. Med izvajanjem programov
+    se vmesnik pravilno posodablja glede na stanje procesorja in pomnilnika.
+    Podokno z registri prikazuje spremembe splošnih registrov, posebnih registrov
+    in zastavic po posameznih ukazih, podokno s pomnilnikom prikazuje spremembe
+    vsebine pomnilniških celic, razstavljeni ukazi pa sledijo vsebini pomnilnika.
+    To omogoča opazovanje izvajanja programa na ravni, ki je pri uporabi pravega računalnika
+    brez dodatne opreme težje dosegljiva.
 
-    Pravilnost razhroščevalnega vpogleda je bila preverjana tudi med ročnim
-    korakanjem skozi ukaze in z uporabo prekinitvenih točk. Pri korakanju skozi ukaze
-    se po vsakem izvedenem ukazu spremenijo registri in morebitne pomnilniške lokacije,
-    ki jih je ukaz dosegel. Uporabnik lahko ob zaustavljenem procesorju spreminja
-    vrednosti registrov, pomnilniških celic in ukaznih zlogov, te spremembe pa se
-    upoštevajo pri nadaljnjem izvajanju. S tem emulator poleg izvajanja
-    programov podpira tudi raziskovanje delovanja posameznih ukazov in celotnih
-    programov ter delovanja osnovnega sistema ROMa.
+    Pravilnost razhroščevalnega vpogleda je bila preverjana tudi med ročnim korakanjem
+    skozi ukaze in z uporabo prekinitvenih točk. Pri korakanju skozi ukaze se po
+    vsakem izvedenem ukazu spremenijo registri in morebitne pomnilniške lokacije,
+    ki jih je ukaz dosegel. Uporabnik lahko ob zaustavljenem procesorju
+    spreminja vrednosti registrov, pomnilniških celic in ukaznih zlogov, te
+    spremembe pa se upoštevajo pri nadaljnjem izvajanju. S tem emulator poleg izvajanja
+    programov podpira tudi raziskovanje delovanja posameznih ukazov in celotnih programov
+    ter delovanja osnovnega sistema ROMa.
 
-    Posebna vrednost razvitega emulatorja je v tem, da razhroščevalni vmesnik ni dodan
-    le kot zunanje orodje za ustavljanje programa, temveč neposredno prikazuje
-    podatke, ki jih uporablja emulacija. Uporabnik lahko opazuje registre in
-    zastavice, pomnilnik, razstavljene ukaze, označena območja ROMa in sistemske spremenljivke.
-    To je glavna razlika v primerjavi z emulatorji, ki so osredotočeni predvsem na
-    igranje, najširšo združljivost ali udobno nalaganje programov.
+    Posebna vrednost razvitega emulatorja je v tem, da razhroščevalni vmesnik ni
+    dodan le kot zunanje orodje za ustavljanje programa, temveč neposredno prikazuje
+    podatke, ki jih uporablja emulacija. Uporabnik lahko opazuje registre in zastavice,
+    pomnilnik, razstavljene ukaze, označena območja ROMa in sistemske
+    spremenljivke. To je glavna razlika v primerjavi z emulatorji, ki so
+    osredotočeni predvsem na igranje, najširšo združljivost ali udobno nalaganje programov.
 
     \section{Časovno delovanje in omejitve}
 
-    Evalvacija pokaže tudi omejitve razvitega emulatorja. Najpomembnejša
-    omejitev je, da časovni model temelji na T-stanjih izvedenih ukazov,
-    emulacija pa ni popolnoma časovno natančna na ravni vseh posameznih dostopov
-    do pomnilnika, V/I vrat in vezja ULA. Za običajne programe in obravnavane
-    preizkuse to zadostuje, pri programih, ki so odvisni od zelo natančnega
-    časovnega usklajevanja z ULA, od učinkov zadrževanja vodil ali od posebnih strojnih
-    pojavov, pa bi lahko prišlo do razlik, čeprav te med testiranjem mnogih programov
-    niso bile opažene. Podobno omejitev predstavlja nalaganje kaset. Nalaganje vsebine
-    kasetnih datotek deluje preko "hitrega nalaganja", ki posnema učinek
-    standardnega ROMovega podprograma za nalaganje, ne emulira pa celotnega zvočnega
-    signala kasete in njegovega branja prek V/I vrat \texttt{0xFE}. Zato posebni nalagalniki
-    in zaščite, ki neposredno merijo dolžine impulzov ali berejo signal EAR mimo
-    standardnih ROMovih rutin, niso polno podprti, prav tako se pri nalaganju
-    programov nalagalni zasloni ne vidijo, temveč delovanje skoči neposredno na izvajanje
-    programa.
+    Evalvacija pokaže tudi omejitve razvitega emulatorja. Najpomembnejša omejitev
+    je, da časovni model temelji na T-stanjih izvedenih ukazov, emulacija pa ni popolnoma
+    časovno natančna na ravni vseh posameznih dostopov do pomnilnika, V/I vrat
+    in vezja ULA. Za običajne programe in obravnavane preizkuse to zadostuje,
+    pri programih, ki so odvisni od zelo natančnega časovnega usklajevanja z ULA,
+    od učinkov zadrževanja vodil ali od posebnih strojnih pojavov, pa bi lahko prišlo
+    do razlik, čeprav te med testiranjem mnogih programov niso bile opažene. Podobno
+    omejitev predstavlja nalaganje kaset. Nalaganje vsebine kasetnih datotek
+    deluje preko "hitrega nalaganja", ki posnema učinek standardnega ROMovega podprograma
+    za nalaganje, ne emulira pa celotnega zvočnega signala kasete in njegovega
+    branja prek V/I vrat \texttt{0xFE}. Zato posebni nalagalniki in zaščite, ki neposredno
+    merijo dolžine impulzov ali berejo signal EAR mimo standardnih ROMovih rutin,
+    niso polno podprti, prav tako se pri nalaganju programov nalagalni zasloni ne
+    vidijo, temveč delovanje skoči neposredno na izvajanje programa.
 
     \chapter{Zaključek}
 
-    Cilj diplomskega dela je bil razviti delujoč emulator računalnika ZX Spectrum
-    48K, ki poleg zaganjanja programov omogoča tudi vpogled v stanje sistema in
-    s tem služi kot razhroščevalno, učno in predstavitveno orodje. V okviru dela
-    so bili predstavljeni zgodovinski pomen računalnika ZX Spectrum, njegova strojna
-    zgradba in ključni deli sistema, nato pa še zasnova ter implementacija
-    emulatorja. Posebej so bili obravnavani pomnilnik, procesor Z80, vezje ULA,
-    zaslon, tipkovnica, kasetni podsistem in zvok, saj prav ti deli skupaj določajo
+    Cilj diplomskega dela je bil razviti delujoč emulator računalnika ZX
+    Spectrum 48K, ki poleg zaganjanja programov omogoča tudi vpogled v stanje sistema
+    in s tem služi kot razhroščevalno, učno in predstavitveno orodje. V okviru dela
+    so bili predstavljeni zgodovinski pomen računalnika ZX Spectrum, njegova
+    strojna zgradba in ključni deli sistema, nato pa še zasnova ter implementacija
+    emulatorja. Posebej so bili obravnavani pomnilnik, procesor Z80, vezje ULA, zaslon,
+    tipkovnica, kasetni podsistem in zvok, saj prav ti deli skupaj določajo
     obnašanje emuliranega računalnika.
 
-    Razviti emulator izpolnjuje glavne cilje diplomskega dela, saj omogoča
-    nalaganje in izvajanje programov za ZX Spectrum 48K, prikaz slike, uporabo
-    tipkovnice, osnovni zvočni izhod ter uporabo datotek posnetkov kaset.
-    Implementacija procesorja Z80 podpira dokumentirane in nedokumentirane dele
-    nabora ukazov, njena pravilnost pa je bila preverjana z namenskim testnim programom.
-    Delovanje emulatorja je bilo dodatno ovrednoteno z izvajanjem izbranih
-    programov in iger, ki so se pravilno naložili in uporabljali različne dele sistema.
+    Razviti emulator izpolnjuje glavne cilje diplomskega dela, saj omogoča nalaganje
+    in izvajanje programov za ZX Spectrum 48K, prikaz slike, uporabo tipkovnice,
+    osnovni zvočni izhod ter uporabo datotek posnetkov kaset. Implementacija procesorja
+    Z80 podpira dokumentirane in nedokumentirane dele nabora ukazov, njena
+    pravilnost pa je bila preverjana z namenskim testnim programom. Delovanje emulatorja
+    je bilo dodatno ovrednoteno z izvajanjem izbranih programov in iger, ki so
+    se pravilno naložili in uporabljali različne dele sistema.
 
-    Poleg same emulacije je bil dosežen tudi cilj vpogleda v notranje stanje sistema.
-    Uporabniški vmesnik omogoča pregled registrov, zastavic, pomnilnika in
-    razstavljenih ukazov, uporabnik pa lahko izvajanje zaustavi, izvede
-    posamezen ukaz, uporabi prekinitvene točke ter po potrebi spremeni vrednosti registrov
-    ali pomnilnika. S tem emulator ni le način poganjanja stare programske
-    opreme, ampak tudi orodje za razumevanje, kako ti programi uporabljajo
-    zmogljivosti procesorja, pomnilnika in vhodno-izhodnih naprav. Tak pristop
-    je pomemben tudi za digitalno ohranjanje, saj ne ohranja samo možnosti izvajanja
-    programov, temveč tudi znanje o njihovem delovanju.
+    Poleg same emulacije je bil dosežen tudi cilj vpogleda v notranje stanje
+    sistema. Uporabniški vmesnik omogoča pregled registrov, zastavic, pomnilnika in
+    razstavljenih ukazov, uporabnik pa lahko izvajanje zaustavi, izvede posamezen
+    ukaz, uporabi prekinitvene točke ter po potrebi spremeni vrednosti registrov
+    ali pomnilnika. S tem emulator ni le način poganjanja stare programske opreme,
+    ampak tudi orodje za razumevanje, kako ti programi uporabljajo zmogljivosti procesorja,
+    pomnilnika in vhodno-izhodnih naprav. Tak pristop je pomemben tudi za digitalno
+    ohranjanje, saj ne ohranja samo možnosti izvajanja programov, temveč tudi znanje
+    o njihovem delovanju.
 
-    Delo hkrati pokaže, da popolna emulacija računalnika ni odvisna samo od pravilne
-    izvedbe ukazov procesorja. Za še natančnejšo emulacijo bi bilo treba
-    izboljšati časovni model dostopov do pomnilnika, procesorja in ULA. S tem bi
-    bilo mogoče bolje podpreti zadrževanje pomnilnika pri dostopih do
-    zaslonskega dela pomnilnika, zadrževanje V/I operacij prek vrat \texttt{0xFE}
-    glede na stanje naslovnega vodila ter strojne pojave, kot je učinek "sneženja"
-    na zaslonu. Druga pomembna nadgradnja bi bila prava emulacija nalaganja
-    kaset prek zvočnih impulzov in branja signala prek V/I vrat \texttt{0xFE},
-    namesto trenutnega "hitrega nalaganja" prek ROMovega podprograma. Tak pristop
-    bi povečal združljivost s posebnimi nalagalniki in zaščitami, vendar bi
-    zahteval tudi natančnejši ter zanesljivejši časovni model, ki pa bi lahko bil
-    tudi manj zanesljiv kot trenutna implementacija "hitrega nalaganja".
+    Delo hkrati pokaže, da popolna emulacija računalnika ni odvisna samo od
+    pravilne izvedbe ukazov procesorja. Za še natančnejšo emulacijo bi bilo treba
+    izboljšati časovni model dostopov do pomnilnika, procesorja in ULA. S tem bi bilo
+    mogoče bolje podpreti zadrževanje pomnilnika pri dostopih do zaslonskega dela
+    pomnilnika, zadrževanje V/I operacij prek vrat \texttt{0xFE} glede na stanje naslovnega
+    vodila ter strojne pojave, kot je učinek "sneženja" na zaslonu. Druga pomembna
+    nadgradnja bi bila prava emulacija nalaganja kaset prek zvočnih impulzov in branja
+    signala prek V/I vrat \texttt{0xFE}, namesto trenutnega "hitrega nalaganja" prek
+    ROMovega podprograma. Tak pristop bi povečal združljivost s posebnimi
+    nalagalniki in zaščitami, vendar bi zahteval tudi natančnejši ter zanesljivejši
+    časovni model, ki pa bi lahko bil tudi manj zanesljiv kot trenutna
+    implementacija "hitrega nalaganja".
 
-    Možna izboljšava je tudi ponoven razmislek o izbrani tehnologiji, v kateri
-    je emulator implementiran. Kotlin Multiplatform omogoča delitev emulacijske logike
-    in uporabniškega vmesnika med platformami, vendar se je pri namizni
-    razhroščevalni aplikaciji pokazalo, da medplatformnost ni nujno najpomembnejša
-    lastnost. Ker je osrednja funkcionalnost projekta razhroščevanje, bi bilo pri
-    nadaljnjem razvoju smiselno razmisliti tudi o tehnologijah, ki omogočajo več
-    neposrednega nadzora nad namiznim okoljem in izrisovanjem uporabniškega
-    vmesnika, na primer ogrodje Electron in uporaba jezika TypeScript, pri
-    katerem pa bi bilo potrebno preveriti hitrost delovanja emulacije napram
-    drugim jezikom, ali pa ogrodji Dioxus oziroma Tauri in uporaba jezika Rust,
-    pri katerem bi bilo potrebno preveriti prijaznost uporabe teh ogrodij za
-    razvijalca.
+    Možna izboljšava je tudi ponoven razmislek o izbrani tehnologiji, v kateri je
+    emulator implementiran. Kotlin Multiplatform omogoča delitev emulacijske
+    logike in uporabniškega vmesnika med platformami, vendar se je pri namizni razhroščevalni
+    aplikaciji pokazalo, da medplatformnost ni nujno najpomembnejša lastnost. Ker
+    je osrednja funkcionalnost projekta razhroščevanje, bi bilo pri nadaljnjem
+    razvoju smiselno razmisliti tudi o tehnologijah, ki omogočajo več neposrednega
+    nadzora nad namiznim okoljem in izrisovanjem uporabniškega vmesnika, na
+    primer o ogrodju Electron in uporabi jezika TypeScript, pri katerem pa bi bilo
+    treba preveriti hitrost delovanja emulacije napram drugim jezikom, ali pa
+    ogrodji Dioxus oziroma Tauri in uporabo jezika Rust, pri katerem bi bilo treba
+    preveriti prijaznost uporabe teh ogrodij za razvijalca.
 
-    Kljub navedenim omejitvam razviti emulator uspešno poveže delujočo emulacijo
-    računalnika ZX Spectrum 48K z vpogledom v notranje stanje sistema. Rezultat dela
-    je zato uporaben tako za izvajanje izbrane programske opreme kot za raziskovanje
-    delovanja računalnika, procesorja Z80 in programov, napisanih za računalnik ZX
-    Spectrum 48K.
+    Kljub navedenim omejitvam razviti emulator uspešno poveže delujočo emulacijo računalnika
+    ZX Spectrum 48K z vpogledom v notranje stanje sistema. Rezultat dela je zato
+    uporaben tako za izvajanje izbrane programske opreme kot za raziskovanje
+    delovanja računalnika, procesorja Z80 in programov, napisanih za računalnik
+    ZX Spectrum 48K.
 
     %\cleardoublepage
     %\addcontentsline{toc}{chapter}{Literatura}
