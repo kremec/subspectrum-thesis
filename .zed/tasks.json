@@ -1,0 +1,16 @@
+[
+  {
+    "label": "marp: watch presentation",
+    "command": "zsh",
+    "args": [
+      "-lc",
+      "marp --watch --html --allow-local-files presentation/main.md --output presentation/main.html & html_pid=$!; marp --watch --pdf --html --allow-local-files --browser firefox --browser-path /Applications/Zen.app/Contents/MacOS/zen presentation/main.md --output presentation/main.pdf & pdf_pid=$!; trap 'kill $html_pid $pdf_pid 2>/dev/null' INT TERM EXIT; wait"
+    ],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "always",
+    "hide": "never",
+    "save": "current"
+  }
+]

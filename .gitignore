@@ -1,3 +1,5 @@
 main.*
 !main.tex
 !main.pdf
+!main.md
+!main.html
