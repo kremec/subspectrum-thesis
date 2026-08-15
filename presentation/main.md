@@ -40,7 +40,7 @@ Fakulteta za računalništvo in informatiko, Univerza v Ljubljani
 ![bg right:40% w:500](./image/wikipediazxspectrum_pic1.png)
 
 <!--
-Pozdravljeni, predstavil vam bom svoje delo na diplomskem delu, v katerem bom govoril o ...
+Pozdravljeni, predstavil vam bom svoje diplomsko delo, pri čemer bom govoril o ...
 -->
 
 ---
@@ -57,10 +57,10 @@ Pozdravljeni, predstavil vam bom svoje delo na diplomskem delu, v katerem bom go
 ![bg right:40% w:500](./image/wikipediazxspectrum_pic1.png)
 
 <!--
-- računalniku ZX Spectrum 48K
+- računalniku ZX Spectrum
 - ciljih diplomskega dela
-- implementaciji izdelka in
-- ovrednotenju končnega rezultata
+- implementaciji in seveda
+- ovrednotenju končnega izdelka
 -->
 
 ---
@@ -82,7 +82,9 @@ Podjetje Sinclair Research je ZX Spectrum ...
 <!--
 ... predstavilo leta 1982 kot zmogljivejši naslednik nizkocenovnih domačih računalnikov - ZX80, ZX81
 
-Ime Spectrum je dobil po novosti: barvni grafiki
+Ime Spectrum, poslovenjeno Mavrica, je dobil po novosti, ki jo je prinesel v to linijo računalnikov - barvno grafiko.
+
+Povedal bi še, da se nadaljnja obravnava osredotoča le na Spectrumov model 48K, saj ta predstavlja najbolj razširjen model Spectruma (obstajata še modala 16K in 128K).
 -->
 
 ---
@@ -98,16 +100,11 @@ Računalnik gradijo
 - procesor Z80
 - bralni pomnilnik oz. ROM
 - bralno-pisalni pomnilnik oz. RAM
-- ULA, ki predstavlja komunikacijski center sistema med procesorjem in:
+- ULA, ki predstavlja komunikacijski center sistema za komunikacijo med procesorjem in:
     - tipkovnico
-    - UHF zaslonom
+    - zaslonom
     - zvočnikom
     - kasetofonom
-
-Vse te dele bomo podrobneje pogledali pri implementaciji posameznih komponent.
-
-Povedal bi še, da model 48K predstavlja najbolj razširjeno različico Spectruma, zato se
-nadaljnja obravnava emulatorja osredotoča le na ta model.
 -->
 
 ---
@@ -118,8 +115,8 @@ nadaljnja obravnava emulatorja osredotoča le na ta model.
 
 <!--
 Preden začnem govoriti o ciljih dela, naj razložim še pojem emulacija
-Ta predstavlja prevod ukazov in delovanja strojne opreme gosta (v našem primeru ZX Spectruma)
-v ukaze arhitekture gostitelja (sodobni računalniki)
+
+Ta predstavlja prevod delovanja sistema gosta (v našem primeru ZX Spectruma) v arhitekturo gostitelja (v našem primeru sodobni računalniki)
 -->
 
 ---
@@ -167,8 +164,8 @@ Moduli funkcionalnosti:
 
 Abstraktni model emuliranega sistema pa sem zasnoval tako, da povezuje module funkcionalnosti
 - procesorja
-- pomnilnika
-- zaslona, tipkovnice, kasetofona oz. zvočnih kaset, in zvočnika
+- pomnilnika in
+- vhodno/izhodnih naprav, ki sem jih omenil prej
 -->
 
 ---
@@ -178,16 +175,9 @@ Abstraktni model emuliranega sistema pa sem zasnoval tako, da povezuje module fu
 # Pomnilnik
 
 <!--
-Pomnilnik Spectruma je logično razdeljen na 2 dela:
-- ROM, ki vsebuje nadzorni program za zagon in razne podprograme za:
-    - izrisovanje slike
-    - spremljanje pritiskov tipk in
-    - tolmačenje BASIC programov, ter
-- RAM, ki vsebuje:
-    - zaslonsko datoteko
-    - sistemske spremenljivke
-    - prosti pomnilnik in
-    - sklad
+Začnimo s pomnilnikom Spectruma, ki je razdeljen na 2 dela:
+- ROM, ki vsebuje nadzorni program za zagon in razne predpripravljene podprograme, ter
+- RAM, ki poleg prostega pomnilnika vsebuje še npr. zaslonsko datoteko, a več o tem kasneje
 -->
 
 ---
@@ -224,17 +214,17 @@ Procesor Z80 ...
 
 <!--
 ... vsebuje 18 8-bitnih in 4 16-bitne registre v dveh registrskih naborih, vsak vsebuje:
-- akumulator (A) za 8-bitne aritmetično-logične operacije
-- register zastavic (F) značilnosti zadnje izvedene operacije
-- 6 splošnonamenskih registrov, ki jih lahko uporabimo posamično, ali kot registrske pare (npr. BC)
+- akumulator oz. register A za 8-bitne aritmetično-logične operacije
+- register zastavic F značilnosti zadnje izvedene operacije
+- 6 splošnonamenskih registrov, ki jih lahko uporabimo kot posamične 8-bitne registre, ali kot 16-bitne registrske pare
 
 Register zastavic vsebuje:
     - 6 dokumentiranih in
-    - 2 nedokumentirani zastavici - slednji se v literaturi pogosto obravnavata kot neuporabljeni, čeprav jih dejanski procesor vseeno nastavlja in uporablja
+    - 2 nedokumentirani zastavici - slednji se v literaturi pogosto obravnavata kot neuporabljeni, čeprav temu v praksi ni tako
 
-Ta dva registrska nabora (od katerih procesor uporablja le enega naenkrat) omogočata hitro menjavo izvajalnega konteksta, uporabno za npr. hiter odziv na prekinitve
+Ta dva registrska nabora, od katerih procesor uporablja le enega naenkrat, omogočata hitro menjavo izvajalnega konteksta, kar je uporabno za npr. hiter odziv na prekinitve
 
-6 posebnonamenskih registrov:
+Vsebuje tudi 6 posebnonamenskih registrov:
 - programski števec
 - kazalec sklada
 - indeksna registra
@@ -260,7 +250,7 @@ CPE Z80:
 ![bg right:46% w:540](./image/subspectruminterface_pic5.png)
 
 <!--
-ZX Spectrum omogoča uporabo jezika BASIC (preko tolmača v ROMu), in strojnega jezika neposredno na procesorju.
+ZX Spectrum omogoča uporabo programskega jezika BASIC preko tolmača v ROMu, in strojnega jezika neposredno na procesorju.
 
 Pri slednjem procesor Z80 podpira:
 - 158 različnih dokumentiranih in mnogo nedokumentiranih ukazov
@@ -268,9 +258,8 @@ Pri slednjem procesor Z80 podpira:
 - 3 načine delovanja maskirnih in nemaskirnih prekinitev
 
 Vsaka definicija strojnega ukaza ima določen:
-- bitni vzorec, ki definira ukaz in operande
-- funkcijo izvedbe ukaza
-- časovno trajanje izvedbe ukaza
+- bitni vzorec, ki definira ukaz in operande, ter
+- funkcijo in časovno trajanje izvedbe ukaza
 -->
 
 ---
@@ -290,7 +279,7 @@ Vsaka definicija strojnega ukaza ima določen:
 <!--
 Delovanje emuliranega procesorja je organizirano okrog izvedbe posameznega ukaza, kar nam omogoči korakanje skozi izvajajoči-se program
 
-Poleg korakanja skozi program razhroščevalnik podpira tudi tekoči in pospešeni tek programa, ter prekinitvene točke
+Poleg korakanja skozi program pa emulator podpira tudi tekoči in pospešeni tek programa, ter prekinitvene točke
 -->
 
 ---
@@ -300,15 +289,9 @@ Poleg korakanja skozi program razhroščevalnik podpira tudi tekoči in pospeše
 # ULA
 
 <!--
-ULA deluje kot komunikacijski center sistema
+ULA kot komunikacijski center sistema preko V/I vrat skrbi za operacije, ki se dotikajo nekaterih V/I naprav
 
-Preko V/I vrat skrbi za določene operacije, ki se dotikajo:
-- zaslona
-- tipkovnice
-- zvočnika (piskača)
-- kasetofona in posledično kaset
-
-Podpira pa tudi serijsko vodilo za poljubne druge zunanje naprave
+Začnimo z ...
 -->
 
 ---
@@ -320,11 +303,11 @@ Podpira pa tudi serijsko vodilo za poljubne druge zunanje naprave
 ![w:650](./image/subspectruminterface_pic13.png)
 
 <!--
-Zaslon se ob periodičnih prekinitvah izrisuje na podlagi sekcij RAMa:
-- zaslonska slika določa aktivnost pik: papir kot ozadje ali črnilo kot ospredje
-- atributi določajo barvo papirja in črnila, svetlost in utripanje
+zaslonom, ki se ob periodičnih prekinitvah izrisuje na podlagi sekcij pomnilnika:
+- zaslonska datoteka določa aktivnost pik: papir kot ozadje ali črnilo kot ospredje
+- sekcija z atributi pa določa barvo papirja in črnila, svetlost in utripanje pozameznih znakov na zaslonu
 
-Posebnost zaslonske slike je nelinearen razpored shranjevanja vrednosti pik
+Posebnost zaslonske datoteke je nelinearen razpored shranjevanja vrednosti pik
 -->
 
 ---
@@ -335,6 +318,7 @@ Posebnost zaslonske slike je nelinearen razpored shranjevanja vrednosti pik
 
 <!--
 Tipkovnica je razdeljena na 8 polvrstic po 5 tipk
+
 Branje tipkovnice iz strojnega programa nam da vedeti, katere tipke izbranih polvrstic so pritisnjene
 -->
 
@@ -347,11 +331,10 @@ Branje tipkovnice iz strojnega programa nam da vedeti, katere tipke izbranih pol
 <!--
 Navadne zvočne kasete predstavljajo trajno shrambo uporabniških programov
 
-Emulator implementira dekodiranje in nalaganje najpogostejših formatov zapisov kaset s programi
-
-Nalaganje kasete je implementirano kot "hitro nalaganje", torej namesto emulacije zvočnih impulzov posnema učinek standardne rutine nalaganja podatkov, kar prinese
+Emulator implementira dekodiranje in nalaganje zapisov kaset, a namesto emuliranja zvočnih impulzov posnema le končni učinek.
+To prinese
 - hitrejše in zanesljivejše delovanje, a obstaja
-- možnost, da programi s posebnimi nalagalniki in zaščitami, ki neposredno merijo dolžine impulzov, niso polno podprti
+- možnost, da programi, ki neposredno merijo dolžine impulzov, niso polno podprti
 -->
 
 ---
@@ -361,10 +344,9 @@ Nalaganje kasete je implementirano kot "hitro nalaganje", torej namesto emulacij
 ![center h:260](./image/zxspectrumbasicprogramming_pic3.png)
 
 <!--
-ZX Spectrum ima vgrajen en piskač, ki predstavlja enobitni zvočni izhod (v praksi osnovni C fiksne glasnosti)
+ZX Spectrum ima vgrajen en zvočnik oz. piskač, ki predstavlja enobitni zvočni izhod (v praksi osnovni C fiksne glasnosti)
 
-Ker lahko v strojnem programu z enim bitom določamo le stanje proizvajanja zvoka (zvok ali tišina),
-lahko igran ton spremenimo z različnimi frekvencami preklapljanja stanja bita
+Ker lahko z enim bitom določamo le stanje proizvajanja zvoka (zvok ali tišina), lahko igran ton spremenimo z različnimi frekvencami preklapljanja stanja bita
 -->
 
 ---
@@ -386,7 +368,7 @@ Emulator, ki je nastal v zadnjem letu in obsega več kot 70.000 vrstic kode, lah
 ![center w:900](./image/subspectruminterface_pic8.png)
 
 <!--
-Pravilnost emulacije smo preverili z zagonom treh izbranih programov
+Pravilnost emulacije sem preveril z zagonom treh izbranih programov
 
 Preizkušeni so bili:
 - popularna arkadna igra Manic Miner
@@ -420,8 +402,8 @@ Vsi ti programi
 - delujejo brez opaznih napak z delujočo sliko, zvokom in upravljanjem preko tipkovnice
 
 Razhroščevalnik pri tem pravilno podpira:
-- prikaz stanja sistema in takojšnji prikaz sprememb
-- delujoče uporabniške posege v delovanje sistema
+- tako prikaz stanja sistema
+- kot tudi uporabniške posege vanj
 -->
 
 ---
@@ -433,11 +415,8 @@ Razhroščevalnik pri tem pravilno podpira:
 ![w:650](./image/subspectruminterface_pic8.png)
 
 <!--
-Emulator tako ni le način poganjanja stare programske opreme,
-temveč služi tudi kot učno in predstavitveno orodje za razumevanje in digitalno ohranjanje
-delovanja sistema in
-zanj napisanih programov
-
+Emulator tako ni le način poganjanja stare programske opreme, temveč služi tudi kot učno in predstavitveno orodje za razumevanje in digitalno ohranjanje
+delovanja sistema in zanj napisanih programov
 
 Hvala za vašo pozornost!
 -->
