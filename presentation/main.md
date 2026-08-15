@@ -57,7 +57,7 @@ Pozdravljeni, predstavil vam bom svoje diplomsko delo, pri čemer bom govoril o 
 ![bg right:40% w:500](./image/wikipediazxspectrum_pic1.png)
 
 <!--
-- računalniku ZX Spectrum
+- računalniku ZX Spectrum, natančneje modelu 48K
 - ciljih diplomskega dela
 - implementaciji in seveda
 - ovrednotenju končnega izdelka
@@ -83,8 +83,6 @@ Podjetje Sinclair Research je ZX Spectrum ...
 ... predstavilo leta 1982 kot zmogljivejši naslednik nizkocenovnih domačih računalnikov - ZX80, ZX81
 
 Ime Spectrum, poslovenjeno Mavrica, je dobil po novosti, ki jo je prinesel v to linijo računalnikov - barvno grafiko.
-
-Povedal bi še, da se nadaljnja obravnava osredotoča le na Spectrumov model 48K, saj ta predstavlja najbolj razširjen model Spectruma (obstajata še modala 16K in 128K).
 -->
 
 ---
@@ -129,10 +127,6 @@ Ta predstavlja prevod delovanja sistema gosta (v našem primeru ZX Spectruma) v 
 Cilj dela je razvoj delujočega emulatorja in razhroščevalnika, ki omogoča
 - ne le poganjanje programov, temveč tudi
 - razhroščevanje z vpogledom v notranje stanje sistema
-
-Slednje omogoča:
-- boljše razumevanje emuliranega računalnika in
-- ohranjanje znanja o njegovem delovanju
 -->
 
 ---
@@ -213,24 +207,14 @@ Procesor Z80 ...
 ![center w:800](./image/subspectruminterface_pic6.png)
 
 <!--
-... vsebuje 18 8-bitnih in 4 16-bitne registre v dveh registrskih naborih, vsak vsebuje:
-- akumulator oz. register A za 8-bitne aritmetično-logične operacije
-- register zastavic F značilnosti zadnje izvedene operacije
-- 6 splošnonamenskih registrov, ki jih lahko uporabimo kot posamične 8-bitne registre, ali kot 16-bitne registrske pare
-
-Register zastavic vsebuje:
-    - 6 dokumentiranih in
-    - 2 nedokumentirani zastavici - slednji se v literaturi pogosto obravnavata kot neuporabljeni, čeprav temu v praksi ni tako
+... vsebuje 18 8-bitnih in 4 16-bitne registre v
+- 6 posebnonamenskih registrih in
+- dveh registrskih naborih, od katerih vsak vsebuje:
+    - akumulator oz. register A za 8-bitne aritmetično-logične operacije
+    - register zastavic F značilnosti zadnje izvedene operacije
+    - 6 splošnonamenskih registrov, ki jih lahko uporabimo kot posamične 8-bitne registre, ali kot 16-bitne registrske pare
 
 Ta dva registrska nabora, od katerih procesor uporablja le enega naenkrat, omogočata hitro menjavo izvajalnega konteksta, kar je uporabno za npr. hiter odziv na prekinitve
-
-Vsebuje tudi 6 posebnonamenskih registrov:
-- programski števec
-- kazalec sklada
-- indeksna registra
-- osvežitveni register
-- register naslova strani prekinitev
-
 -->
 
 ---
@@ -345,8 +329,6 @@ To prinese
 
 <!--
 ZX Spectrum ima vgrajen en zvočnik oz. piskač, ki predstavlja enobitni zvočni izhod (v praksi osnovni C fiksne glasnosti)
-
-Ker lahko z enim bitom določamo le stanje proizvajanja zvoka (zvok ali tišina), lahko igran ton spremenimo z različnimi frekvencami preklapljanja stanja bita
 -->
 
 ---
@@ -356,9 +338,7 @@ Ker lahko z enim bitom določamo le stanje proizvajanja zvoka (zvok ali tišina)
 # Evalvacija
 
 <!--
-Emulator, ki je nastal v zadnjem letu in obsega več kot 70.000 vrstic kode, lahko ovrednotimo z vidikov:
-- pravilnosti izvajanja programov, razvitih za ZX Spectrum, in
-- uporabnosti razhroščevalnika
+Emulator je nastal v zadnjem letu in obsega več kot 70.000 vrstic kode, pravilnost emulacije pa sem preveril z zagonom treh izbranih programov.
 -->
 
 ---
@@ -368,8 +348,6 @@ Emulator, ki je nastal v zadnjem letu in obsega več kot 70.000 vrstic kode, lah
 ![center w:900](./image/subspectruminterface_pic8.png)
 
 <!--
-Pravilnost emulacije sem preveril z zagonom treh izbranih programov
-
 Preizkušeni so bili:
 - popularna arkadna igra Manic Miner
 ...
