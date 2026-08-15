@@ -47,7 +47,7 @@ Pozdravljeni, predstavil vam bom svoje diplomsko delo, pri čemer bom govoril o 
 
 <!-- footer: '' -->
 
-# Povzetek
+<!-- header: '**Povzetek**' --->
 
 - ZX Spectrum 48K: zgodovina, zgradba
 - cilj dela
@@ -65,29 +65,19 @@ Pozdravljeni, predstavil vam bom svoje diplomsko delo, pri čemer bom govoril o 
 
 ---
 
-<!-- header: '' --->
-
-# ZX Spectrum 48K
-
-<!--
-Podjetje Sinclair Research je ZX Spectrum ...
--->
-
----
-
-<!-- header: '**Zgodovina**' -->
+<!-- header: '**ZX Spectrum 48K** - Zgodovina' -->
 
 ![center w:900](./image/i4cysinclairomputers_pic1.png)
 
 <!--
-... predstavilo leta 1982 kot zmogljivejši naslednik nizkocenovnih domačih računalnikov - ZX80, ZX81
+Podjetje Sinclair Research je ZX Spectrum predstavilo leta 1982 kot zmogljivejši naslednik nizkocenovnih domačih računalnikov - ZX80, ZX81
 
 Ime Spectrum, poslovenjeno Mavrica, je dobil po novosti, ki jo je prinesel v to linijo računalnikov - barvno grafiko.
 -->
 
 ---
 
-<!-- header: '**Zgradba**' -->
+<!-- header: '**ZX Spectrum 48K** - Zgradba' -->
 <!-- _class: columns -->
 
 ![w:500](./image/zxspectrumintroduction_pic2.png)
@@ -107,23 +97,15 @@ Računalnik gradijo
 
 ---
 
-<!-- header: '' --->
+<!-- header: '**Cilj dela**' -->
 
-# Cilj dela
+![center w:800](./image/subspectruminterface_pic1.png)
 
 <!--
 Preden začnem govoriti o ciljih dela, naj razložim še pojem emulacija
 
 Ta predstavlja prevod delovanja sistema gosta (v našem primeru ZX Spectruma) v arhitekturo gostitelja (v našem primeru sodobni računalniki)
--->
 
----
-
-<!-- header: '**Cilji dela**' -->
-
-![center w:800](./image/subspectruminterface_pic1.png)
-
-<!--
 Cilj dela je razvoj delujočega emulatorja in razhroščevalnika, ki omogoča
 - ne le poganjanje programov, temveč tudi
 - razhroščevanje z vpogledom v notranje stanje sistema
@@ -131,19 +113,7 @@ Cilj dela je razvoj delujočega emulatorja in razhroščevalnika, ki omogoča
 
 ---
 
-<!-- header: '' --->
-
-# Razvoj
-
-<!--
-Emulator sem razvil v ogrodju za razvoj večplatformnih aplikacij - Kotlin Multiplatform.
-
-...
--->
-
----
-
-<!-- header: 'Arhitektura' -->
+<!-- header: '**Razvoj** - Arhitektura' -->
 
 Moduli funkcionalnosti:
 
@@ -154,7 +124,7 @@ Moduli funkcionalnosti:
 ![bg right:55% w:650](./image/subspectruminterface_pic1.png)
 
 <!--
-...
+Emulator sem razvil v ogrodju za razvoj večplatformnih aplikacij - Kotlin Multiplatform.
 
 Abstraktni model emuliranega sistema pa sem zasnoval tako, da povezuje module funkcionalnosti
 - procesorja
@@ -164,50 +134,31 @@ Abstraktni model emuliranega sistema pa sem zasnoval tako, da povezuje module fu
 
 ---
 
-<!-- header: '' -->
-
-# Pomnilnik
-
-<!--
-Začnimo s pomnilnikom Spectruma, ki je razdeljen na 2 dela:
-- ROM, ki vsebuje nadzorni program za zagon in razne predpripravljene podprograme, ter
-- RAM, ki poleg prostega pomnilnika vsebuje še npr. zaslonsko datoteko, a več o tem kasneje
--->
-
----
-
-<!-- header: '**Pomnilnik**' -->
+<!-- header: '**Razvoj** - Pomnilnik' -->
 <!-- _class: columns -->
 
 ![w:500](./image/subspectruminterface_pic3.png)
 ![w:500](./image/subspectruminterface_pic4.png)
 
 <!--
-Implementiran je s 64 kilobajtov velikim poljem zlogov, in funkcijami za branje in pisanje zlogov ali bitov
+Pomnilnik je v emulatorju implementiran s
+- 64 kilobajtov velikim poljem zlogov, ki predstavljajo pomnilniške celice, in
+- funkcijami za branje in pisanje teh zlogov ali bitov
 
 Podokno razhroščevalnika
-- prikazuje vrednosti pomnilniških celic in označi posamezne odseke in njihove namene
+- prikazuje vrednosti pomnilniških celic,
+- označi pomembne pomnilniške odseke in njihove namene, ter
 - omogoča ročno nastavljanje vrednosti posameznih pomnilniških celic
 -->
 
 ---
 
-<!-- header: '' -->
-
-# Centralna procesna enota Z80
-
-<!--
-Procesor Z80 ...
--->
-
----
-
-<!-- header: '**Registri in zastavice**' -->
+<!-- header: '**Razvoj** - Registri in zastavice' -->
 
 ![center w:800](./image/subspectruminterface_pic6.png)
 
 <!--
-... vsebuje 18 8-bitnih in 4 16-bitne registre v
+Procesor Z80 vsebuje 18 8-bitnih in 4 16-bitne registre v
 - 6 posebnonamenskih registrih in
 - dveh registrskih naborih, od katerih vsak vsebuje:
     - akumulator oz. register A za 8-bitne aritmetično-logične operacije
@@ -219,7 +170,7 @@ Ta dva registrska nabora, od katerih procesor uporablja le enega naenkrat, omogo
 
 ---
 
-<!-- header: '**Ukazi**' -->
+<!-- header: '**Razvoj** - Ukazi' -->
 
 CPE Z80:
 
@@ -248,7 +199,7 @@ Vsaka definicija strojnega ukaza ima določen:
 
 ---
 
-<!-- header: '**Izvajanje**' -->
+<!-- header: '**Razvoj** - Izvajanje' -->
 
 `Processor.step`:
 
@@ -268,26 +219,16 @@ Poleg korakanja skozi program pa emulator podpira tudi tekoči in pospešeni tek
 
 ---
 
-<!-- header: '' -->
-
-# ULA
-
-<!--
-ULA kot komunikacijski center sistema preko V/I vrat skrbi za operacije, ki se dotikajo nekaterih V/I naprav
-
-Začnimo z ...
--->
-
----
-
-<!-- header: '**Zaslon**' -->
+<!-- header: '**Razvoj** - Zaslon' -->
 <!-- _class: columns -->
 
 ![w:450](./image/subspectruminterface_pic7.png)
 ![w:650](./image/subspectruminterface_pic13.png)
 
 <!--
-zaslonom, ki se ob periodičnih prekinitvah izrisuje na podlagi sekcij pomnilnika:
+ULA kot komunikacijski center sistema preko V/I vrat skrbi za operacije, ki se dotikajo nekaterih V/I naprav
+
+Začnimo z zaslonom, ki se ob periodičnih prekinitvah izrisuje na podlagi sekcij pomnilnika:
 - zaslonska datoteka določa aktivnost pik: papir kot ozadje ali črnilo kot ospredje
 - sekcija z atributi pa določa barvo papirja in črnila, svetlost in utripanje pozameznih znakov na zaslonu
 
@@ -296,7 +237,7 @@ Posebnost zaslonske datoteke je nelinearen razpored shranjevanja vrednosti pik
 
 ---
 
-<!-- header: '**Tipkovnica**' -->
+<!-- header: '**Razvoj** - Tipkovnica' -->
 
 ![center h:360](./image/softspectrum48_pic1.png)
 
@@ -308,7 +249,7 @@ Branje tipkovnice iz strojnega programa nam da vedeti, katere tipke izbranih pol
 
 ---
 
-<!-- header: '**Kasete**' -->
+<!-- header: '**Razvoj** - Kasete' -->
 
 ![center h:360](./image/howtapeloadingword_pic1.png)
 
@@ -323,7 +264,7 @@ To prinese
 
 ---
 
-<!-- header: '**Zvok**' -->
+<!-- header: '**Razvoj** - Zvok' -->
 
 ![center h:260](./image/zxspectrumbasicprogramming_pic3.png)
 
@@ -333,46 +274,34 @@ ZX Spectrum ima vgrajen en zvočnik oz. piskač, ki predstavlja enobitni zvočni
 
 ---
 
-<!-- header: '' -->
-
-# Evalvacija
-
-<!--
-Emulator je nastal v zadnjem letu in obsega več kot 70.000 vrstic kode, pravilnost emulacije pa sem preveril z zagonom treh izbranih programov.
--->
-
----
-
-<!-- header: '**Pravilnost emulacije** - Manic Miner' -->
+<!-- header: '**Evalvacija** - Manic Miner' -->
 
 ![center w:900](./image/subspectruminterface_pic8.png)
 
 <!--
+Emulator je nastal v zadnjem letu in obsega več kot 70.000 vrstic kode, pravilnost emulacije pa sem preveril z zagonom treh izbranih programov.
+
 Preizkušeni so bili:
 - popularna arkadna igra Manic Miner
-...
 -->
 
 ---
 
-<!-- header: '**Pravilnost emulacije** - INES' -->
+<!-- header: '**Evalvacija** - INES' -->
 
 ![center w:900](./image/subspectruminterface_pic9.png)
 
 <!--
-...
 - slovenski urejevalnik besedil INES, ki med drugim podpira uporabo slovenskih črk
-...
 -->
 
 ---
 
-<!-- header: '**Pravilnost emulacije** - Kontrabant' -->
+<!-- header: '**Evalvacija** - Kontrabant' -->
 
 ![center w:900](./image/subspectruminterface_pic10.png)
 
 <!--
-...
 - ter slovenska besedilna pustolovska igra Kontrabant
 
 Vsi ti programi
