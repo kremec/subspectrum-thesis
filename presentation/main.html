@@ -146,7 +146,11 @@ Ta predstavlja prevod delovanja sistema gosta (v našem primeru ZX Spectruma) v 
 
 Cilj dela je razvoj delujočega emulatorja in razhroščevalnika, ki omogoča
 - ne le poganjanje programov, temveč tudi
-- razhroščevanje z vpogledom v notranje stanje sistema</p></div><div class="bespoke-marp-note" data-index="5" tabindex="0"><p>Emulator sem razvil v ogrodju za razvoj večplatformnih aplikacij - Kotlin Multiplatform.
+- razhroščevanje z vpogledom v notranje stanje sistema
+
+Slednje omogoča:
+- boljše razumevanje emuliranega računalnika in
+- ohranjanje znanja o njegovem delovanju</p></div><div class="bespoke-marp-note" data-index="5" tabindex="0"><p>Emulator sem razvil v ogrodju za razvoj večplatformnih aplikacij - Kotlin Multiplatform.
 
 Abstraktni model emuliranega sistema pa sem zasnoval tako, da povezuje module funkcionalnosti
 - procesorja
@@ -162,7 +166,7 @@ Podokno razhroščevalnika
 - 6 posebnonamenskih registrih in
 - dveh registrskih naborih, od katerih vsak vsebuje:
     - akumulator oz. register A za 8-bitne aritmetično-logične operacije
-    - register zastavic F značilnosti zadnje izvedene operacije
+    - register zastavic F, ki vsebuje značilnosti zadnje izvedene operacije v 6 dokumentiranih in 2 nedokumentiranih zastavicah (slednji se v literaturi pogosto obravnavata kot neuporabljeni, čeprav temu v praksi ni tako)
     - 6 splošnonamenskih registrov, ki jih lahko uporabimo kot posamične 8-bitne registre, ali kot 16-bitne registrske pare
 
 Ta dva registrska nabora, od katerih procesor uporablja le enega naenkrat, omogočata hitro menjavo izvajalnega konteksta, kar je uporabno za npr. hiter odziv na prekinitve</p></div><div class="bespoke-marp-note" data-index="8" tabindex="0"><p>ZX Spectrum omogoča uporabo programskega jezika BASIC preko tolmača v ROMu, in strojnega jezika neposredno na procesorju.
@@ -189,7 +193,9 @@ Branje tipkovnice iz strojnega programa nam da vedeti, katere tipke izbranih pol
 Emulator implementira dekodiranje in nalaganje zapisov kaset, a namesto emuliranja zvočnih impulzov posnema le končni učinek.
 To prinese
 - hitrejše in zanesljivejše delovanje, a obstaja
-- možnost, da programi, ki neposredno merijo dolžine impulzov, niso polno podprti</p></div><div class="bespoke-marp-note" data-index="13" tabindex="0"><p>ZX Spectrum ima vgrajen en zvočnik oz. piskač, ki predstavlja enobitni zvočni izhod (v praksi osnovni C fiksne glasnosti)</p></div><div class="bespoke-marp-note" data-index="14" tabindex="0"><p>Emulator je nastal v zadnjem letu in obsega več kot 70.000 vrstic kode, pravilnost emulacije pa sem preveril z zagonom treh izbranih programov.
+- možnost, da programi, ki neposredno merijo dolžine impulzov, niso polno podprti</p></div><div class="bespoke-marp-note" data-index="13" tabindex="0"><p>ZX Spectrum ima vgrajen en zvočnik oz. piskač, ki predstavlja enobitni zvočni izhod (v praksi osnovni C fiksne glasnosti)
+
+Ker lahko z enim bitom določamo le stanje proizvajanja zvoka (zvok ali tišina), lahko igran ton spremenimo z različnimi frekvencami preklapljanja stanja bita</p></div><div class="bespoke-marp-note" data-index="14" tabindex="0"><p>Emulator je nastal v zadnjem letu in obsega več kot 70.000 vrstic kode, pravilnost emulacije pa sem preveril z zagonom treh izbranih programov.
 
 Preizkušeni so bili:
 - popularna arkadna igra Manic Miner</p></div><div class="bespoke-marp-note" data-index="15" tabindex="0"><p>- slovenski urejevalnik besedil INES, ki med drugim podpira uporabo slovenskih črk</p></div><div class="bespoke-marp-note" data-index="16" tabindex="0"><p>- ter slovenska besedilna pustolovska igra Kontrabant

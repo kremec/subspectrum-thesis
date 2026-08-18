@@ -109,6 +109,10 @@ Ta predstavlja prevod delovanja sistema gosta (v našem primeru ZX Spectruma) v 
 Cilj dela je razvoj delujočega emulatorja in razhroščevalnika, ki omogoča
 - ne le poganjanje programov, temveč tudi
 - razhroščevanje z vpogledom v notranje stanje sistema
+
+Slednje omogoča:
+- boljše razumevanje emuliranega računalnika in
+- ohranjanje znanja o njegovem delovanju
 -->
 
 ---
@@ -162,7 +166,7 @@ Procesor Z80 vsebuje 18 8-bitnih in 4 16-bitne registre v
 - 6 posebnonamenskih registrih in
 - dveh registrskih naborih, od katerih vsak vsebuje:
     - akumulator oz. register A za 8-bitne aritmetično-logične operacije
-    - register zastavic F značilnosti zadnje izvedene operacije
+    - register zastavic F, ki vsebuje značilnosti zadnje izvedene operacije v 6 dokumentiranih in 2 nedokumentiranih zastavicah (slednji se v literaturi pogosto obravnavata kot neuporabljeni, čeprav temu v praksi ni tako)
     - 6 splošnonamenskih registrov, ki jih lahko uporabimo kot posamične 8-bitne registre, ali kot 16-bitne registrske pare
 
 Ta dva registrska nabora, od katerih procesor uporablja le enega naenkrat, omogočata hitro menjavo izvajalnega konteksta, kar je uporabno za npr. hiter odziv na prekinitve
@@ -270,6 +274,8 @@ To prinese
 
 <!--
 ZX Spectrum ima vgrajen en zvočnik oz. piskač, ki predstavlja enobitni zvočni izhod (v praksi osnovni C fiksne glasnosti)
+
+Ker lahko z enim bitom določamo le stanje proizvajanja zvoka (zvok ali tišina), lahko igran ton spremenimo z različnimi frekvencami preklapljanja stanja bita
 -->
 
 ---
